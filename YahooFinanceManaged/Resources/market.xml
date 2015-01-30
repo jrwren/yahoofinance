@@ -1,0 +1,833 @@
+﻿<?xml version="1.0"?>
+<WorldMarket xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://yahoofinance.codeplex.com/1/market.xsd">
+  <Sectors>
+    <Sector ID="1" Name="Basic Materials" />
+    <Sector ID="2" Name="Conglomerates" />
+    <Sector ID="3" Name="Consumer Goods" />
+    <Sector ID="4" Name="Financial" />
+    <Sector ID="5" Name="Healthcare" />
+    <Sector ID="6" Name="Industrial Goods" />
+    <Sector ID="7" Name="Services" />
+    <Sector ID="8" Name="Technology" />
+    <Sector ID="9" Name="Utilities" />
+  </Sectors>
+  <Industries>
+    <Industry ID="110" Name="Chemicals Major Diversified" />
+    <Industry ID="111" Name="Synthetics" />
+    <Industry ID="112" Name="Agricultural Chemicals" />
+    <Industry ID="113" Name="Specialty Chemicals" />
+    <Industry ID="120" Name="Major Integrated Oil &amp; Gas" />
+    <Industry ID="121" Name="Independent Oil &amp; Gas" />
+    <Industry ID="122" Name="Oil &amp; Gas Refining &amp; Marketing" />
+    <Industry ID="123" Name="Oil &amp; Gas Drilling &amp; Exploration" />
+    <Industry ID="124" Name="Oil &amp; Gas Equipment &amp; Services" />
+    <Industry ID="125" Name="Oil &amp; Gas Pipelines" />
+    <Industry ID="130" Name="Steel &amp; Iron" />
+    <Industry ID="131" Name="Copper" />
+    <Industry ID="132" Name="Aluminum" />
+    <Industry ID="133" Name="Industrial Metals &amp; Minerals" />
+    <Industry ID="134" Name="Gold" />
+    <Industry ID="135" Name="Silver" />
+    <Industry ID="136" Name="Nonmetallic Mineral Mining" />
+    <Industry ID="210" Name="Conglomerates" />
+    <Industry ID="310" Name="Appliances" />
+    <Industry ID="311" Name="Home Furnishings &amp; Fixtures" />
+    <Industry ID="312" Name="Housewares &amp; Accessories" />
+    <Industry ID="313" Name="Business Equipment" />
+    <Industry ID="314" Name="Electronic Equipment" />
+    <Industry ID="315" Name="Toys &amp; Games" />
+    <Industry ID="316" Name="Sporting Goods" />
+    <Industry ID="317" Name="Recreational Goods Other" />
+    <Industry ID="318" Name="Photographic Equipment &amp; Supplies" />
+    <Industry ID="320" Name="Textile Apparel Clothing" />
+    <Industry ID="321" Name="Textile Apparel Footwear &amp; Accessories" />
+    <Industry ID="322" Name="Rubber &amp; Plastics" />
+    <Industry ID="323" Name="Personal Products" />
+    <Industry ID="324" Name="Paper &amp; Paper Products" />
+    <Industry ID="325" Name="Packaging &amp; Containers" />
+    <Industry ID="326" Name="Cleaning Products" />
+    <Industry ID="327" Name="Office Supplies" />
+    <Industry ID="330" Name="Auto Manufacturers Major" />
+    <Industry ID="331" Name="Trucks &amp; Other Vehicles" />
+    <Industry ID="332" Name="Recreational Vehicles" />
+    <Industry ID="333" Name="Auto Parts" />
+    <Industry ID="340" Name="Food Major Diversified" />
+    <Industry ID="341" Name="Farm Products" />
+    <Industry ID="342" Name="Processed &amp; Packaged Goods" />
+    <Industry ID="343" Name="Meat Products" />
+    <Industry ID="344" Name="Dairy Products" />
+    <Industry ID="345" Name="Confectioners" />
+    <Industry ID="346" Name="Beverages Brewers" />
+    <Industry ID="347" Name="Beverages Wineries &amp; Distillers" />
+    <Industry ID="348" Name="Beverages Soft Drinks" />
+    <Industry ID="350" Name="Cigarettes" />
+    <Industry ID="351" Name="Tobacco Products Other" />
+    <Industry ID="410" Name="Money Center Banks" />
+    <Industry ID="411" Name="Regional Northeast Banks" />
+    <Industry ID="412" Name="Regional Mid Atlantic Banks" />
+    <Industry ID="413" Name="Regional Southeast Banks" />
+    <Industry ID="414" Name="Regional Midwest Banks" />
+    <Industry ID="415" Name="Regional Southwest Banks" />
+    <Industry ID="416" Name="Regional Pacific Banks" />
+    <Industry ID="417" Name="Foreign Money Center Banks" />
+    <Industry ID="418" Name="Foreign Regional Banks" />
+    <Industry ID="419" Name="Savings &amp; Loans" />
+    <Industry ID="420" Name="Investment Brokerage National" />
+    <Industry ID="421" Name="Investment Brokerage Regional" />
+    <Industry ID="422" Name="Asset Management" />
+    <Industry ID="423" Name="Diversified Investments" />
+    <Industry ID="424" Name="Credit Services" />
+    <Industry ID="425" Name="Closed End Fund Debt" />
+    <Industry ID="426" Name="Closed End Fund Equity" />
+    <Industry ID="427" Name="Closed End Fund Foreign" />
+    <Industry ID="430" Name="Life Insurance" />
+    <Industry ID="431" Name="Accident &amp; Health Insurance" />
+    <Industry ID="432" Name="Property &amp; Casualty Insurance" />
+    <Industry ID="433" Name="Surety &amp; Title Insurance" />
+    <Industry ID="434" Name="Insurance Brokers" />
+    <Industry ID="440" Name="REIT Diversified" />
+    <Industry ID="441" Name="REIT Office" />
+    <Industry ID="442" Name="REIT Healthcare Facilities" />
+    <Industry ID="443" Name="REIT Hotel Motel" />
+    <Industry ID="444" Name="REIT Industrial" />
+    <Industry ID="445" Name="REIT Residential" />
+    <Industry ID="446" Name="REIT Retail" />
+    <Industry ID="447" Name="Mortgage Investment" />
+    <Industry ID="448" Name="Property Management" />
+    <Industry ID="449" Name="Real Estate Development" />
+    <Industry ID="510" Name="Drug Manufacturers Major" />
+    <Industry ID="511" Name="Drug Manufacturers Other" />
+    <Industry ID="512" Name="Drugs Generic" />
+    <Industry ID="513" Name="Drug Delivery" />
+    <Industry ID="514" Name="Drug Related Products" />
+    <Industry ID="515" Name="Biotechnology" />
+    <Industry ID="516" Name="Diagnostic Substances" />
+    <Industry ID="520" Name="Medical Instruments &amp; Supplies" />
+    <Industry ID="521" Name="Medical Appliances &amp; Equipment" />
+    <Industry ID="522" Name="Health Care Plans" />
+    <Industry ID="523" Name="Long Term Care Facilities" />
+    <Industry ID="524" Name="Hospitals" />
+    <Industry ID="525" Name="Medical Laboratories &amp; Research" />
+    <Industry ID="526" Name="Home Health Care" />
+    <Industry ID="527" Name="Medical Practitioners" />
+    <Industry ID="528" Name="Specialized Health Services" />
+    <Industry ID="610" Name="Aerospace Defense Major Diversified" />
+    <Industry ID="611" Name="Aerospace Defense Products &amp; Services" />
+    <Industry ID="620" Name="Farm &amp; Construction Machinery" />
+    <Industry ID="621" Name="Industrial Equipment &amp; Components" />
+    <Industry ID="622" Name="Diversified Machinery" />
+    <Industry ID="623" Name="Pollution &amp; Treatment Controls" />
+    <Industry ID="624" Name="Machine Tools &amp; Accessories" />
+    <Industry ID="625" Name="Small Tools &amp; Accessories" />
+    <Industry ID="626" Name="Metal Fabrication" />
+    <Industry ID="627" Name="Industrial Electrical Equipment" />
+    <Industry ID="628" Name="Textile Industrial" />
+    <Industry ID="630" Name="Residential Construction" />
+    <Industry ID="631" Name="Manufactured Housing" />
+    <Industry ID="632" Name="Lumber Wood Production" />
+    <Industry ID="633" Name="Cement" />
+    <Industry ID="634" Name="General Building Materials" />
+    <Industry ID="635" Name="Heavy Construction" />
+    <Industry ID="636" Name="General Contractors" />
+    <Industry ID="637" Name="Waste Management" />
+    <Industry ID="710" Name="Lodging" />
+    <Industry ID="711" Name="Resorts &amp; Casinos" />
+    <Industry ID="712" Name="Restaurants" />
+    <Industry ID="713" Name="Specialty Eateries" />
+    <Industry ID="714" Name="Gaming Activities" />
+    <Industry ID="715" Name="Sporting Activities" />
+    <Industry ID="716" Name="General Entertainment" />
+    <Industry ID="720" Name="Advertising Agencies" />
+    <Industry ID="721" Name="Marketing Services" />
+    <Industry ID="722" Name="Entertainment Diversified" />
+    <Industry ID="723" Name="Broadcasting TV" />
+    <Industry ID="724" Name="Broadcasting Radio" />
+    <Industry ID="725" Name="CATV Systems" />
+    <Industry ID="726" Name="Movie Production Theaters" />
+    <Industry ID="727" Name="Publishing Newspapers" />
+    <Industry ID="728" Name="Publishing Periodicals" />
+    <Industry ID="729" Name="Publishing Books" />
+    <Industry ID="730" Name="Apparel Stores" />
+    <Industry ID="731" Name="Department Stores" />
+    <Industry ID="732" Name="Discount Variety Stores" />
+    <Industry ID="733" Name="Drug Stores" />
+    <Industry ID="734" Name="Grocery Stores" />
+    <Industry ID="735" Name="Electronics Stores" />
+    <Industry ID="736" Name="Home Improvement Stores" />
+    <Industry ID="737" Name="Home Furnishing Stores" />
+    <Industry ID="738" Name="Auto Parts Stores" />
+    <Industry ID="739" Name="Catalog &amp; Mail Order Houses" />
+    <Industry ID="740" Name="Sporting Goods Stores" />
+    <Industry ID="741" Name="Toy &amp; Hobby Stores" />
+    <Industry ID="742" Name="Jewelry Stores" />
+    <Industry ID="743" Name="Music &amp; Video Stores" />
+    <Industry ID="744" Name="Auto Dealerships" />
+    <Industry ID="745" Name="Specialty Retail Other" />
+    <Industry ID="750" Name="Auto Parts Wholesale" />
+    <Industry ID="751" Name="Building Materials Wholesale" />
+    <Industry ID="752" Name="Industrial Equipment Wholesale" />
+    <Industry ID="753" Name="Electronics Wholesale" />
+    <Industry ID="754" Name="Medical Equipment Wholesale" />
+    <Industry ID="755" Name="Computers Wholesale" />
+    <Industry ID="756" Name="Drugs Wholesale" />
+    <Industry ID="757" Name="Food Wholesale" />
+    <Industry ID="758" Name="Basic Materials Wholesale" />
+    <Industry ID="759" Name="Wholesale Other" />
+    <Industry ID="760" Name="Business Services" />
+    <Industry ID="761" Name="Rental &amp; Leasing Services" />
+    <Industry ID="762" Name="Personal Services" />
+    <Industry ID="763" Name="Consumer Services" />
+    <Industry ID="764" Name="Staffing &amp; Outsourcing Services" />
+    <Industry ID="765" Name="Security &amp; Protection Services" />
+    <Industry ID="766" Name="Education &amp; Training Services" />
+    <Industry ID="767" Name="Technical Services" />
+    <Industry ID="768" Name="Research Services" />
+    <Industry ID="769" Name="Management Services" />
+    <Industry ID="770" Name="Major Airlines" />
+    <Industry ID="771" Name="Regional Airlines" />
+    <Industry ID="772" Name="Air Services Other" />
+    <Industry ID="773" Name="Air Delivery &amp; Freight Services" />
+    <Industry ID="774" Name="Trucking" />
+    <Industry ID="775" Name="Shipping" />
+    <Industry ID="776" Name="Railroads" />
+    <Industry ID="810" Name="Diversified Computer Systems" />
+    <Industry ID="811" Name="Personal Computers" />
+    <Industry ID="812" Name="Computer Based Systems" />
+    <Industry ID="813" Name="Data Storage Devices" />
+    <Industry ID="814" Name="Networking &amp; Communication Devices" />
+    <Industry ID="815" Name="Computer Peripherals" />
+    <Industry ID="820" Name="Multimedia &amp; Graphics Software" />
+    <Industry ID="821" Name="Application Software" />
+    <Industry ID="822" Name="Technical &amp; System Software" />
+    <Industry ID="823" Name="Security Software &amp; Services" />
+    <Industry ID="824" Name="Information Technology Services" />
+    <Industry ID="825" Name="Healthcare Information Services" />
+    <Industry ID="826" Name="Business Software &amp; Services" />
+    <Industry ID="827" Name="Information &amp; Delivery Services" />
+    <Industry ID="830" Name="Semiconductor Broad Line" />
+    <Industry ID="831" Name="Semiconductor Memory Chips" />
+    <Industry ID="832" Name="Semiconductor Specialized" />
+    <Industry ID="833" Name="Semiconductor Integrated Circuits" />
+    <Industry ID="834" Name="Semiconductor Equipment &amp; Materials" />
+    <Industry ID="835" Name="Printed Circuit Boards" />
+    <Industry ID="836" Name="Diversified Electronics" />
+    <Industry ID="837" Name="Scientific &amp; Technical Instruments" />
+    <Industry ID="840" Name="Wireless Communications" />
+    <Industry ID="841" Name="Communication Equipment" />
+    <Industry ID="842" Name="Processing Systems &amp; Products" />
+    <Industry ID="843" Name="Long Distance Carriers" />
+    <Industry ID="844" Name="Telecom Services Domestic" />
+    <Industry ID="845" Name="Telecom Services Foreign" />
+    <Industry ID="846" Name="Diversified Communication Services" />
+    <Industry ID="850" Name="Internet Service Providers" />
+    <Industry ID="851" Name="Internet Information Providers" />
+    <Industry ID="852" Name="Internet Software &amp; Services" />
+    <Industry ID="910" Name="Foreign Utilities" />
+    <Industry ID="911" Name="Electric Utilities" />
+    <Industry ID="912" Name="Gas Utilities" />
+    <Industry ID="913" Name="Diversified Utilities" />
+    <Industry ID="914" Name="Water Utilities" />
+  </Industries>
+  <Currencies>
+    <Currency ID="AED" Name="UAE Dirham" />
+    <Currency ID="ALL" Name="Albanian Lek" />
+    <Currency ID="ANG" Name="Neth Antilles Guilder" />
+    <Currency ID="ARS" Name="Argentine Peso" />
+    <Currency ID="AUD" Name="Australian Dollar" />
+    <Currency ID="AWG" Name="Aruba Florin" />
+    <Currency ID="BBD" Name="Barbados Dollar" />
+    <Currency ID="BDT" Name="Bangladesh Taka" />
+    <Currency ID="BGN" Name="Bulgarian Lev" />
+    <Currency ID="BHD" Name="Bahreini Dinar" />
+    <Currency ID="BIF" Name="Burundi Franc" />
+    <Currency ID="BMD" Name="Bermuda Dollar" />
+    <Currency ID="BND" Name="Brunei Dollar" />
+    <Currency ID="BOB" Name="Bolivian Boliviano" />
+    <Currency ID="BRL" Name="Brazilian Real" />
+    <Currency ID="BSD" Name="Bahamian Dollar" />
+    <Currency ID="BTN" Name="Bhutan Ngultrum" />
+    <Currency ID="BWP" Name="Botswana Pula" />
+    <Currency ID="BYR" Name="Belarus Rouble" />
+    <Currency ID="BZD" Name="Belize Dollar" />
+    <Currency ID="CAD" Name="Canadian Dollar" />
+    <Currency ID="CHF" Name="Swiss Franc" />
+    <Currency ID="CLP" Name="Chilean Peso" />
+    <Currency ID="CNY" Name="Chinese Yuan" />
+    <Currency ID="COP" Name="Colombian Peso" />
+    <Currency ID="CRC" Name="Costa Rica Colon" />
+    <Currency ID="CUP" Name="Cuban Peso" />
+    <Currency ID="CVE" Name="Cape Verde Excudo" />
+    <Currency ID="CZK" Name="Czech Koruna" />
+    <Currency ID="DJF" Name="Dijibouti Franc" />
+    <Currency ID="DKK" Name="Danish Krone" />
+    <Currency ID="DOP" Name="Dominican Peso" />
+    <Currency ID="DZD" Name="Algerian Dinar" />
+    <Currency ID="ECS" Name="Equador Sucre" />
+    <Currency ID="EEK" Name="Estonian Kroon" />
+    <Currency ID="EGP" Name="Egyptian Pound" />
+    <Currency ID="ERN" Name="Eritrea Nakfa" />
+    <Currency ID="ETB" Name="Ethopian Birr" />
+    <Currency ID="EUR" Name="Euro" />
+    <Currency ID="FJD" Name="Fiji Dollar" />
+    <Currency ID="FKP" Name="Falkland Island Pound" />
+    <Currency ID="GBP" Name="British Pound" />
+    <Currency ID="GHC" Name="Ghanian Cedi" />
+    <Currency ID="GIP" Name="Gibraltar Pound" />
+    <Currency ID="GMD" Name="Gambian Dalasi" />
+    <Currency ID="GNF" Name="Guinea Franc" />
+    <Currency ID="GTQ" Name="Guatemala Quetzal" />
+    <Currency ID="GYD" Name="Guyana Dollar" />
+    <Currency ID="HNL" Name="Honduras Lempira" />
+    <Currency ID="HKD" Name="Hong Kong Dollar" />
+    <Currency ID="HRK" Name="Croatian Kuna" />
+    <Currency ID="HTG" Name="Haiti Gourde" />
+    <Currency ID="HUF" Name="Hungarian Forint" />
+    <Currency ID="IDR" Name="Indonesian Rpiah" />
+    <Currency ID="ILS" Name="Israeli Shekel" />
+    <Currency ID="INR" Name="Indian Rupee" />
+    <Currency ID="IQD" Name="Iraqui Dinar" />
+    <Currency ID="IRR" Name="Iran Rial" />
+    <Currency ID="ISK" Name="Iceland Krona" />
+    <Currency ID="JMD" Name="Jamaican Dollar" />
+    <Currency ID="JOD" Name="Jordania Dinar" />
+    <Currency ID="JPY" Name="Japanese Yen" />
+    <Currency ID="KES" Name="Kenyan Shilling" />
+    <Currency ID="KHR" Name="Cambodia Riel" />
+    <Currency ID="KMF" Name="Comoros Franc" />
+    <Currency ID="KRW" Name="Korean Won" />
+    <Currency ID="KWD" Name="Kuwaiti Dinar" />
+    <Currency ID="KYD" Name="Cayman Islands Dollar" />
+    <Currency ID="KZT" Name="Kazakhstan Tenge" />
+    <Currency ID="LAK" Name="Lao Kip" />
+    <Currency ID="LBP" Name="Lebanese Pound" />
+    <Currency ID="LKR" Name="Sri Lanka Rupee" />
+    <Currency ID="LRD" Name="Liberian Dollar" />
+    <Currency ID="LSL" Name="Lesoto Loti" />
+    <Currency ID="LTL" Name="Lithuanian Lita" />
+    <Currency ID="LVL" Name="Latvian Lat" />
+    <Currency ID="LYD" Name="Libyan Dinar" />
+    <Currency ID="MAD" Name="Moroccan Dirham" />
+    <Currency ID="MDL" Name="Moldovan Leu" />
+    <Currency ID="MKD" Name="Macedonian Denar" />
+    <Currency ID="MMK" Name="Myanmar Kyat" />
+    <Currency ID="MNT" Name="Mongolian Tukrik" />
+    <Currency ID="MOP" Name="Macau Pataca" />
+    <Currency ID="MRO" Name="Mauritania Ougulya" />
+    <Currency ID="MTL" Name="Maltese Lira" />
+    <Currency ID="MUR" Name="Mauritius Rupee" />
+    <Currency ID="MVR" Name="Maledives Rufiyaa" />
+    <Currency ID="MWK" Name="Malawi Kwacha" />
+    <Currency ID="MXN" Name="Mexican Peso" />
+    <Currency ID="MYR" Name="Malaysian Ringgit" />
+    <Currency ID="NAD" Name="Namibian Dollar" />
+    <Currency ID="NGN" Name="Nigerian Naira" />
+    <Currency ID="NIO" Name="Nicaragua Cordoba" />
+    <Currency ID="NOK" Name="Norwegian Krone" />
+    <Currency ID="NPR" Name="Nepalese Rupee" />
+    <Currency ID="KPW" Name="North Korean Won" />
+    <Currency ID="NZD" Name="New Zealand Dollar" />
+    <Currency ID="OMR" Name="Omani Rial" />
+    <Currency ID="PAB" Name="Panama elboa" />
+    <Currency ID="PEN" Name="Peruvian Nuevo Sol" />
+    <Currency ID="PGK" Name="Papua New Guinea Kina" />
+    <Currency ID="PHP" Name="Philipine Peso" />
+    <Currency ID="PKR" Name="Pakistani Rupee" />
+    <Currency ID="PLN" Name="Polish Zloty" />
+    <Currency ID="PYG" Name="Paraquayan Guarani" />
+    <Currency ID="QAR" Name="Qatar Rial" />
+    <Currency ID="RON" Name="Romanian New Leu" />
+    <Currency ID="RUB" Name="Russian Roubel" />
+    <Currency ID="RWF" Name="Rwanda Franc" />
+    <Currency ID="SAR" Name="Saudi Arabian Riyal" />
+    <Currency ID="SBD" Name="Solomon Islands Dollar" />
+    <Currency ID="SCR" Name="Seychelles Rupee" />
+    <Currency ID="SDG" Name="Sudanese Pound" />
+    <Currency ID="SEK" Name="Swedish Krona" />
+    <Currency ID="SGD" Name="Singapore Dollar" />
+    <Currency ID="SHP" Name="St Helena Pound" />
+    <Currency ID="SIT" Name="Slovenian Tolar" />
+    <Currency ID="SKK" Name="Slovak Koruna" />
+    <Currency ID="SLL" Name="Sierra Leone Leone" />
+    <Currency ID="SOS" Name="Somali Shilling" />
+    <Currency ID="STD" Name="Sao Tome Dobra" />
+    <Currency ID="SVC" Name="El Salvador Colon" />
+    <Currency ID="SYP" Name="Syrian Pound" />
+    <Currency ID="SZL" Name="Swaziland Lilageni" />
+    <Currency ID="THB" Name="Thai eht" />
+    <Currency ID="TND" Name="Tunisian Dinar" />
+    <Currency ID="TOP" Name="Tonga Pa'ang" />
+    <Currency ID="TRY" Name="Turkish Lira" />
+    <Currency ID="TTD" Name="Trinidad &amp; Tobago Dollar" />
+    <Currency ID="TWD" Name="Taiwan Dollar" />
+    <Currency ID="TZS" Name="Tanzanian Shilling" />
+    <Currency ID="UAH" Name="Ukraine Hryvnia" />
+    <Currency ID="UGX" Name="Ugandan Shilling" />
+    <Currency ID="USD" Name="U.S. Dollar" />
+    <Currency ID="UYU" Name="Uruguayan New Peso" />
+    <Currency ID="VEF" Name="Venezuelan Bolivar Fuerte" />
+    <Currency ID="VND" Name="Vietnam Dong" />
+    <Currency ID="VUV" Name="Vanuatu Vatu" />
+    <Currency ID="WST" Name="Samoa Tala" />
+    <Currency ID="XAF" Name="CFA Franc (BEAC)" />
+    <Currency ID="XAG" Name="Silver Ounces" />
+    <Currency ID="XAL" Name="Aluminium Ounces" />
+    <Currency ID="XAU" Name="Gold Ounces" />
+    <Currency ID="XCD" Name="East Caribbean Dollar" />
+    <Currency ID="XCP" Name="Copper Pounds" />
+    <Currency ID="XOF" Name="CFA Franc (BCEAO)" />
+    <Currency ID="XPD" Name="Paladium Ounces" />
+    <Currency ID="XPF" Name="Pacific Franc" />
+    <Currency ID="XPT" Name="Platinum Ounces" />
+    <Currency ID="YER" Name="Yemen Riyal" />
+    <Currency ID="ZAR" Name="South African Rand" />
+    <Currency ID="ZMK" Name="Zambian Kwacha" />
+    <Currency ID="ZWD" Name="Zimbabwe Dollar" />
+  </Currencies>
+  <Countries>
+    <Country ID="AR" Currency="ARS" Name="Argentina" />
+    <Country ID="AU" Currency="AUD" Name="Australia" />
+    <Country ID="AT" Currency="EUR" Name="Austria" />
+    <Country ID="BE" Currency="EUR" Name="Belgium" />
+    <Country ID="BR" Currency="BRL" Name="Brazil" />
+    <Country ID="CA" Currency="CAD" Name="Canada" />
+    <Country ID="CT" Currency="EUR" Name="Catalonia" />
+    <Country ID="CL" Currency="CLP" Name="Chile" />
+    <Country ID="CN" Currency="CNY" Name="China" />
+    <Country ID="CO" Currency="COP" Name="Columbia" />
+    <Country ID="CZ" Currency="CZK" Name="Czech Republic" />
+    <Country ID="DK" Currency="EUR" Name="Denmark" />
+    <Country ID="FI" Currency="EUR" Name="Finland" />
+    <Country ID="FR" Currency="EUR" Name="France" />
+    <Country ID="DE" Currency="EUR" Name="Germany" />
+    <Country ID="HK" Currency="HKD" Name="Hong Kong" />
+    <Country ID="HU" Currency="HUF" Name="Hungary" />
+    <Country ID="ID" Currency="IDR" Name="Indonesia" />
+    <Country ID="IN" Currency="INR" Name="India" />
+    <Country ID="IE" Currency="EUR" Name="Ireland" />
+    <Country ID="IL" Currency="ILS" Name="Israel" />
+    <Country ID="IT" Currency="EUR" Name="Italy" />
+    <Country ID="JP" Currency="JPY" Name="Japan" />
+    <Country ID="KR" Currency="KRW" Name="Korea" />
+    <Country ID="MY" Currency="MYR" Name="Malaysia" />
+    <Country ID="MX" Currency="MXN" Name="Mexico" />
+    <Country ID="NL" Currency="EUR" Name="Netherlands" />
+    <Country ID="NZ" Currency="NZD" Name="New Zealand" />
+    <Country ID="NO" Currency="NOK" Name="Norway" />
+    <Country ID="PE" Currency="PEN" Name="Peru" />
+    <Country ID="PT" Currency="EUR" Name="Portugal" />
+    <Country ID="PH" Currency="PHP" Name="Philippines" />
+    <Country ID="RO" Currency="RON" Name="Romania" />
+    <Country ID="RU" Currency="RUB" Name="Russia" />
+    <Country ID="SG" Currency="SGD" Name="Singapore" />
+    <Country ID="ES" Currency="EUR" Name="Spain" />
+    <Country ID="SE" Currency="SEK" Name="Sweden" />
+    <Country ID="CH" Currency="CHF" Name="Switzerland" />
+    <Country ID="TW" Currency="TWD" Name="Taiwan" />
+    <Country ID="TH" Currency="THB" Name="Thailand" />
+    <Country ID="TR" Currency="TRY" Name="Turkey" />
+    <Country ID="UK" Currency="GBP" Name="United Kingdom" />
+    <Country ID="US" Currency="USD" Name="United States of America" />
+    <Country ID="VE" Currency="VEF" Name="Venezuela" />
+    <Country ID="VN" Currency="VND" Name="Vietnam" />
+  </Countries>
+  <StockExchanges>
+    <StockExchange ID="AMS" Country="NL" Suffix=".AS" Name="Amsterdam Stock Exchange" Location="Amsterdam">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:30:00.0000000+00:00" DelayMinutes="15" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="ASE" Country="US" Name="American Stock Exchange" Location="New York" >
+      <TradingTime OpeningTimeLocal="09:30:00.0000000+00:00" ClosingTimeLocal="16:00:00.0000000+00:00" DelayMinutes="15" TimeZone="Eastern Standard Time" />
+    </StockExchange>
+    <StockExchange ID="ASX" Country="AU" Suffix=".AX" Name="Australian Securities Exchange" Location="Sydney" >
+      <TradingTime OpeningTimeLocal="10:00:00.0000000+00:00" ClosingTimeLocal="16:00:00.0000000+00:00" DelayMinutes="20" TimeZone="AUS Eastern Standard Time" />
+    </StockExchange>
+    <StockExchange ID="BAR" Country="ES" Suffix=".BC" Name="Barcelona Stock Exchange" Location="Barcelona">
+      <TradingTime OpeningTimeLocal="08:00:00.0000000+00:00" ClosingTimeLocal="16:30:00.0000000+00:00" DelayMinutes="15" TimeZone="Romance Standard Time" />
+    </StockExchange>
+    <StockExchange ID="BER" Country="DE" Suffix=".BE" Name="Berlin Stock Exchange" Location="Berlin">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="20:00:00.0000000+00:00" DelayMinutes="15" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="BIL" Country="ES" Suffix=".BI" Name="Bilbao Stock Exchange" Location="Bilbao">
+      <TradingTime OpeningTimeLocal="08:30:00.0000000+00:00" ClosingTimeLocal="16:30:00.0000000+00:00" DelayMinutes="15" TimeZone="Romance Standard Time" />
+    </StockExchange>
+    <StockExchange ID="BRE" Country="DE" Suffix=".BM" Name="Bremen Stock Exchange" Location="Bremen">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="20:00:00.0000000+00:00" DelayMinutes="15" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="BSE" Country="IN" Suffix=".BO" Name="Bombay Stock Exchange" Location="Mumbai">
+      <TradingTime OpeningTimeLocal="09:25:00.0000000+00:00" ClosingTimeLocal="15:00:00.0000000+00:00" DelayMinutes="15" TimeZone="India Standard Time" />
+    </StockExchange>
+    <StockExchange ID="BTX" Country="US" Name="BATS Exchange" Location="Kansas City">
+      <TradingTime OpeningTimeLocal="00:00:00.0000000+00:00" ClosingTimeLocal="23:59:59.0000000+00:00" DelayMinutes="00" TimeZone="Central Standard Time" />
+    </StockExchange>
+    <StockExchange ID="BUE" Country="AR" Suffix=".BA" Name="Buenos Aires Stock Exchange" Location="Buenos Aires">
+      <TradingTime OpeningTimeLocal="10:00:00.0000000+00:00" ClosingTimeLocal="18:00:00.0000000+00:00" DelayMinutes="15" TimeZone="Argentina Standard Time" />
+    </StockExchange>
+    <StockExchange ID="CAL" Country="IN" Name="Calcutta Stock Exchange" Location="Calcutta">
+      <TradingTime OpeningTimeLocal="08:00:00.0000000+00:00" ClosingTimeLocal="13:00:00.0000000+00:00" DelayMinutes="00" TimeZone="India Standard Time" />
+    </StockExchange>
+    <StockExchange ID="CBO" Country="US" Name="Chicago Board Options Exchange" Location="Chicago">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:30:00.0000000+00:00" DelayMinutes="00" TimeZone="Central Standard Time" />
+    </StockExchange>
+    <StockExchange ID="CBT" Country="US" Suffix=".CBT" Name="Chicago Board of Trade" Location="Chicago">
+      <TradingTime OpeningTimeLocal="08:00:00.0000000+00:00" ClosingTimeLocal="16:30:00.0000000+00:00" DelayMinutes="10" TimeZone="Central Standard Time" />
+    </StockExchange>
+    <StockExchange ID="CCS" Country="VE" Suffix=".CR" Name="Caracas Stock Exchange" Location="Caracas">
+      <TradingTime OpeningTimeLocal="08:30:00.0000000+00:00" ClosingTimeLocal="13:00:00.0000000+00:00" DelayMinutes="00" TimeZone="Venezuela Standard Time" />
+    </StockExchange>
+    <StockExchange ID="VAN" Country="CA" Suffix=".V" Name="TSX Venture Exchange" Location="Calgary">
+      <TradingTime OpeningTimeLocal="00:00:00.0000000+00:00" ClosingTimeLocal="23:59:59.0000000+00:00" DelayMinutes="00" TimeZone="Mountain Standard Time" />
+    </StockExchange>
+    <StockExchange ID="CME" Country="US" Suffix=".CME" Name="Chicago Mercantile Exchange" Location="Chicago">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:00:00.0000000+00:00" DelayMinutes="10" TimeZone="Central Standard Time" />
+    </StockExchange>
+    <StockExchange ID="CMX" Country="US" Suffix=".CMX" Name="New York Commodities Exchange" Location="New York">
+      <TradingTime OpeningTimeLocal="09:30:00.0000000+00:00" ClosingTimeLocal="15:00:00.0000000+00:00" DelayMinutes="30" TimeZone="Eastern Standard Time" />
+    </StockExchange>
+    <StockExchange ID="CPH" Country="DK" Suffix=".CO" Name="Copenhagen Stock Exchange" Location="Kopenhagen">
+      <TradingTime OpeningTimeLocal="08:30:00.0000000+00:00" ClosingTimeLocal="17:00:00.0000000+00:00" DelayMinutes="15" TimeZone="Romance Standard Time" />
+    </StockExchange>
+    <StockExchange ID="DJI" Country="US" Name="Dow Jones Indexes" Location="New York">
+      <TradingTime OpeningTimeLocal="09:30:00.0000000+00:00" ClosingTimeLocal="16:00:00.0000000+00:00" DelayMinutes="15" TimeZone="Eastern Standard Time" />
+    </StockExchange>
+    <StockExchange ID="DUS" Country="DE" Suffix=".DU" Name="Dusseldorf Stock Exchange" Location="Düsseldorf">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:30:00.0000000+00:00" DelayMinutes="15" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="EBS" Country="CH" Suffix=".SW" Name="Swiss Exchange" Location="Zürich">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:30:00.0000000+00:00" DelayMinutes="30" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="ENX" Country="FR" Suffix=".NX" Name="Euronext Amsterdam/Brussels/Paris" Location="Amsterdam">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:30:00.0000000+00:00" DelayMinutes="15" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="EUX" Country="CH" Suffix=".EX" Name="Eurex" Location="Eschborn">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:30:00.0000000+00:00" DelayMinutes="15" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="EWX" Country="DE" Suffix=".SG" Name="Stuttgart EWX" Location="Stuttgart">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="20:00:00.0000000+00:00" DelayMinutes="15" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="FGI" Country="US" Suffix=".FGI" Name="FGI" Location="New York">
+      <TradingTime OpeningTimeLocal="08:00:00.0000000+00:00" ClosingTimeLocal="18:00:00.0000000+00:00" DelayMinutes="00" TimeZone="Eastern Standard Time" />
+    </StockExchange>
+    <StockExchange ID="FRA" Country="DE" Suffix=".F" Name="Frankfurt Stock Exchange" Location="Frankfurt">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="20:00:00.0000000+00:00" DelayMinutes="15" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="FTI" Country="UK" Name="FTSE Indices" Location="London">
+      <TradingTime OpeningTimeLocal="08:00:00.0000000+00:00" ClosingTimeLocal="16:30:00.0000000+00:00" DelayMinutes="15" TimeZone="GMT Standard Time" />
+    </StockExchange>
+    <StockExchange ID="GER" Country="DE" Suffix=".DE" Name="XETRA" Location="Frankfurt">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:30:00.0000000+00:00" DelayMinutes="15" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="HAM" Country="DE" Suffix=".HM" Name="Hamburg Stock Exchange" Location="Hamburg">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="20:00:00.0000000+00:00" DelayMinutes="15" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="HAN" Country="DE" Suffix=".HA" Name="Hanover Stock Exchange" Location="Hanover">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="20:00:00.0000000+00:00" DelayMinutes="15" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="HKG" Country="HK" Suffix=".HK" Name="Hong Kong Stock Exchange" Location="Hong Kong">
+      <TradingTime OpeningTimeLocal="10:00:00.0000000+00:00" ClosingTimeLocal="16:00:00.0000000+00:00" DelayMinutes="15" TimeZone="China Standard Time" />
+    </StockExchange>
+    <StockExchange ID="IOB" Country="UK" Suffix=".IL" Name="IOB" Location="London">
+      <TradingTime OpeningTimeLocal="00:00:00.0000000+00:00" ClosingTimeLocal="23:59:59.0000000+00:00" DelayMinutes="00" TimeZone="GMT Standard Time" />
+    </StockExchange>
+    <StockExchange ID="ISE" Country="IE" Name="Irish Stock Exchange" Location="Dublin">
+      <TradingTime OpeningTimeLocal="08:00:00.0000000+00:00" ClosingTimeLocal="17:00:00.0000000+00:00" DelayMinutes="00" TimeZone="GMT Standard Time" />
+    </StockExchange>
+    <StockExchange ID="JKT" Country="ID" Suffix=".JK" Name="Jakarta Stock Exchange" Location="Jakarta">
+      <TradingTime OpeningTimeLocal="09:30:00.0000000+00:00" ClosingTimeLocal="16:00:00.0000000+00:00" DelayMinutes="10" TimeZone="SE Asia Standard Time" />
+    </StockExchange>
+    <StockExchange ID="KLS" Country="MY" Suffix=".KL" Name="Bursa Malaysia" Location="Kuala Lumpur">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:00:00.0000000+00:00" DelayMinutes="00" TimeZone="Singapore Standard Time" />
+    </StockExchange>
+    <StockExchange ID="KSC" Country="KR" Suffix=".KS" Name="Korea Composite Stock Price Index" Location="Seoul">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:00:00.0000000+00:00" DelayMinutes="20" TimeZone="Korea Standard Time" />
+    </StockExchange>
+    <StockExchange ID="KSQ" Country="KR" Suffix=".KQ" Name="KOSDAQ/Korean Securities Dealers Automated Quotations" Location="Seoul">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="15:00:00.0000000+00:00" DelayMinutes="20" TimeZone="Korea Standard Time" />
+    </StockExchange>
+    <StockExchange ID="LMA" Country="PE" Suffix=".LM" Name="Lima Stock Exchange" Location="Lima">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="16:00:00.0000000+00:00" DelayMinutes="00" TimeZone="SA Pacific Standard Time" />
+    </StockExchange>
+    <StockExchange ID="LSB" Country="PT" Suffix=".LS" Name="Lisbon Stock Exchange" Location="Lisboa">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:30:00.0000000+00:00" DelayMinutes="00" TimeZone="GMT Standard Time" />
+    </StockExchange>
+    <StockExchange ID="LSE" Country="UK" Suffix=".L" Name="London Stock Exchange" Location="London">
+      <TradingTime OpeningTimeLocal="08:00:00.0000000+00:00" ClosingTimeLocal="16:35:00.0000000+00:00" DelayMinutes="20" TimeZone="GMT Standard Time" />
+    </StockExchange>
+    <StockExchange ID="MAD" Country="ES" Suffix=".MA" Name="Madrid Stock Exchange" Location="Madrid">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:30:00.0000000+00:00" DelayMinutes="15" TimeZone="Romance Standard Time" />
+    </StockExchange>
+    <StockExchange ID="MCE" Country="ES" Suffix=".MC" Name="Madrid SE C.A.T.S." Location="Madrid">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:30:00.0000000+00:00" DelayMinutes="15" TimeZone="Romance Standard Time" />
+    </StockExchange>
+    <StockExchange ID="MEX" Country="MX" Suffix=".MX" Name="Mexico Stock Exchange" Location="Mexico City">
+      <TradingTime OpeningTimeLocal="08:30:00.0000000+00:00" ClosingTimeLocal="17:00:00.0000000+00:00" DelayMinutes="20" TimeZone="Central Standard Time (Mexico)" />
+    </StockExchange>
+    <StockExchange ID="MFI" Country="ES" Suffix=".MF" Name="Madrid Fixed Income Market" Location="Madrid">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:30:00.0000000+00:00" DelayMinutes="15" TimeZone="Romance Standard Time" />
+    </StockExchange>
+    <StockExchange ID="MIL" Country="IT" Suffix=".MI" Name="Milan Stock Exchange" Location="Milano">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:30:00.0000000+00:00" DelayMinutes="20" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="MUN" Country="DE" Suffix=".MU" Name="Munich Stock Exchange" Location="München">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="20:00:00.0000000+00:00" DelayMinutes="15" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="NAS" Country="US" Name="NASDAQ" Location="New York">
+      <TradingTime OpeningTimeLocal="09:30:00.0000000+00:00" ClosingTimeLocal="16:00:00.0000000+00:00" DelayMinutes="15" TimeZone="Eastern Standard Time" />
+    </StockExchange>
+    <StockExchange ID="NGM" Country="SE" Name="Nordic Growth Market" Location="Stockholm">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="18:00:00.0000000+00:00" DelayMinutes="00" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="NIK" Country="JP" Name="Nikkei Indices" Location="Tokio">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:00:00.0000000+00:00" DelayMinutes="30" TimeZone="Tokyo Standard Time" />
+    </StockExchange>
+    <StockExchange ID="NSE" Country="IN" Suffix=".NS" Name="National Stock Exchange of India" Location="Mumbai">
+      <TradingTime OpeningTimeLocal="09:25:00.0000000+00:00" ClosingTimeLocal="15:00:00.0000000+00:00" DelayMinutes="15" TimeZone="India Standard Time" />
+    </StockExchange>
+    <StockExchange ID="NSI" Country="IN" Suffix=".NS" Name="National Stock Exchange of India" Location="Mumbai">
+      <TradingTime OpeningTimeLocal="09:25:00.0000000+00:00" ClosingTimeLocal="15:00:00.0000000+00:00" DelayMinutes="15" TimeZone="India Standard Time" />
+    </StockExchange>
+    <StockExchange ID="NYB" Country="US" Suffix=".NYB" Name="New York Board of Trade" Location="New York">
+      <TradingTime OpeningTimeLocal="07:55:00.0000000+00:00" ClosingTimeLocal="16:15:00.0000000+00:00" DelayMinutes="30" TimeZone="Eastern Standard Time" />
+    </StockExchange>
+    <StockExchange ID="NYM" Country="US" Suffix=".NYM" Name="New York Mercantile Exchange" Location="New York">
+      <TradingTime OpeningTimeLocal="08:00:00.0000000+00:00" ClosingTimeLocal="17:15:00.0000000+00:00" DelayMinutes="30" TimeZone="Eastern Standard Time" />
+    </StockExchange>
+    <StockExchange ID="NYQ" Country="US" Name="New York Stock Exchange" Location="New York">
+      <TradingTime OpeningTimeLocal="09:30:00.0000000+00:00" ClosingTimeLocal="16:00:00.0000000+00:00" DelayMinutes="15" TimeZone="Eastern Standard Time" />
+    </StockExchange>
+    <StockExchange ID="NZX" Country="NZ" Suffix=".NZ" Name="New Zealand Stock Exchange" Location="Wellington">
+      <TradingTime OpeningTimeLocal="10:00:00.0000000+00:00" ClosingTimeLocal="16:45:00.0000000+00:00" DelayMinutes="20" TimeZone="New Zealand Standard Time" />
+    </StockExchange>
+    <StockExchange ID="OBB" Country="US" Suffix=".OB" Name="OTC Bulletin Board Market" Location="New York">
+      <TradingTime OpeningTimeLocal="09:30:00.0000000+00:00" ClosingTimeLocal="16:00:00.0000000+00:00" DelayMinutes="20" TimeZone="Eastern Standard Time" />
+    </StockExchange>
+    <StockExchange ID="OSE" Country="JP" Name="Osaka Securities Exchange" Location="Osaka">
+      <TradingTime OpeningTimeLocal="08:20:00.0000000+00:00" ClosingTimeLocal="16:30:00.0000000+00:00" DelayMinutes="00" TimeZone="Tokyo Standard Time" />
+    </StockExchange>
+    <StockExchange ID="OSL" Country="NO" Suffix=".OL" Name="Oslo Stock Exchange" Location="Oslo">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="16:30:00.0000000+00:00" DelayMinutes="15" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="PAR" Country="FR" Suffix=".PA" Name="Paris Stock Exchange" Location="Paris">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:30:00.0000000+00:00" DelayMinutes="15" TimeZone="Romance Standard Time" />
+    </StockExchange>
+    <StockExchange ID="PCX" Country="US" Name="Pacific Exchange" Location="San Francisco">
+      <TradingTime OpeningTimeLocal="00:00:00.0000000+00:00" ClosingTimeLocal="12:00:00.0000000+00:00" DelayMinutes="00" TimeZone="Pacific Standard Time" />
+    </StockExchange>
+    <StockExchange ID="RTS" Country="RU" Suffix=".RS" Name="Russian Trading System Stock Exchange" Location="Moskva">
+      <TradingTime OpeningTimeLocal="10:00:00.0000000+00:00" ClosingTimeLocal="18:45:00.0000000+00:00" DelayMinutes="00" TimeZone="Russian Standard Time" />
+    </StockExchange>
+    <StockExchange ID="PNK" Country="US" Suffix=".PK" Name="Pink Sheets" Location="New York">
+      <TradingTime OpeningTimeLocal="00:00:00.0000000+00:00" ClosingTimeLocal="23:59:59.0000000+00:00" DelayMinutes="00" TimeZone="Eastern Standard Time" />
+    </StockExchange>
+    <StockExchange ID="SAO" Country="BR" Suffix=".SA" Name="BOVESPA - Sao Paolo Stock Exchange" Location="Sao Paolo">
+      <TradingTime OpeningTimeLocal="10:00:00.0000000+00:00" ClosingTimeLocal="17:00:00.0000000+00:00" DelayMinutes="15" TimeZone="E. South America Standard Time" />
+    </StockExchange>
+    <StockExchange ID="SES" Country="SG" Suffix=".SI" Name="Singapore Stock Exchange" Location="Singapore">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="18:00:00.0000000+00:00" DelayMinutes="20" TimeZone="Singapore Standard Time" />
+    </StockExchange>
+    <StockExchange ID="SET" Country="TH" Suffix=".BK" Name="Stock Exchange of Thailand" Location="Bangkok">
+      <TradingTime OpeningTimeLocal="09:30:00.0000000+00:00" ClosingTimeLocal="17:00:00.0000000+00:00" DelayMinutes="00" TimeZone="SE Asia Standard Time" />
+    </StockExchange>
+    <StockExchange ID="SGO" Country="CL" Suffix=".SN" Name="Santiago Stock Exchange" Location="Santiago de Chile">
+      <TradingTime OpeningTimeLocal="09:30:00.0000000+00:00" ClosingTimeLocal="13:20:00.0000000+00:00" DelayMinutes="15" TimeZone="Pacific SA Standard Time" />
+    </StockExchange>
+    <StockExchange ID="SHH" Country="CN" Suffix=".SS" Name="Shanghai Stock Exchange" Location="Shanghai">
+      <TradingTime OpeningTimeLocal="09:30:00.0000000+00:00" ClosingTimeLocal="16:00:00.0000000+00:00" DelayMinutes="30" TimeZone="China Standard Time" />
+    </StockExchange>
+    <StockExchange ID="SHZ" Country="CN" Suffix=".SZ" Name="Shenzhen Stock Exchange" Location="Shenzen">
+      <TradingTime OpeningTimeLocal="09:30:00.0000000+00:00" ClosingTimeLocal="16:00:00.0000000+00:00" DelayMinutes="30" TimeZone="China Standard Time" />
+    </StockExchange>
+    <StockExchange ID="SPI" Country="US" Name="S &amp; P Indices" Location="New York">
+      <TradingTime OpeningTimeLocal="09:30:00.0000000+00:00" ClosingTimeLocal="17:00:00.0000000+00:00" DelayMinutes="00" TimeZone="Eastern Standard Time" />
+    </StockExchange>
+    <StockExchange ID="STO" Country="SE" Suffix=".ST" Name="Stockholm Stock Exchange" Location="Stockholm">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:30:00.0000000+00:00" DelayMinutes="15" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="STU" Country="DE" Suffix=".SG" Name="Stuttgart Stock Exchange" Location="Stuttgart">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="20:00:00.0000000+00:00" DelayMinutes="15" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="TAI" Country="TW" Suffix=".TW" Name="Taiwan Stock Exchange" Location="Taipei">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="13:30:00.0000000+00:00" DelayMinutes="20" TimeZone="Taipei Standard Time" />
+    </StockExchange>
+    <StockExchange ID="TKD" Country="US" Suffix=".DF" Name="TKD" Location="New york">
+      <TradingTime OpeningTimeLocal="00:00:00.0000000+00:00" ClosingTimeLocal="23:59:59.0000000+00:00" DelayMinutes="00" TimeZone="Eastern Standard Time" />
+    </StockExchange>
+    <StockExchange ID="TLV" Country="IL" Suffix=".TA" Name="Tel Aviv Stock Exchange" Location="Tel Aviv">
+      <TradingTime OpeningTimeLocal="08:30:00.0000000+00:00" ClosingTimeLocal="17:30:00.0000000+00:00" DelayMinutes="20" TimeZone="Israel Standard Time" />
+    </StockExchange>
+    <StockExchange ID="TLO" Country="US" Suffix=".TI" Name="TLO" Location="Milano">
+      <TradingTime OpeningTimeLocal="00:00:00.0000000+00:00" ClosingTimeLocal="23:59:59.0000000+00:00" DelayMinutes="00" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="TLX" Country="IT" Suffix=".TI" Name="EuroTLX" Location="Milano">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:30:00.0000000+00:00" DelayMinutes="00" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="TOR" Country="CA" Suffix=".TO" Name="Toronto Stock Exchange" Location="Toronto">
+      <TradingTime OpeningTimeLocal="09:30:00.0000000+00:00" ClosingTimeLocal="16:00:00.0000000+00:00" DelayMinutes="15" TimeZone="Eastern Standard Time" />
+    </StockExchange>
+    <StockExchange ID="TWO" Country="TW" Suffix=".TWO" Name="Taiwan OTC Exchange" Location="Taipei">
+      <TradingTime OpeningTimeLocal="10:00:00.0000000+00:00" ClosingTimeLocal="16:30:00.0000000+00:00" DelayMinutes="20" TimeZone="Taipei Standard Time" />
+    </StockExchange>
+    <StockExchange ID="VIE" Country="AT" Suffix=".VI" Name="Vienna Stock Exchange" Location="Wien">
+      <TradingTime OpeningTimeLocal="09:15:00.0000000+00:00" ClosingTimeLocal="17:35:00.0000000+00:00" DelayMinutes="15" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="VTX" Country="CH" Suffix=".VX" Name="SWX Europe/Virt-X" Location="Zürich">
+      <TradingTime OpeningTimeLocal="09:00:00.0000000+00:00" ClosingTimeLocal="17:30:00.0000000+00:00" DelayMinutes="15" TimeZone="W. Europe Standard Time" />
+    </StockExchange>
+    <StockExchange ID="WCB" Country="US" Name="WCB" Location="New York">
+      <TradingTime OpeningTimeLocal="00:00:00.0000000+00:00" ClosingTimeLocal="23:59:59.0000000+00:00" DelayMinutes="00" TimeZone="Eastern Standard Time" />
+    </StockExchange>
+    <StockExchange ID="CDX" Country="CA" Name="CDX" Location="Toronto">
+      <TradingTime OpeningTimeLocal="00:00:00.0000000+00:00" ClosingTimeLocal="23:59:59.0000000+00:00" DelayMinutes="00" TimeZone="Eastern Standard Time" />
+    </StockExchange>
+    <StockExchange ID="AEX" Country="US" Name="AEX" Location="New York">
+      <TradingTime OpeningTimeLocal="00:00:00.0000000+00:00" ClosingTimeLocal="23:59:59.0000000+00:00" DelayMinutes="00" TimeZone="Eastern Standard Time" />
+    </StockExchange>
+  </StockExchanges>
+  <Indices>
+    <Index ID="^AORD" StockExchange="ASX" Name="ALL ORDINARIES" />
+    <Index ID="^ATX" StockExchange="VIE" Name="ATX" />
+    <Index ID="^BFX" StockExchange="ENX" Name="EURONEXT BEL 20" />
+    <Index ID="^BVSP" StockExchange="SAO" Name="IBOVESPA" />
+    <Index ID="IBXX.SA" StockExchange="SAO" Name="IBRX" />
+    <Index ID="^GSPTSE" StockExchange="TOR" Name="S&amp;P/TSX Composite Index" />
+    <Index ID="^SPTSES" StockExchange="TOR" Name="S&amp;P/TSX SmallCap Index" />
+    <Index ID="^SPTSEM" StockExchange="TOR" Name="S&amp;P/TSX MidCap Index" />
+    <Index ID="^SPTSECP" StockExchange="TOR" Name="S&amp;P/TSX 60 Capped Index" />
+    <Index ID="^SPTSECP3" StockExchange="TOR" Name="S&amp;P/TSX Capped Composite Index" />
+    <Index ID="^SPTTEN" StockExchange="TOR" Name="S&amp;P/TSX Capped Energy Index" />
+    <Index ID="^SPTTFS" StockExchange="TOR" Name="S&amp;P/TSX Capped Financials Index" />
+    <Index ID="^SPTTGD" StockExchange="TOR" Name="S&amp;P/TSX Capped Gold Index" />
+    <Index ID="^SPTTTK" StockExchange="TOR" Name="S&amp;P/TSX Capped Information Tech" />
+    <Index ID="^GSPTTCD" StockExchange="TOR" Name="S&amp;P/TSX Capped Consumer Discret" />
+    <Index ID="^GSPTTCS" StockExchange="TOR" Name="S&amp;P/TSE Capped Consumer Staples" />
+    <Index ID="^GSPTTHC" StockExchange="TOR" Name="S&amp;P/TSX Capped Health Care Index" />
+    <Index ID="^GSPTTIN" StockExchange="TOR" Name="S&amp;P/TSX Capped Industrials Index" />
+    <Index ID="^GSPTTMN" StockExchange="TOR" Name="S&amp;P/TSX Capped Diversified Meta" />
+    <Index ID="^GSPTTMT" StockExchange="TOR" Name="S&amp;P/TSX Capped Materials Index" />
+    <Index ID="^GSPTTRE" StockExchange="TOR" Name="S&amp;P/TSX Capped Real Estate Index" />
+    <Index ID="^GSPTTTS" StockExchange="TOR" Name="S&amp;P/TSX Capped Telecommunication" />
+    <Index ID="^GSPTTUT" StockExchange="TOR" Name="S&amp;P/TSX Capped Utilities Index" />
+    <Index ID="^SPCDNX" StockExchange="CDX" Name="S&amp;P/TSX Venture Composite Index" />
+    <Index ID="^TV.TO" StockExchange="TOR" Name="Toronto Volume in 000's" />
+    <Index ID="^TV.V" StockExchange="CDX" Name="TSX Venture Volume in 000's" />
+    <Index ID="000001.SS" StockExchange="SHH" Name="SSE Composite Index" />
+    <Index ID="OMXC20.CO" StockExchange="CPH" Name="OMX COPENHAGEN 20" />
+    <Index ID="^FCHI" StockExchange="PAR" Name="CAC 40" />
+    <Index ID="^GDAXI" StockExchange="GER" Name="DAX" />
+    <Index ID="^TECDAX" StockExchange="GER" Name="TecDAX" />
+    <Index ID="^MDAXIL" StockExchange="GER" Name="MDAX" />
+    <Index ID="^SDAXI" StockExchange="GER" Name="SDAX" />
+    <Index ID="^CDAXX" StockExchange="GER" Name="CDAX" />
+    <Index ID="^HSI" StockExchange="HKG" Name="Hang Seng Index" />
+    <Index ID="^JKSE" StockExchange="JKT" Name="Jakarta Composite Index" />
+    <Index ID="^BSESN" StockExchange="BSE" Name="BSE SENSEX 30" />
+    <Index ID="^NSEI" StockExchange="NSE" Name="S&amp;P CNX NIFTY" />
+    <Index ID="^IETP" StockExchange="ISE" Name="ISEQ 20 PRICE" />
+    <Index ID="^TA100" StockExchange="TLV" Name="TEL AVIV TA 100" />
+    <Index ID="FTSEMIB.MI" StockExchange="MIL" Name="FTSE MIB" />
+    <Index ID="^N225" StockExchange="NIK" Name="NIKKEI 225" />
+    <Index ID="^N300" StockExchange="NIK" Name="NIKKEI 300" />
+    <Index ID="^TYI" StockExchange="NYQ" Name="NETS TOPIX Japan" />
+    <Index ID="^KS11" StockExchange="KSC" Name="KOSPI Composite Index" />
+    <Index ID="^KLSE" StockExchange="KLS" Name="FTSE Bursa Malaysia KLCI" />
+    <Index ID="^MXX" StockExchange="MEX" Name="IPC" />
+    <Index ID="^AEX" StockExchange="AEX" Name="AEX" />
+    <Index ID="^NZ50" StockExchange="ASX" Name="NZX 50 INDEX" />
+    <Index ID="XOBX.OL" StockExchange="OSL" Name="OBX" />
+    <Index ID="^OSEAX" StockExchange="OSL" Name="OSLO EXCHANGE ALL SHARE" />
+    <Index ID="^PSI20" StockExchange="ENX" Name="PSI 20" />
+    <Index ID="RTS.RS" StockExchange="RTS" Name="RTS" />
+    <Index ID="^STI" StockExchange="SES" Name="STI Straight Times Index" />
+    <Index ID="^SMSI" StockExchange="MAD" Name="IGBM" />
+    <Index ID="^SSMI" StockExchange="VTX" Name="SMI" />
+    <Index ID="SLI.SW" StockExchange="EBS" Name="SLI SWISS LEADER" />
+    <Index ID="^TWII" StockExchange="TWO" Name="TSEC Weighted Index" />
+    <Index ID="^FTSE" StockExchange="FTI" Name="FTSE 100" />
+    <Index ID="^DJA" StockExchange="DJI" Name="Dow Jones Composite" />
+    <Index ID="^DJI" StockExchange="DJI" Name="Dow Jones Industrial Average" />
+    <Index ID="^DJT" StockExchange="DJI" Name="Dow Jones Transportation" />
+    <Index ID="^DJU" StockExchange="DJI" Name="Dow Jones Utility" />
+    <Index ID="^NDX" StockExchange="NAS" Name="NASDAQ 100" />
+    <Index ID="^IXBK" StockExchange="NAS" Name="NASDAQ enk" />
+    <Index ID="^NBI" StockExchange="NAS" Name="NASDAQ Biotechnology" />
+    <Index ID="^IXIC" StockExchange="NAS" Name="NASDAQ Composite" />
+    <Index ID="^IXK" StockExchange="NAS" Name="NASDAQ Computer" />
+    <Index ID="^IXF" StockExchange="NAS" Name="NASDAQ Financial 100" />
+    <Index ID="^IXHC" StockExchange="NAS" Name="NASDAQ Health Care" />
+    <Index ID="^IXID" StockExchange="NAS" Name="NASDAQ Industrial" />
+    <Index ID="^IXIS" StockExchange="NAS" Name="NASDAQ Insurance" />
+    <Index ID="^IXFN" StockExchange="NAS" Name="NASDAQ Other Finance" />
+    <Index ID="^IXUT" StockExchange="NAS" Name="NASDAQ Telecommunications" />
+    <Index ID="^IXTR" StockExchange="NAS" Name="NASDAQ Transportation" />
+    <Index ID="^TV.O" StockExchange="NAS" Name="NASDAQ Volume in 000's" />
+    <Index ID="^NYA" StockExchange="NYQ" Name="NYSE Composite Index" />
+    <Index ID="^NYI" StockExchange="NYQ" Name="NYSE International 100" />
+    <Index ID="^NY" StockExchange="NYQ" Name="NYSE US 100" />
+    <Index ID="^NYY" StockExchange="NYQ" Name="NYSE TMT" />
+    <Index ID="^NYL" StockExchange="NYQ" Name="NYSE World Leaders" />
+    <Index ID="^NYK" StockExchange="NYQ" Name="NYSE Financial" />
+    <Index ID="^NYP" StockExchange="NYQ" Name="NYSE Health Care" />
+    <Index ID="^NYE" StockExchange="NYQ" Name="NYSE Energy" />
+    <Index ID="^TV.N" StockExchange="NYQ" Name="NYSE Volume in 000's" />
+    <Index ID="^OEX" StockExchange="CBO" Name="S&amp;P 100" />
+    <Index ID="^MID" StockExchange="ASE" Name="S&amp;P 400 Midcap" />
+    <Index ID="^GSPC" StockExchange="SPI" Name="S&amp;P 500" />
+    <Index ID="^SPSUPX" StockExchange="ASE" Name="S&amp;P Composite 1500" />
+    <Index ID="^SML" StockExchange="CBO" Name="S&amp;P SmallCap 600" />
+    <Index ID="^CH30D" StockExchange="DJI" Name="Dow Jones Switzerland Titans 30" />
+  </Indices>
+  <FundCategories>
+    <Category ID="1;" Name="Any U.S. Stock Funds" />
+    <Category ID="2;" Name="Any Hybrid Funds" />
+    <Category ID="3;" Name="Any Int'l Stock Funds" />
+    <Category ID="4;" Name="Any Bond Funds" />
+    <Category ID="HY" Name="Bond - High Yield" />
+    <Category ID="CI" Name="Bond - Interm-Term" />
+    <Category ID="CL" Name="Bond - Long-Term" />
+    <Category ID="MU" Name="Bond - Multisector" />
+    <Category ID="CS" Name="Bond - Short-Term" />
+    <Category ID="CV" Name="Convertibles" />
+    <Category ID="DH" Name="Domestic Hybrid" />
+    <Category ID="GI" Name="Government - Intermediate" />
+    <Category ID="GL" Name="Government - Long" />
+    <Category ID="GS" Name="Government - Short" />
+    <Category ID="IB" Name="Int'l - Bond" />
+    <Category ID="EM" Name="Int'l - Divers. Emerging Mkts" />
+    <Category ID="DP" Name="Int'l - Diversified Pacific Stock" />
+    <Category ID="EB" Name="Int'l - Emerging Mkts Bond" />
+    <Category ID="ES" Name="Int'l - Europe Stock" />
+    <Category ID="FS" Name="Int'l - Foreign Stock" />
+    <Category ID="IH" Name="Int'l - Hybrid" />
+    <Category ID="JS" Name="Int'l - Japan Stock" />
+    <Category ID="LS" Name="Int'l - Latin America Stock" />
+    <Category ID="PJ" Name="Int'l - Pacific ex-Japan Stock" />
+    <Category ID="WS" Name="Int'l - World Stock" />
+    <Category ID="LB" Name="Large Blend" />
+    <Category ID="LG" Name="Large Growth" />
+    <Category ID="LV" Name="Large Value" />
+    <Category ID="MB" Name="Mid-Cap Blend" />
+    <Category ID="MG" Name="Mid-Cap Growth" />
+    <Category ID="MV" Name="Mid-Cap Value" />
+    <Category ID="MF" Name="Muni - California Interm" />
+    <Category ID="MC" Name="Muni - California Long" />
+    <Category ID="MI" Name="Muni - National Interm" />
+    <Category ID="ML" Name="Muni - National Long" />
+    <Category ID="MN" Name="Muni - New York Interm" />
+    <Category ID="MY" Name="Muni - New York Long" />
+    <Category ID="MS" Name="Muni - Short" />
+    <Category ID="SI" Name="Muni - Single State Interm" />
+    <Category ID="SL" Name="Muni - Single State Long" />
+    <Category ID="SB" Name="Small Blend" />
+    <Category ID="SG" Name="Small Growth" />
+    <Category ID="SV" Name="Small Value" />
+    <Category ID="SC" Name="Specialty - Communications" />
+    <Category ID="SF" Name="Specialty - Financial" />
+    <Category ID="SH" Name="Specialty - Health" />
+    <Category ID="SN" Name="Specialty - Natural Resources" />
+    <Category ID="SP" Name="Specialty - Precious Metals" />
+    <Category ID="SR" Name="Specialty - Real Estate" />
+    <Category ID="ST" Name="Specialty - Technology" />
+    <Category ID="SU" Name="Specialty - Utilities" />
+    <Category ID="UB" Name="Ultrashort Bond" />
+  </FundCategories>
+</WorldMarket>
+
+
