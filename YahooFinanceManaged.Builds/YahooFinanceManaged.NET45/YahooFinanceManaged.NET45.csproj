@@ -29,6 +29,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,230 +51,231 @@
   <ItemGroup>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\Extensions.cs">
       <Link>MaasOne\Extensions.cs</Link>
-      <SubType>Code</SubType>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Indicators\BB.cs">
-      <Link>MaasOne\Finance\Indicators\BB.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\ConnectionInfo.cs">
+      <Link>MaasOne\Net\ConnectionInfo.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Indicators\EMA.cs">
-      <Link>MaasOne\Finance\Indicators\EMA.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\DownloadClient.cs">
+      <Link>MaasOne\Net\DownloadClient.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Indicators\Envelopes.cs">
-      <Link>MaasOne\Finance\Indicators\Envelopes.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\DownloadEventArgs.cs">
+      <Link>MaasOne\Net\DownloadEventArgs.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Indicators\IIndicator.cs">
-      <Link>MaasOne\Finance\Indicators\IIndicator.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\DownloadSession.cs">
+      <Link>MaasOne\Net\DownloadSession.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Indicators\MA.cs">
-      <Link>MaasOne\Finance\Indicators\MA.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\Enums.cs">
+      <Link>MaasOne\Net\Enums.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Indicators\MACD.cs">
-      <Link>MaasOne\Finance\Indicators\MACD.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\Exceptions.cs">
+      <Link>MaasOne\Net\Exceptions.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Indicators\Momentum.cs">
-      <Link>MaasOne\Finance\Indicators\Momentum.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\HtmlToJson.cs">
+      <Link>MaasOne\Net\HtmlToJson.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Indicators\QuotesSorterAndConverter.cs">
-      <Link>MaasOne\Finance\Indicators\QuotesSorterAndConverter.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\Interfaces.cs">
+      <Link>MaasOne\Net\Interfaces.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Indicators\Range.cs">
-      <Link>MaasOne\Finance\Indicators\Range.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\Query.cs">
+      <Link>MaasOne\Net\Query.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Indicators\ROC.cs">
-      <Link>MaasOne\Finance\Indicators\ROC.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\Response.cs">
+      <Link>MaasOne\Net\Response.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Indicators\RSI.cs">
-      <Link>MaasOne\Finance\Indicators\RSI.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\StringQuery.cs">
+      <Link>MaasOne\Net\StringQuery.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Indicators\StD.cs">
-      <Link>MaasOne\Finance\Indicators\StD.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\ValidationResult.cs">
+      <Link>MaasOne\Net\ValidationResult.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Indicators\WPR.cs">
-      <Link>MaasOne\Finance\Indicators\WPR.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Rss\Category.cs">
+      <Link>MaasOne\Rss\Category.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\CountryInfo.cs">
-      <Link>MaasOne\Finance\Yahoo\CountryInfo.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Rss\Cloud.cs">
+      <Link>MaasOne\Rss\Cloud.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Culture.cs">
-      <Link>MaasOne\Finance\Yahoo\Culture.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Rss\Enclosure.cs">
+      <Link>MaasOne\Rss\Enclosure.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\CurrencyInfo.cs">
-      <Link>MaasOne\Finance\Yahoo\CurrencyInfo.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Rss\Feed.cs">
+      <Link>MaasOne\Rss\Feed.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Data\CompanyKeyStatistics.cs">
-      <Link>MaasOne\Finance\Yahoo\Data\CompanyKeyStatistics.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Rss\FeedItem.cs">
+      <Link>MaasOne\Rss\FeedItem.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Data\CompanyProfileData.cs">
-      <Link>MaasOne\Finance\Yahoo\Data\CompanyProfileData.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Rss\FeedQuery.cs">
+      <Link>MaasOne\Rss\FeedQuery.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Data\Components.cs">
-      <Link>MaasOne\Finance\Yahoo\Data\Components.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Rss\GUID.cs">
+      <Link>MaasOne\Rss\GUID.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Data\Enums.cs">
-      <Link>MaasOne\Finance\Yahoo\Data\Enums.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Rss\Image.cs">
+      <Link>MaasOne\Rss\Image.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Data\HistoricalQuotes.cs">
-      <Link>MaasOne\Finance\Yahoo\Data\HistoricalQuotes.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Rss\Skip.cs">
+      <Link>MaasOne\Rss\Skip.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Data\IDSearch.cs">
-      <Link>MaasOne\Finance\Yahoo\Data\IDSearch.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Rss\Source.cs">
+      <Link>MaasOne\Rss\Source.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Data\IndustryInfo.cs">
-      <Link>MaasOne\Finance\Yahoo\Data\IndustryInfo.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Rss\TextInputBox.cs">
+      <Link>MaasOne\Rss\TextInputBox.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Data\QuoteOptions.cs">
-      <Link>MaasOne\Finance\Yahoo\Data\QuoteOptions.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\CountryInfo.cs">
+      <Link>MaasOne\YahooFinance\CountryInfo.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Data\Quotes.cs">
-      <Link>MaasOne\Finance\Yahoo\Data\Quotes.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Culture.cs">
+      <Link>MaasOne\YahooFinance\Culture.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Data\QuotesShortInfo.cs">
-      <Link>MaasOne\Finance\Yahoo\Data\QuotesShortInfo.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\CurrencyInfo.cs">
+      <Link>MaasOne\YahooFinance\CurrencyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Data\Screener.cs">
-      <Link>MaasOne\Finance\Yahoo\Data\Screener.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Data\Analyse.cs">
+      <Link>MaasOne\YahooFinance\Data\Analyse.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\DaylightSavingTime.cs">
-      <Link>MaasOne\Finance\Yahoo\DaylightSavingTime.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Data\CompanyEvents.cs">
+      <Link>MaasOne\YahooFinance\Data\CompanyEvents.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\DefaultData.cs">
-      <Link>MaasOne\Finance\Yahoo\DefaultData.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Data\CompanyKeyStatistics.cs">
+      <Link>MaasOne\YahooFinance\Data\CompanyKeyStatistics.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Enums.cs">
-      <Link>MaasOne\Finance\Yahoo\Enums.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Data\CompanyProfile.cs">
+      <Link>MaasOne\YahooFinance\Data\CompanyProfile.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Industry.cs">
-      <Link>MaasOne\Finance\Yahoo\Industry.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Data\Components.cs">
+      <Link>MaasOne\YahooFinance\Data\Components.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Interfaces.cs">
-      <Link>MaasOne\Finance\Yahoo\Interfaces.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Data\Enums.cs">
+      <Link>MaasOne\YahooFinance\Data\Enums.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\ISIN.cs">
-      <Link>MaasOne\Finance\Yahoo\ISIN.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Data\ETF.cs">
+      <Link>MaasOne\YahooFinance\Data\ETF.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Screener\BaseCriterias.cs">
-      <Link>MaasOne\Finance\Yahoo\Screener\BaseCriterias.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Data\IDSearch.cs">
+      <Link>MaasOne\YahooFinance\Data\IDSearch.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Screener\BondTypeCriteria.cs">
-      <Link>MaasOne\Finance\Yahoo\Screener\BondTypeCriteria.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Data\Industry.cs">
+      <Link>MaasOne\YahooFinance\Data\Industry.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Screener\Enums.cs">
-      <Link>MaasOne\Finance\Yahoo\Screener\Enums.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Data\Quotes.cs">
+      <Link>MaasOne\YahooFinance\Data\Quotes.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Screener\FundCriterias.cs">
-      <Link>MaasOne\Finance\Yahoo\Screener\FundCriterias.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Data\Screener.cs">
+      <Link>MaasOne\YahooFinance\Data\Screener.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Screener\StockCriterias.cs">
-      <Link>MaasOne\Finance\Yahoo\Screener\StockCriterias.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\DaylightSavingTime.cs">
+      <Link>MaasOne\YahooFinance\DaylightSavingTime.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\StockExchange.cs">
-      <Link>MaasOne\Finance\Yahoo\StockExchange.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\DefaultData.cs">
+      <Link>MaasOne\YahooFinance\DefaultData.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\TradingTimeInfo.cs">
-      <Link>MaasOne\Finance\Yahoo\TradingTimeInfo.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Enums.cs">
+      <Link>MaasOne\YahooFinance\Enums.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Web\BondScreener.cs">
-      <Link>MaasOne\Finance\Yahoo\Web\BondScreener.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Fund.cs">
+      <Link>MaasOne\YahooFinance\Fund.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Web\Chart.cs">
-      <Link>MaasOne\Finance\Yahoo\Web\Chart.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Industry.cs">
+      <Link>MaasOne\YahooFinance\Industry.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Web\CompanyKeyStatistics.cs">
-      <Link>MaasOne\Finance\Yahoo\Web\CompanyKeyStatistics.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Interfaces.cs">
+      <Link>MaasOne\YahooFinance\Interfaces.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Web\CompanyProfile.cs">
-      <Link>MaasOne\Finance\Yahoo\Web\CompanyProfile.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\ISIN.cs">
+      <Link>MaasOne\YahooFinance\ISIN.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Web\Components.cs">
-      <Link>MaasOne\Finance\Yahoo\Web\Components.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\StockExchange.cs">
+      <Link>MaasOne\YahooFinance\StockExchange.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Web\Enums.cs">
-      <Link>MaasOne\Finance\Yahoo\Web\Enums.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\TradingTimeInfo.cs">
+      <Link>MaasOne\YahooFinance\TradingTimeInfo.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Web\FundScreener.cs">
-      <Link>MaasOne\Finance\Yahoo\Web\FundScreener.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\AnalyseUpDowngrades.cs">
+      <Link>MaasOne\YahooFinance\Web\AnalyseUpDowngrades.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Web\HistoricalQuotes.cs">
-      <Link>MaasOne\Finance\Yahoo\Web\HistoricalQuotes.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\BondScreener.cs">
+      <Link>MaasOne\YahooFinance\Web\BondScreener.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Web\IDInstantSearch.cs">
-      <Link>MaasOne\Finance\Yahoo\Web\IDInstantSearch.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\Chart.cs">
+      <Link>MaasOne\YahooFinance\Web\Chart.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Web\IDSearch.cs">
-      <Link>MaasOne\Finance\Yahoo\Web\IDSearch.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\CompanyCompetitors.cs">
+      <Link>MaasOne\YahooFinance\Web\CompanyCompetitors.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Web\IndustryInfo.cs">
-      <Link>MaasOne\Finance\Yahoo\Web\IndustryInfo.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\CompanyEvents.cs">
+      <Link>MaasOne\YahooFinance\Web\CompanyEvents.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Web\IndustryList.cs">
-      <Link>MaasOne\Finance\Yahoo\Web\IndustryList.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\CompanyKeyStatistics.cs">
+      <Link>MaasOne\YahooFinance\Web\CompanyKeyStatistics.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Web\Interfaces.cs">
-      <Link>MaasOne\Finance\Yahoo\Web\Interfaces.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\CompanyProfile.cs">
+      <Link>MaasOne\YahooFinance\Web\CompanyProfile.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Web\Pagination.cs">
-      <Link>MaasOne\Finance\Yahoo\Web\Pagination.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\Components.cs">
+      <Link>MaasOne\YahooFinance\Web\Components.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Web\QuoteOptions.cs">
-      <Link>MaasOne\Finance\Yahoo\Web\QuoteOptions.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\Enums.cs">
+      <Link>MaasOne\YahooFinance\Web\Enums.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Web\Quotes.cs">
-      <Link>MaasOne\Finance\Yahoo\Web\Quotes.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\ETFSearch.cs">
+      <Link>MaasOne\YahooFinance\Web\ETFSearch.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Web\Screener.cs">
-      <Link>MaasOne\Finance\Yahoo\Web\Screener.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\FundScreener.cs">
+      <Link>MaasOne\YahooFinance\Web\FundScreener.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Web\StockScreener.cs">
-      <Link>MaasOne\Finance\Yahoo\Web\StockScreener.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\IDSearch.cs">
+      <Link>MaasOne\YahooFinance\Web\IDSearch.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\Web\YQL.cs">
-      <Link>MaasOne\Finance\Yahoo\Web\YQL.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\IDSearchInstant.cs">
+      <Link>MaasOne\YahooFinance\Web\IDSearchInstant.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\WorldMarket.cs">
-      <Link>MaasOne\Finance\Yahoo\WorldMarket.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\IndustryCompanies.cs">
+      <Link>MaasOne\YahooFinance\Web\IndustryCompanies.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\YCurrencyID.cs">
-      <Link>MaasOne\Finance\Yahoo\YCurrencyID.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\IndustryInfo.cs">
+      <Link>MaasOne\YahooFinance\Web\IndustryInfo.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\YFHelper.cs">
-      <Link>MaasOne\Finance\Yahoo\YFHelper.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\IndustryList.cs">
+      <Link>MaasOne\YahooFinance\Web\IndustryList.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\YID.cs">
-      <Link>MaasOne\Finance\Yahoo\YID.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\Interfaces.cs">
+      <Link>MaasOne\YahooFinance\Web\Interfaces.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Finance\Yahoo\YIndexID.cs">
-      <Link>MaasOne\Finance\Yahoo\YIndexID.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\Pagination.cs">
+      <Link>MaasOne\YahooFinance\Web\Pagination.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\MyHelper.cs">
-      <Link>MaasOne\MyHelper.cs</Link>
-      <SubType>Code</SubType>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\Quotes.cs">
+      <Link>MaasOne\YahooFinance\Web\Quotes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\QuotesHistorical.cs">
+      <Link>MaasOne\YahooFinance\Web\QuotesHistorical.cs</Link>
+    </Compile>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\QuotesOptions.cs">
+      <Link>MaasOne\YahooFinance\Web\QuotesOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\QuotesOrderBook.cs">
+      <Link>MaasOne\YahooFinance\Web\QuotesOrderBook.cs</Link>
+    </Compile>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\Screener.cs">
+      <Link>MaasOne\YahooFinance\Web\Screener.cs</Link>
+    </Compile>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\StockScreener.cs">
+      <Link>MaasOne\YahooFinance\Web\StockScreener.cs</Link>
+    </Compile>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\YQL.cs">
+      <Link>MaasOne\YahooFinance\Web\YQL.cs</Link>
+    </Compile>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\WorldMarket.cs">
+      <Link>MaasOne\YahooFinance\WorldMarket.cs</Link>
+    </Compile>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\YCurrencyID.cs">
+      <Link>MaasOne\YahooFinance\YCurrencyID.cs</Link>
+    </Compile>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\YFHelper.cs">
+      <Link>MaasOne\YahooFinance\YFHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\YID.cs">
+      <Link>MaasOne\YahooFinance\YID.cs</Link>
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\Newtonsoft.Json\Serialization\CachedAttributeGetter.cs">
       <Link>Newtonsoft.Json\Serialization\CachedAttributeGetter.cs</Link>
@@ -400,45 +407,6 @@
     <Compile Include="..\..\YahooFinanceManaged\System\Extensions.cs">
       <Link>System\Extensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\System\Net\ConnectionInfo.cs">
-      <Link>System\Net\ConnectionInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\System\Net\DownloadClient.cs">
-      <Link>System\Net\DownloadClient.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\System\Net\DownloadEventArgs.cs">
-      <Link>System\Net\DownloadEventArgs.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\System\Net\DownloadSession.cs">
-      <Link>System\Net\DownloadSession.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\System\Net\Enums.cs">
-      <Link>System\Net\Enums.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\System\Net\Exceptions.cs">
-      <Link>System\Net\Exceptions.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\System\Net\HtmlToJson.cs">
-      <Link>System\Net\HtmlToJson.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\System\Net\Interfaces.cs">
-      <Link>System\Net\Interfaces.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\System\Net\Mail\MailAddress.cs">
-      <Link>System\Net\Mail\MailAddress.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\System\Net\Query.cs">
-      <Link>System\Net\Query.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\System\Net\Response.cs">
-      <Link>System\Net\Response.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\System\Net\StringQuery.cs">
-      <Link>System\Net\StringQuery.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\System\Net\ValidationResult.cs">
-      <Link>System\Net\ValidationResult.cs</Link>
-    </Compile>
     <Compile Include="..\..\YahooFinanceManaged\System\TimeZoneInfo.cs">
       <Link>System\TimeZoneInfo.cs</Link>
     </Compile>
@@ -456,6 +424,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\MyHelper.cs">
+      <Link>MaasOne\MyHelper.cs</Link>
+    </Compile>
     <Compile Include="..\..\YahooFinanceManaged\Newtonsoft.Json\Bson\BsonBinaryType.cs">
       <Link>Newtonsoft.Json\Bson\BsonBinaryType.cs</Link>
     </Compile>
@@ -912,6 +883,9 @@
     <Compile Include="..\..\YahooFinanceManaged\Newtonsoft.Json\WriteState.cs">
       <Link>Newtonsoft.Json\WriteState.cs</Link>
     </Compile>
+    <Compile Include="..\..\YahooFinanceManaged\System\Net\Mail\MailAddress.cs">
+      <Link>System\Net\Mail\MailAddress.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -929,6 +903,7 @@
       <Link>Resources\market.xsd</Link>
       <SubType>Designer</SubType>
     </None>
+    <None Include="key.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -17,33 +17,37 @@
 // **  
 // **************************************************************************************************
 using System;
-using MaasOne.Net;
 using System.Collections.Generic;
 
-namespace MaasOne.Rss
+namespace MaasOne.Net
 {
 
-    public class FeedQuery : Query<Feed>
+    public class ValidationResult
     {
 
-        public Uri Url { get; set; }
+        public bool Success { get; set; }
+        public List<KeyValuePair<string, string>> Info { get; set; }
 
-        public FeedQuery() { }
-        public FeedQuery(string url) : this(new Uri(url)) { }
-        public FeedQuery(Uri url) { this.Url = url; }
-
-        protected override void ValidateQuery(ValidationResult result)
+        public ValidationResult()
         {
-            if (this.Url == null)
+            this.Success = true;
+            this.Info = new List<KeyValuePair<string,string>>();
+        }
+        
+        internal Exception CreateException()
+        {
+            if (this.Success) { return null; }
+            else
             {
-                result.Success = false;
-                result.Info.Add(new KeyValuePair<string, string>("Url", "The Url is NULL."));
+                string message = string.Empty;
+                foreach (var info in this.Info)
+                {
+                    message += string.Format("\n{0}: \"{1}\"", info.Key, info.Value);
+                }
+                return new ArgumentException("The query is not valid.\n" + message + "\n\n(Is the Clone() method copying all the data?)");
             }
         }
-        protected override Uri CreateUrl() { return this.Url; }
-        protected override Feed ConvertResult(System.IO.Stream stream) { return (Feed)new System.Xml.Serialization.XmlSerializer(typeof(Feed)).Deserialize(stream); }
-        public override Query<Feed> Clone() { return new FeedQuery(this.Url); }
-        
+
     }
 
 }

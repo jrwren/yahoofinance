@@ -16,20 +16,18 @@
 // **  
 // **  
 // **************************************************************************************************
-#if (PORTABLE40 || PORTABLE45)
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace MaasOne.Net.Mail
+namespace MaasOne.YahooFinance.Web
 {
-    public class MailAddress
+
+    public class ScreenerItemData
     {
-        public string Address { get; set; }
-        public string DisplayName { get; set; }
-        public MailAddress(string address) { this.Address = address; }
-        public MailAddress(string address, string displayName) : this(address) { this.DisplayName = displayName; }
+        public string Name { get; set; }
+        public string ID { get; set; }
+        public Dictionary<Data.ScreenerProperty, object> Values { get; private set; }
+        public ScreenerItemData() { this.Values = new Dictionary<Data.ScreenerProperty, object>(); }
     }
+
 }
-#endif

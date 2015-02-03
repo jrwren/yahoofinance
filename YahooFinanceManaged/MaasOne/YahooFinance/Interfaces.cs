@@ -16,20 +16,35 @@
 // **  
 // **  
 // **************************************************************************************************
-#if (PORTABLE40 || PORTABLE45)
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
-namespace MaasOne.Net.Mail
+
+namespace MaasOne.YahooFinance
 {
-    public class MailAddress
+
+    /// <summary>
+    /// Interface for Yahoo! ID. Can be used for downloading informations from Yahoo! Finance.
+    /// </summary>
+    /// <remarks></remarks>
+    public interface IID
     {
-        public string Address { get; set; }
-        public string DisplayName { get; set; }
-        public MailAddress(string address) { this.Address = address; }
-        public MailAddress(string address, string displayName) : this(address) { this.DisplayName = displayName; }
+        /// <summary>
+        /// The valid Yahoo! ID.
+        /// </summary>
+        /// <value></value>
+        /// <returns>The full ID built by the implementing class.</returns>
+        /// <remarks></remarks>
+        string ID { get; }
     }
+
+
+    public interface IQuotePrice : IID
+    {
+        double? LastTradePriceOnly { get; }
+    }
+
+
+    
 }
-#endif

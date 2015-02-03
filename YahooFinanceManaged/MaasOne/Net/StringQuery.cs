@@ -17,20 +17,19 @@
 // **  
 // **************************************************************************************************
 using System;
-using MaasOne.Net;
 using System.Collections.Generic;
 
-namespace MaasOne.Rss
+namespace MaasOne.Net
 {
-
-    public class FeedQuery : Query<Feed>
+    public class StringQuery : Query<string>
     {
 
         public Uri Url { get; set; }
+        public System.Text.Encoding Encoding { get; set; }
 
-        public FeedQuery() { }
-        public FeedQuery(string url) : this(new Uri(url)) { }
-        public FeedQuery(Uri url) { this.Url = url; }
+        public StringQuery() { }
+        public StringQuery(string url) : this(new Uri(url, UriKind.RelativeOrAbsolute)) { }
+        public StringQuery(Uri url) { this.Url = url; this.Encoding = System.Text.Encoding.UTF8; }
 
         protected override void ValidateQuery(ValidationResult result)
         {
@@ -40,10 +39,23 @@ namespace MaasOne.Rss
                 result.Info.Add(new KeyValuePair<string, string>("Url", "The Url is NULL."));
             }
         }
-        protected override Uri CreateUrl() { return this.Url; }
-        protected override Feed ConvertResult(System.IO.Stream stream) { return (Feed)new System.Xml.Serialization.XmlSerializer(typeof(Feed)).Deserialize(stream); }
-        public override Query<Feed> Clone() { return new FeedQuery(this.Url); }
-        
-    }
+        protected override Uri CreateUrl()
+        {
+            return this.Url;
+        }
+        protected override string ConvertResult(System.IO.Stream stream)
+        {           
+            string result = string.Empty;
+            using (var r = new System.IO.StreamReader(stream, this.Encoding))
+            {
+                result = r.ReadToEnd();
+            }
+            return result;
+        }
+        public override Query<string> Clone()
+        {
+            return new StringQuery(this.Url);
+        }
 
+    }
 }

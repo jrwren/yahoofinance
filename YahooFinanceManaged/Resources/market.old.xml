@@ -1,0 +1,904 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+ ******************************************************************************
+ ** 
+ **  Yahoo! Managed
+ **  Written by Marius Häusler 2012
+ **  It would be pleasant, if you contact me when you are using this code.
+ **  Contact: YahooFinanceManaged@gmail.com
+ **  Project Home: http:code.google.com/p/yahoo-finance-managed/
+ **  
+ ******************************************************************************
+ **  
+ **  Copyright 2012 Marius Häusler
+ **  
+ **  Licensed under the Apache License, Version 2.0 (the "License");
+ **  you may not use this file except in compliance with the License.
+ **  You may obtain a copy of the License at
+ **  
+ **    http:www.apache.org/licenses/LICENSE-2.0
+ **  
+ **  Unless required by applicable law or agreed to in writing, software
+ **  distributed under the License is distributed on an "AS IS" BASIS,
+ **  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ **  See the License for the specific language governing permissions and
+ **  limitations under the License.
+ ** 
+ ******************************************************************************
+-->
+<WorldMarket>
+
+  <Sectors>
+    <IDItem ID="1" Name="Basic Materials" />
+    <IDItem ID="2" Name="Conglomerates" />
+    <IDItem ID="3" Name="Consumer Goods" />
+    <IDItem ID="4" Name="Financial" />
+    <IDItem ID="5" Name="Healthcare" />
+    <IDItem ID="6" Name="Industrial Goods" />
+    <IDItem ID="7" Name="Services" />
+    <IDItem ID="8" Name="Technology" />
+    <IDItem ID="9" Name="Utilities" />
+  </Sectors>
+
+  <Industries>
+    <IDItem ID="110" Name="Chemicals Major Diversified" />
+    <IDItem ID="111" Name="Synthetics" />
+    <IDItem ID="112" Name="Agricultural Chemicals" />
+    <IDItem ID="113" Name="Specialty Chemicals" />
+    <IDItem ID="120" Name="Major Integrated Oil &amp; Gas" />
+    <IDItem ID="121" Name="Independent Oil &amp; Gas" />
+    <IDItem ID="122" Name="Oil &amp; Gas Refining &amp; Marketing" />
+    <IDItem ID="123" Name="Oil &amp; Gas Drilling &amp; Exploration" />
+    <IDItem ID="124" Name="Oil &amp; Gas Equipment &amp; Services" />
+    <IDItem ID="125" Name="Oil &amp; Gas Pipelines" />
+    <IDItem ID="130" Name="Steel &amp; Iron" />
+    <IDItem ID="131" Name="Copper" />
+    <IDItem ID="132" Name="Aluminum" />
+    <IDItem ID="133" Name="Industrial Metals &amp; Minerals" />
+    <IDItem ID="134" Name="Gold" />
+    <IDItem ID="135" Name="Silver" />
+    <IDItem ID="136" Name="Nonmetallic Mineral Mining" />
+    
+    <IDItem ID="210" Name="Conglomerates" />
+    
+    <IDItem ID="310" Name="Appliances" />
+    <IDItem ID="311" Name="Home Furnishings &amp; Fixtures" />
+    <IDItem ID="312" Name="Housewares &amp; Accessories" />
+    <IDItem ID="313" Name="Business Equipment" />
+    <IDItem ID="314" Name="Electronic Equipment" />
+    <IDItem ID="315" Name="Toys &amp; Games" />
+    <IDItem ID="316" Name="Sporting Goods" />
+    <IDItem ID="317" Name="Recreational Goods Other" />
+    <IDItem ID="318" Name="Photographic Equipment &amp; Supplies" />
+    <IDItem ID="320" Name="Textile Apparel Clothing" />
+    <IDItem ID="321" Name="Textile Apparel Footwear &amp; Accessories" />
+    <IDItem ID="322" Name="Rubber &amp; Plastics" />
+    <IDItem ID="323" Name="Personal Products" />
+    <IDItem ID="324" Name="Paper &amp; Paper Products" />
+    <IDItem ID="325" Name="Packaging &amp; Containers" />
+    <IDItem ID="326" Name="Cleaning Products" />
+    <IDItem ID="327" Name="Office Supplies" />
+    <IDItem ID="330" Name="Auto Manufacturers Major" />
+    <IDItem ID="331" Name="Trucks &amp; Other Vehicles" />
+    <IDItem ID="332" Name="Recreational Vehicles" />
+    <IDItem ID="333" Name="Auto Parts" />
+    <IDItem ID="340" Name="Food Major Diversified" />
+    <IDItem ID="341" Name="Farm Products" />
+    <IDItem ID="342" Name="Processed &amp; Packaged Goods" />
+    <IDItem ID="343" Name="Meat Products" />
+    <IDItem ID="344" Name="Dairy Products" />
+    <IDItem ID="345" Name="Confectioners" />
+    <IDItem ID="346" Name="Beverages Brewers" />
+    <IDItem ID="347" Name="Beverages Wineries &amp; Distillers" />
+    <IDItem ID="348" Name="Beverages Soft Drinks" />
+    <IDItem ID="350" Name="Cigarettes" />
+    <IDItem ID="351" Name="Tobacco Products Other" />
+    
+    <IDItem ID="410" Name="Money Center Banks" />
+    <IDItem ID="411" Name="Regional Northeast Banks" />
+    <IDItem ID="412" Name="Regional Mid Atlantic Banks" />
+    <IDItem ID="413" Name="Regional Southeast Banks" />
+    <IDItem ID="414" Name="Regional Midwest Banks" />
+    <IDItem ID="415" Name="Regional Southwest Banks" />
+    <IDItem ID="416" Name="Regional Pacific Banks" />
+    <IDItem ID="417" Name="Foreign Money Center Banks" />
+    <IDItem ID="418" Name="Foreign Regional Banks" />
+    <IDItem ID="419" Name="Savings &amp; Loans" />
+    <IDItem ID="420" Name="Investment Brokerage National" />
+    <IDItem ID="421" Name="Investment Brokerage Regional" />
+    <IDItem ID="422" Name="Asset Management" />
+    <IDItem ID="423" Name="Diversified Investments" />
+    <IDItem ID="424" Name="Credit Services" />
+    <IDItem ID="425" Name="Closed End Fund Debt" />
+    <IDItem ID="426" Name="Closed End Fund Equity" />
+    <IDItem ID="427" Name="Closed End Fund Foreign" />
+    <IDItem ID="430" Name="Life Insurance" />
+    <IDItem ID="431" Name="Accident &amp; Health Insurance" />
+    <IDItem ID="432" Name="Property &amp; Casualty Insurance" />
+    <IDItem ID="433" Name="Surety &amp; Title Insurance" />
+    <IDItem ID="434" Name="Insurance Brokers" />
+    <IDItem ID="440" Name="REIT Diversified" />
+    <IDItem ID="441" Name="REIT Office" />
+    <IDItem ID="442" Name="REIT Healthcare Facilities" />
+    <IDItem ID="443" Name="REIT Hotel Motel" />
+    <IDItem ID="444" Name="REIT Industrial" />
+    <IDItem ID="445" Name="REIT Residential" />
+    <IDItem ID="446" Name="REIT Retail" />
+    <IDItem ID="447" Name="Mortgage Investment" />
+    <IDItem ID="448" Name="Property Management" />
+    <IDItem ID="449" Name="Real Estate Development" />
+    
+    <IDItem ID="510" Name="Drug Manufacturers Major" />
+    <IDItem ID="511" Name="Drug Manufacturers Other" />
+    <IDItem ID="512" Name="Drugs Generic" />
+    <IDItem ID="513" Name="Drug Delivery" />
+    <IDItem ID="514" Name="Drug Related Products" />
+    <IDItem ID="515" Name="Biotechnology" />
+    <IDItem ID="516" Name="Diagnostic Substances" />
+    <IDItem ID="520" Name="Medical Instruments &amp; Supplies" />
+    <IDItem ID="521" Name="Medical Appliances &amp; Equipment" />
+    <IDItem ID="522" Name="Health Care Plans" />
+    <IDItem ID="523" Name="Long Term Care Facilities" />
+    <IDItem ID="524" Name="Hospitals" />
+    <IDItem ID="525" Name="Medical Laboratories &amp; Research" />
+    <IDItem ID="526" Name="Home Health Care" />
+    <IDItem ID="527" Name="Medical Practitioners" />
+    <IDItem ID="528" Name="Specialized Health Services" />
+    
+    <IDItem ID="610" Name="Aerospace Defense Major Diversified" />
+    <IDItem ID="611" Name="Aerospace Defense Products &amp; Services" />
+    <IDItem ID="620" Name="Farm &amp; Construction Machinery" />
+    <IDItem ID="621" Name="Industrial Equipment &amp; Components" />
+    <IDItem ID="622" Name="Diversified Machinery" />
+    <IDItem ID="623" Name="Pollution &amp; Treatment Controls" />
+    <IDItem ID="624" Name="Machine Tools &amp; Accessories" />
+    <IDItem ID="625" Name="Small Tools &amp; Accessories" />
+    <IDItem ID="626" Name="Metal Fabrication" />
+    <IDItem ID="627" Name="Industrial Electrical Equipment" />
+    <IDItem ID="628" Name="Textile Industrial" />
+    <IDItem ID="630" Name="Residential Construction" />
+    <IDItem ID="631" Name="Manufactured Housing" />
+    <IDItem ID="632" Name="Lumber Wood Production" />
+    <IDItem ID="633" Name="Cement" />
+    <IDItem ID="634" Name="General Building Materials" />
+    <IDItem ID="635" Name="Heavy Construction" />
+    <IDItem ID="636" Name="General Contractors" />
+    <IDItem ID="637" Name="Waste Management" />
+    
+    <IDItem ID="710" Name="Lodging" />
+    <IDItem ID="711" Name="Resorts &amp; Casinos" />
+    <IDItem ID="712" Name="Restaurants" />
+    <IDItem ID="713" Name="Specialty Eateries" />
+    <IDItem ID="714" Name="Gaming Activities" />
+    <IDItem ID="715" Name="Sporting Activities" />
+    <IDItem ID="716" Name="General Entertainment" />
+    <IDItem ID="720" Name="Advertising Agencies" />
+    <IDItem ID="721" Name="Marketing Services" />
+    <IDItem ID="722" Name="Entertainment Diversified" />
+    <IDItem ID="723" Name="Broadcasting TV" />
+    <IDItem ID="724" Name="Broadcasting Radio" />
+    <IDItem ID="725" Name="CATV Systems" />
+    <IDItem ID="726" Name="Movie Production Theaters" />
+    <IDItem ID="727" Name="Publishing Newspapers" />
+    <IDItem ID="728" Name="Publishing Periodicals" />
+    <IDItem ID="729" Name="Publishing Books" />
+    <IDItem ID="730" Name="Apparel Stores" />
+    <IDItem ID="731" Name="Department Stores" />
+    <IDItem ID="732" Name="Discount Variety Stores" />
+    <IDItem ID="733" Name="Drug Stores" />
+    <IDItem ID="734" Name="Grocery Stores" />
+    <IDItem ID="735" Name="Electronics Stores" />
+    <IDItem ID="736" Name="Home Improvement Stores" />
+    <IDItem ID="737" Name="Home Furnishing Stores" />
+    <IDItem ID="738" Name="Auto Parts Stores" />
+    <IDItem ID="739" Name="Catalog &amp; Mail Order Houses" />
+    <IDItem ID="740" Name="Sporting Goods Stores" />
+    <IDItem ID="741" Name="Toy &amp; Hobby Stores" />
+    <IDItem ID="742" Name="Jewelry Stores" />
+    <IDItem ID="743" Name="Music &amp; Video Stores" />
+    <IDItem ID="744" Name="Auto Dealerships" />
+    <IDItem ID="745" Name="Specialty Retail Other" />
+    <IDItem ID="750" Name="Auto Parts Wholesale" />
+    <IDItem ID="751" Name="Building Materials Wholesale" />
+    <IDItem ID="752" Name="Industrial Equipment Wholesale" />
+    <IDItem ID="753" Name="Electronics Wholesale" />
+    <IDItem ID="754" Name="Medical Equipment Wholesale" />
+    <IDItem ID="755" Name="Computers Wholesale" />
+    <IDItem ID="756" Name="Drugs Wholesale" />
+    <IDItem ID="757" Name="Food Wholesale" />
+    <IDItem ID="758" Name="Basic Materials Wholesale" />
+    <IDItem ID="759" Name="Wholesale Other" />
+    <IDItem ID="760" Name="Business Services" />
+    <IDItem ID="761" Name="Rental &amp; Leasing Services" />
+    <IDItem ID="762" Name="Personal Services" />
+    <IDItem ID="763" Name="Consumer Services" />
+    <IDItem ID="764" Name="Staffing &amp; Outsourcing Services" />
+    <IDItem ID="765" Name="Security &amp; Protection Services" />
+    <IDItem ID="766" Name="Education &amp; Training Services" />
+    <IDItem ID="767" Name="Technical Services" />
+    <IDItem ID="768" Name="Research Services" />
+    <IDItem ID="769" Name="Management Services" />
+    <IDItem ID="770" Name="Major Airlines" />
+    <IDItem ID="771" Name="Regional Airlines" />
+    <IDItem ID="772" Name="Air Services Other" />
+    <IDItem ID="773" Name="Air Delivery &amp; Freight Services" />
+    <IDItem ID="774" Name="Trucking" />
+    <IDItem ID="775" Name="Shipping" />
+    <IDItem ID="776" Name="Railroads" />
+    
+    <IDItem ID="810" Name="Diversified Computer Systems" />
+    <IDItem ID="811" Name="Personal Computers" />
+    <IDItem ID="812" Name="Computer Based Systems" />
+    <IDItem ID="813" Name="Data Storage Devices" />
+    <IDItem ID="814" Name="Networking &amp; Communication Devices" />
+    <IDItem ID="815" Name="Computer Peripherals" />
+    <IDItem ID="820" Name="Multimedia &amp; Graphics Software" />
+    <IDItem ID="821" Name="Application Software" />
+    <IDItem ID="822" Name="Technical &amp; System Software" />
+    <IDItem ID="823" Name="Security Software &amp; Services" />
+    <IDItem ID="824" Name="Information Technology Services" />
+    <IDItem ID="825" Name="Healthcare Information Services" />
+    <IDItem ID="826" Name="Business Software &amp; Services" />
+    <IDItem ID="827" Name="Information &amp; Delivery Services" />
+    <IDItem ID="830" Name="Semiconductor Broad Line" />
+    <IDItem ID="831" Name="Semiconductor Memory Chips" />
+    <IDItem ID="832" Name="Semiconductor Specialized" />
+    <IDItem ID="833" Name="Semiconductor Integrated Circuits" />
+    <IDItem ID="834" Name="Semiconductor Equipment &amp; Materials" />
+    <IDItem ID="835" Name="Printed Circuit Boards" />
+    <IDItem ID="836" Name="Diversified Electronics" />
+    <IDItem ID="837" Name="Scientific &amp; Technical Instruments" />
+    <IDItem ID="840" Name="Wireless Communications" />
+    <IDItem ID="841" Name="Communication Equipment" />
+    <IDItem ID="842" Name="Processing Systems &amp; Products" />
+    <IDItem ID="843" Name="Long Distance Carriers" />
+    <IDItem ID="844" Name="Telecom Services Domestic" />
+    <IDItem ID="845" Name="Telecom Services Foreign" />
+    <IDItem ID="846" Name="Diversified Communication Services" />
+    <IDItem ID="850" Name="Internet Service Providers" />
+    <IDItem ID="851" Name="Internet Information Providers" />
+    <IDItem ID="852" Name="Internet Software &amp; Services" />
+    
+    <IDItem ID="910" Name="Foreign Utilities" />
+    <IDItem ID="911" Name="Electric Utilities" />
+    <IDItem ID="912" Name="Gas Utilities" />
+    <IDItem ID="913" Name="Diversified Utilities" />
+    <IDItem ID="914" Name="Water Utilities" />
+  </Industries>
+
+  <Currencies>
+    <IDItem Name="UAE Dirham" ID="AED" />
+    <IDItem Name="Albanian Lek" ID="ALL" />
+    <IDItem Name="Neth Antilles Guilder" ID="ANG" />
+    <IDItem Name="Argentine Peso" ID="ARS" />
+    <IDItem Name="Australian Dollar" ID="AUD" />
+    <IDItem Name="Aruba Florin" ID="AWG" />
+
+    <IDItem Name="Barbados Dollar" ID="BBD" />
+    <IDItem Name="Bangladesh Taka" ID="BDT" />
+    <IDItem Name="Bulgarian Lev" ID="BGN" />
+    <IDItem Name="Bahreini Dinar" ID="BHD" />
+    <IDItem Name="Burundi Franc" ID="BIF" />
+    <IDItem Name="Bermuda Dollar" ID="BMD" />
+    <IDItem Name="Brunei Dollar" ID="BND" />
+    <IDItem Name="Bolivian Boliviano" ID="BOB" />
+    <IDItem Name="Brazilian Real" ID="BRL" />
+    <IDItem Name="Bahamian Dollar" ID="BSD" />
+    <IDItem Name="Bhutan Ngultrum" ID="BTN" />
+    <IDItem Name="Botswana Pula" ID="BWP" />
+    <IDItem Name="Belarus Rouble" ID="BYR" />
+    <IDItem Name="Belize Dollar" ID="BZD" />
+
+    <IDItem Name="Canadian Dollar" ID="CAD" />
+    <IDItem Name="Swiss Franc" ID="CHF" />
+    <IDItem Name="Chilean Peso" ID="CLP" />
+    <IDItem Name="Chinese Yuan" ID="CNY" />
+    <IDItem Name="Colombian Peso" ID="COP" />
+    <IDItem Name="Costa Rica Colon" ID="CRC" />
+    <IDItem Name="Cuban Peso" ID="CUP" />
+    <IDItem Name="Cape Verde Excudo" ID="CVE" />
+    <IDItem Name="Czech Koruna" ID="CZK" />
+
+    <IDItem Name="Dijibouti Franc" ID="DJF" />
+    <IDItem Name="Danish Krone" ID="DKK" />
+    <IDItem Name="Dominican Peso" ID="DOP" />
+    <IDItem Name="Algerian Dinar" ID="DZD" />
+
+    <IDItem Name="Equador Sucre" ID="ECS" />
+    <IDItem Name="Estonian Kroon" ID="EEK" />
+    <IDItem Name="Egyptian Pound" ID="EGP" />
+    <IDItem Name="Eritrea Nakfa" ID="ERN" />
+    <IDItem Name="Ethopian Birr" ID="ETB" />
+    <IDItem Name="Euro" ID="EUR" />
+
+    <IDItem Name="Fiji Dollar" ID="FJD" />
+    <IDItem Name="Falkland Island Pound" ID="FKP" />
+
+    <IDItem Name="British Pound" ID="GBP" />
+    <IDItem Name="Ghanian Cedi" ID="GHC" />
+    <IDItem Name="Gibraltar Pound" ID="GIP" />
+    <IDItem Name="Gambian Dalasi" ID="GMD" />
+    <IDItem Name="Guinea Franc" ID="GNF" />
+    <IDItem Name="Guatemala Quetzal" ID="GTQ" />
+    <IDItem Name="Guyana Dollar" ID="GYD" />
+
+    <IDItem Name="Honduras Lempira" ID="HNL" />
+    <IDItem Name="Hong Kong Dollar" ID="HKD" />
+    <IDItem Name="Croatian Kuna" ID="HRK" />
+    <IDItem Name="Haiti Gourde" ID="HTG" />
+    <IDItem Name="Hungarian Forint" ID="HUF" />
+
+    <IDItem Name="Indonesian Rpiah" ID="IDR" />
+    <IDItem Name="Israeli Shekel" ID="ILS" />
+    <IDItem Name="Indian Rupee" ID="INR" />
+    <IDItem Name="Iraqui Dinar" ID="IQD" />
+    <IDItem Name="Iran Rial" ID="IRR" />
+    <IDItem Name="Iceland Krona" ID="ISK" />
+
+    <IDItem Name="Jamaican Dollar" ID="JMD" />
+    <IDItem Name="Jordania Dinar" ID="JOD" />
+    <IDItem Name="Japanese Yen" ID="JPY" />
+
+    <IDItem Name="Kenyan Shilling" ID="KES" />
+    <IDItem Name="Cambodia Riel" ID="KHR" />
+    <IDItem Name="Comoros Franc" ID="KMF" />
+    <IDItem Name="Korean Won" ID="KRW" />
+    <IDItem Name="Kuwaiti Dinar" ID="KWD" />
+    <IDItem Name="Cayman Islands Dollar" ID="KYD" />
+    <IDItem Name="Kazakhstan Tenge" ID="KZT" />
+
+    <IDItem Name="Lao Kip" ID="LAK" />
+    <IDItem Name="Lebanese Pound" ID="LBP" />
+    <IDItem Name="Sri Lanka Rupee" ID="LKR" />
+    <IDItem Name="Liberian Dollar" ID="LRD" />
+    <IDItem Name="Lesoto Loti" ID="LSL" />
+    <IDItem Name="Lithuanian Lita" ID="LTL" />
+    <IDItem Name="Latvian Lat" ID="LVL" />
+    <IDItem Name="Libyan Dinar" ID="LYD" />
+
+    <IDItem Name="Moroccan Dirham" ID="MAD" />
+    <IDItem Name="Moldovan Leu" ID="MDL" />
+    <IDItem Name="Macedonian Denar" ID="MKD" />
+    <IDItem Name="Myanmar Kyat" ID="MMK" />
+    <IDItem Name="Mongolian Tukrik" ID="MNT" />
+    <IDItem Name="Macau Pataca" ID="MOP" />
+    <IDItem Name="Mauritania Ougulya" ID="MRO" />
+    <IDItem Name="Maltese Lira" ID="MTL" />
+    <IDItem Name="Mauritius Rupee" ID="MUR" />
+    <IDItem Name="Maledives Rufiyaa" ID="MVR" />
+    <IDItem Name="Malawi Kwacha" ID="MWK" />
+    <IDItem Name="Mexican Peso" ID="MXN" />
+    <IDItem Name="Malaysian Ringgit" ID="MYR" />
+
+    <IDItem Name="Namibian Dollar" ID="NAD" />
+    <IDItem Name="Nigerian Naira" ID="NGN" />
+    <IDItem Name="Nicaragua Cordoba" ID="NIO" />
+    <IDItem Name="Norwegian Krone" ID="NOK" />
+    <IDItem Name="Nepalese Rupee" ID="NPR" />
+    <IDItem Name="North Korean Won" ID="KPW" />
+    <IDItem Name="New Zealand Dollar" ID="NZD" />
+
+    <IDItem Name="Omani Rial" ID="OMR" />
+
+    <IDItem Name="Panama elboa" ID="PAB" />
+    <IDItem Name="Peruvian Nuevo Sol" ID="PEN" />
+    <IDItem Name="Papua New Guinea Kina" ID="PGK" />
+    <IDItem Name="Philipine Peso" ID="PHP" />
+    <IDItem Name="Pakistani Rupee" ID="PKR" />
+    <IDItem Name="Polish Zloty" ID="PLN" />
+    <IDItem Name="Paraquayan Guarani" ID="PYG" />
+
+    <IDItem Name="Qatar Rial" ID="QAR" />
+
+    <IDItem Name="Romanian New Leu" ID="RON" />
+    <IDItem Name="Russian Roubel" ID="RUB" />
+    <IDItem Name="Rwanda Franc" ID="RWF" />
+
+    <IDItem Name="Saudi Arabian Riyal" ID="SAR" />
+    <IDItem Name="Solomon Islands Dollar" ID="SBD" />
+    <IDItem Name="Seychelles Rupee" ID="SCR" />
+    <IDItem Name="Sudanese Pound" ID="SDG" />
+    <IDItem Name="Swedish Krona" ID="SEK" />
+    <IDItem Name="Singapore Dollar" ID="SGD" />
+    <IDItem Name="St Helena Pound" ID="SHP" />
+    <IDItem Name="Slovenian Tolar" ID="SIT" />
+    <IDItem Name="Slovak Koruna" ID="SKK" />
+    <IDItem Name="Sierra Leone Leone" ID="SLL" />
+    <IDItem Name="Somali Shilling" ID="SOS" />
+    <IDItem Name="Sao Tome Dobra" ID="STD" />
+    <IDItem Name="El Salvador Colon" ID="SVC" />
+    <IDItem Name="Syrian Pound" ID="SYP" />
+    <IDItem Name="Swaziland Lilageni" ID="SZL" />
+
+    <IDItem Name="Thai eht" ID="THB" />
+    <IDItem Name="Tunisian Dinar" ID="TND" />
+    <IDItem Name="Tonga Pa'ang" ID="TOP" />
+    <IDItem Name="Turkish Lira" ID="TRY" />
+    <IDItem Name="Trinidad &amp; Tobago Dollar" ID="TTD" />
+    <IDItem Name="Taiwan Dollar" ID="TWD" />
+    <IDItem Name="Tanzanian Shilling" ID="TZS" />
+
+    <IDItem Name="Ukraine Hryvnia" ID="UAH" />
+    <IDItem Name="Ugandan Shilling" ID="UGX" />
+    <IDItem Name="U.S. Dollar" ID="USD" />
+    <IDItem Name="Uruguayan New Peso" ID="UYU" />
+
+    <IDItem Name="Venezuelan Bolivar Fuerte" ID="VEF" />
+    <IDItem Name="Vietnam Dong" ID="VND" />
+    <IDItem Name="Vanuatu Vatu" ID="VUV" />
+
+    <IDItem Name="Samoa Tala" ID="WST" />
+
+    <IDItem Name="CFA Franc (BEAC)" ID="XAF" />
+    <IDItem Name="Silver Ounces" ID="XAG" />
+    <IDItem Name="Aluminium Ounces" ID="XAL" />
+    <IDItem Name="Gold Ounces" ID="XAU" />
+    <IDItem Name="East Caribbean Dollar" ID="XCD" />
+    <IDItem Name="Copper Pounds" ID="XCP" />
+    <IDItem Name="CFA Franc (BCEAO)" ID="XOF" />
+    <IDItem Name="Paladium Ounces" ID="XPD" />
+    <IDItem Name="Pacific Franc" ID="XPF" />
+    <IDItem Name="Platinum Ounces" ID="XPT" />
+
+    <IDItem Name="Yemen Riyal" ID="YER" />
+
+    <IDItem Name="South African Rand" ID="ZAR" />
+    <IDItem Name="Zambian Kwacha" ID="ZMK" />
+    <IDItem Name="Zimbabwe Dollar" ID="ZWD" />
+  </Currencies>
+
+  <Countries>
+    <Country ID="AR" Currency="ARS" Name="Argentina" ></Country>
+    <Country ID="AU" Currency="AUD" Name="Australia" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="10/2/2011 02:00:00 AM" End="4/3/2011 03:00:00 AM" />
+        <DST Year="2012" Start="10/7/2012 02:00:00 AM" End="4/1/2012 03:00:00 AM" />
+        <DST Year="2013" Start="10/6/2013 02:00:00 AM" End="4/7/2013 03:00:00 AM" />
+        <DST Year="2014" Start="10/5/2014 02:00:00 AM" End="4/6/2014 03:00:00 AM" />
+        <DST Year="2015" Start="10/4/2015 02:00:00 AM" End="4/5/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="AT" Currency="EUR" Name="Austria" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/27/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="BE" Currency="EUR" Name="Belgium" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/27/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="BR" Currency="BRL" Name="Brazil" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="10/16/2011 12:00:00 AM" End="2/19/2011 12:00:00 AM" />
+        <DST Year="2012" Start="10/21/2012 12:00:00 AM" End="2/15/2012 12:00:00 AM" />
+        <DST Year="2013" Start="10/20/2013 12:00:00 AM" End="2/16/2013 12:00:00 AM" />
+        <DST Year="2014" Start="10/19/2014 12:00:00 AM" End="2/15/2014 12:00:00 AM" />
+        <DST Year="2015" Start="10/18/2015 12:00:00 AM" End="2/21/2015 12:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="CA" Currency="CAD" Name="Canada" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/13/2011 02:00:00 AM" End="11/6/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/11/2012 02:00:00 AM" End="11/4/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/10/2013 02:00:00 AM" End="11/3/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/9/2014 02:00:00 AM" End="11/2/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/8/2015 02:00:00 AM" End="11/1/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="CT" Currency="EUR" Name="Catalonia" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/27/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="CL" Currency="CLP" Name="Chile" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="8/21/2011 12:00:00 AM" End="5/7/2011 12:00:00 AM" />
+        <DST Year="2012" Start="10/14/2012 12:00:00 AM" End="3/10/2012 12:00:00 AM" />
+        <DST Year="2013" Start="10/13/2013 12:00:00 AM" End="3/9/2013 12:00:00 AM" />
+        <DST Year="2014" Start="10/12/2014 12:00:00 AM" End="3/8/2014 12:00:00 AM" />
+        <DST Year="2015" Start="10/11/2015 12:00:00 AM" End="3/14/2015 12:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="CN" Currency="CNY" Name="China" ></Country>
+    <Country ID="CO" Currency="COP" Name="Columbia" ></Country>
+    <Country ID="CZ" Currency="CZK" Name="Czech Republic" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/27/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="DK" Currency="EUR" Name="Denmark" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/27/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="FI" Currency="EUR" Name="Finland" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/27/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="FR" Currency="EUR" Name="France" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/27/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="DE" Currency="EUR" Name="Germany" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/27/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="HK" Currency="HKD" Name="Hong Kong" ></Country>
+    <Country ID="HU" Currency="HUF" Name="Hungary" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/27/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="ID" Currency="IDR" Name="Indonesia" ></Country>
+    <Country ID="IN" Currency="INR" Name="India" ></Country>
+    <Country ID="IE" Currency="EUR" Name="Ireland" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/27/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="IL" Currency="ILS" Name="Israel" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="4/1/2011 02:00:00 AM" End="10/2/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/30/2012 02:00:00 AM" End="9/23/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/29/2013 02:00:00 AM" End="9/8/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/28/2014 02:00:00 AM" End="9/28/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/27/2015 02:00:00 AM" End="9/20/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="IT" Currency="EUR" Name="Italy" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/27/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="JP" Currency="JPY" Name="Japan" ></Country>
+    <Country ID="KR" Currency="KRW" Name="Korea" ></Country>
+    <Country ID="MY" Currency="MYR" Name="Malaysia" ></Country>
+    <Country ID="MX" Currency="MXN" Name="Mexico" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="4/3/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="4/1/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="4/7/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="4/6/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="4/5/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="NL" Currency="EUR" Name="Netherlands" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/27/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="NZ" Currency="NZD" Name="New Zealand" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="9/25/2011 02:00:00 AM" End="4/3/2011 03:00:00 AM" />
+        <DST Year="2012" Start="9/30/2012 02:00:00 AM" End="4/1/2012 03:00:00 AM" />
+        <DST Year="2013" Start="9/29/2013 02:00:00 AM" End="4/7/2013 03:00:00 AM" />
+        <DST Year="2014" Start="9/28/2014 02:00:00 AM" End="4/6/2014 03:00:00 AM" />
+        <DST Year="2015" Start="9/27/2015 02:00:00 AM" End="4/5/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="NO" Currency="NOK" Name="Norway" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/27/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="PE" Currency="PEN" Name="Peru" ></Country>
+    <Country ID="PT" Currency="EUR" Name="Portugal" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/27/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="PH" Currency="PHP" Name="Philippines" ></Country>
+    <Country ID="RO" Currency="RON" Name="Romania" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/27/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="RU" Currency="RUB" Name="Russia" ></Country>
+    <Country ID="SG" Currency="SGD" Name="Singapore" ></Country>
+    <Country ID="ES" Currency="EUR" Name="Spain" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/27/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="SE" Currency="SEK" Name="Sweden" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/27/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="CH" Currency="CHF" Name="Switzerland" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/27/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="TW" Currency="TWD" Name="Taiwan" ></Country>
+    <Country ID="TH" Currency="THB" Name="Thailand" ></Country>
+    <Country ID="TR" Currency="TRY" Name="Turkey" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/28/2011 03:00:00 AM" End="10/30/2011 04:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 03:00:00 AM" End="10/28/2012 04:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 03:00:00 AM" End="10/27/2013 04:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 03:00:00 AM" End="10/26/2014 04:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 03:00:00 AM" End="10/25/2015 04:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="UK" Currency="GBP" Name="United Kingdom" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/27/2011 02:00:00 AM" End="10/30/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/25/2012 02:00:00 AM" End="10/28/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/31/2013 02:00:00 AM" End="10/27/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/30/2014 02:00:00 AM" End="10/26/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/29/2015 02:00:00 AM" End="10/25/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="US" Currency="USD" Name="United States of America" >
+      <DaylightSavingTimes>
+        <DST Year="2011" Start="3/13/2011 02:00:00 AM" End="11/6/2011 03:00:00 AM" />
+        <DST Year="2012" Start="3/11/2012 02:00:00 AM" End="11/4/2012 03:00:00 AM" />
+        <DST Year="2013" Start="3/10/2013 02:00:00 AM" End="11/3/2013 03:00:00 AM" />
+        <DST Year="2014" Start="3/9/2014 02:00:00 AM" End="11/2/2014 03:00:00 AM" />
+        <DST Year="2015" Start="3/8/2015 02:00:00 AM" End="11/1/2015 03:00:00 AM" />
+      </DaylightSavingTimes>
+    </Country>
+    <Country ID="VE" Currency="VEF" Name="Venezuela" ></Country>
+    <Country ID="VN" Currency="VND" Name="Vietnam" ></Country>
+  </Countries>
+
+  <StockExchanges>
+    <StockExchange ID="AMS" Suffix=".AS" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:30:00 PM" UtcOffsetStandardTime="+1" Country="NL" Name="Amsterdam Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="ASE" Suffix="" DelayMinutes="15" OpeningTimeLocal="9:30:00 AM" ClosingTimeLocal="4:00:00 PM" UtcOffsetStandardTime="-5" Country="US" Name="American Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" Tags="AMEX" />
+    <StockExchange ID="ASX" Suffix=".AX" DelayMinutes="20" OpeningTimeLocal="10:00:00 AM" ClosingTimeLocal="4:00:00 PM" UtcOffsetStandardTime="+11" Country="AU" Name="Australian Securities Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="BAR" Suffix=".BC" DelayMinutes="15" OpeningTimeLocal="8:00:00 AM" ClosingTimeLocal="4:30:00 PM" UtcOffsetStandardTime="+1" Country="ES" Name="Barcelona Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="BER" Suffix=".BE" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="8:00:00 PM" UtcOffsetStandardTime="+1" Country="DE" Name="Berlin Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="BIL" Suffix=".BI" DelayMinutes="15" OpeningTimeLocal="8:30:00 AM" ClosingTimeLocal="4:30:00 PM" UtcOffsetStandardTime="+1" Country="ES" Name="Bilbao Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="BRE" Suffix=".BM" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="8:00:00 PM" UtcOffsetStandardTime="+1" Country="DE" Name="Bremen Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="BSE" Suffix=".BO" DelayMinutes="15" OpeningTimeLocal="9:25:00 AM" ClosingTimeLocal="15:00:00 PM" UtcOffsetStandardTime="+5" Country="IN" Name="Bombay Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="BTX" Suffix="" DelayMinutes="00" OpeningTimeLocal="8:00:00 AM" ClosingTimeLocal="5:00:00 PM" UtcOffsetStandardTime="-6" Country="US" Name="BATS Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="BUE" Suffix=".BA" DelayMinutes="30" OpeningTimeLocal="10:00:00 AM" ClosingTimeLocal="6:00:00 PM" UtcOffsetStandardTime="-2" Country="AR" Name="Buenos Aires Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="CAL" Suffix="" DelayMinutes="00" OpeningTimeLocal="8:00:00 AM" ClosingTimeLocal="1:00:00 PM" UtcOffsetStandardTime="+6" Country="IN" Name="Calcutta Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="CBO" Suffix="" DelayMinutes="00" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:30:00 PM" UtcOffsetStandardTime="-6" Country="US" Name="Chicago Board Options Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="CBT" Suffix=".CBT" DelayMinutes="10" OpeningTimeLocal="8:00:00 AM" ClosingTimeLocal="4:30:00 PM" UtcOffsetStandardTime="-6" Country="US" Name="Chicago Board of Trade" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="CCS" Suffix=".CR" DelayMinutes="00" OpeningTimeLocal="8:30:00 AM" ClosingTimeLocal="1:00:00 PM" UtcOffsetStandardTime="0" Country="VE" Name="Caracas Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="VAN" Suffix=".V" DelayMinutes="15" OpeningTimeLocal="9:30:00 AM" ClosingTimeLocal="4:00:00 PM" UtcOffsetStandardTime="0" Country="CA" Name="TSX Venture Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="CME" Suffix=".CME" DelayMinutes="10" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:00:00 PM" UtcOffsetStandardTime="-6" Country="US" Name="Chicago Mercantile Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="CMX" Suffix=".CMX" DelayMinutes="30" OpeningTimeLocal="9:30:00 AM" ClosingTimeLocal="3:00:00 PM" UtcOffsetStandardTime="-5" Country="US" Name="New York Commodities Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="CPH" Suffix=".CO" DelayMinutes="15" OpeningTimeLocal="8:30:00 AM" ClosingTimeLocal="5:00:00 PM" UtcOffsetStandardTime="+1" Country="DK" Name="Copenhagen Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="DJI" Suffix="" DelayMinutes="15" OpeningTimeLocal="9:30:00 AM" ClosingTimeLocal="4:00:00 PM" UtcOffsetStandardTime="-5" Country="US" Name="Dow Jones Indexes" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="DUS" Suffix=".DU" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:30:00 PM" UtcOffsetStandardTime="+1" Country="DE" Name="Dusseldorf Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="EBS" Suffix=".SW" DelayMinutes="30" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:30:00 PM" UtcOffsetStandardTime="+1" Country="CH" Name="Swiss Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="ENX" Suffix=".NX" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:30:00 PM" UtcOffsetStandardTime="+1" Country="FR" Name="Euronext Amsterdam/Brussels/Paris" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="EUX" Suffix=".EX" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:30:00 PM" UtcOffsetStandardTime="+1" Country="CH" Name="Eurex" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="EWX" Suffix=".SG" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="8:00:00 PM" UtcOffsetStandardTime="+1" Country="DE" Name="Stuttgart EWX" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="FGI" Suffix=".FGI" DelayMinutes="00" OpeningTimeLocal="8:00:00 AM" ClosingTimeLocal="6:00:00 PM" UtcOffsetStandardTime="-5" Country="US" Name="FGI" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="FRA" Suffix=".F" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="8:00:00 PM" UtcOffsetStandardTime="+1" Country="DE" Name="Frankfurt Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="FTI" Suffix="" DelayMinutes="15" OpeningTimeLocal="8:00:00 AM" ClosingTimeLocal="4:30:00 PM" UtcOffsetStandardTime="0" Country="UK" Name="FTSE Indices" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="GER" Suffix=".DE" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:30:00 PM" UtcOffsetStandardTime="+1" Country="DE" Name="XETRA" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="HAM" Suffix=".HM" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="8:00:00 PM" UtcOffsetStandardTime="+1" Country="DE" Name="Hamburg Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="HAN" Suffix=".HA" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="8:00:00 PM" UtcOffsetStandardTime="+1" Country="DE" Name="Hanover Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="HKG" Suffix=".HK" DelayMinutes="15" OpeningTimeLocal="10:00:00 AM" ClosingTimeLocal="4:00:00 PM" UtcOffsetStandardTime="+8" Country="HK" Name="Hong Kong Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="IOB" Suffix=".IL" DelayMinutes="00" OpeningTimeLocal="8:00:00 AM" ClosingTimeLocal="4:30:00 PM" UtcOffsetStandardTime="0" Country="UK" Name="IOB" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="ISE" Suffix="" DelayMinutes="00" OpeningTimeLocal="8:00:00 AM" ClosingTimeLocal="5:00:00 PM" UtcOffsetStandardTime="0" Country="IE" Name="Irish Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" Tags="Dublin" />
+    <StockExchange ID="JKT" Suffix=".JK" DelayMinutes="10" OpeningTimeLocal="9:30:00 AM" ClosingTimeLocal="4:00:00 PM" UtcOffsetStandardTime="+7" Country="ID" Name="Jakarta Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="KLS" Suffix=".KL" DelayMinutes="00" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:00:00 PM" UtcOffsetStandardTime="0" Country="MY" Name="Bursa Malaysia" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="KSC" Suffix=".KS" DelayMinutes="20" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:00:00 PM" UtcOffsetStandardTime="+8" Country="KR" Name="Korea Composite Stock Price Index" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="KSQ" Suffix=".KQ" DelayMinutes="20" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="3:00:00 PM" UtcOffsetStandardTime="+9" Country="KR" Name="Korean Securities Dealers Automated Quotations" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="LMA" Suffix=".LM" DelayMinutes="00" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="4:00:00 PM" UtcOffsetStandardTime="0" Country="PE" Name="Lima Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="LSB" Suffix=".LS" DelayMinutes="00" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:30:00 PM" UtcOffsetStandardTime="+1" Country="PT" Name="Lisbon Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="LSE" Suffix=".L" DelayMinutes="20" OpeningTimeLocal="8:00:00 AM" ClosingTimeLocal="4:35:00 PM" UtcOffsetStandardTime="0" Country="UK" Name="London Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="MAD" Suffix=".MA" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:30:00 PM" UtcOffsetStandardTime="+1" Country="ES" Name="Madrid Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" Tags="Madrid"/>
+    <StockExchange ID="MCE" Suffix=".MC" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:30:00 PM" UtcOffsetStandardTime="+1" Country="ES" Name="Madrid SE C.A.T.S." TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="MEX" Suffix=".MX" DelayMinutes="20" OpeningTimeLocal="8:30:00 AM" ClosingTimeLocal="5:00:00 PM" UtcOffsetStandardTime="-6" Country="MX" Name="Mexico Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="MFI" Suffix=".MF" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:30:00 PM" UtcOffsetStandardTime="+1" Country="ES" Name="Madrid Fixed Income Market" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="MIL" Suffix=".MI" DelayMinutes="20" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:30:00 PM" UtcOffsetStandardTime="+1" Country="IT" Name="Milan Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" Tags="Mailand" />
+    <StockExchange ID="MUN" Suffix=".MU" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="8:00:00 PM" UtcOffsetStandardTime="+1" Country="DE" Name="Munich Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="NAS" Suffix="" DelayMinutes="15" OpeningTimeLocal="9:30:00 AM" ClosingTimeLocal="4:00:00 PM" UtcOffsetStandardTime="-5" Country="US" Name="NASDAQ" TradingDays="Mo,Tu,We,Th,Fr" Tags="NasdaqNM,NasdaqSC,NasdaqGS,NasdaqCM,NCM,NMS" />
+    <StockExchange ID="NGM" Suffix="" DelayMinutes="00" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="6:00:00 PM" UtcOffsetStandardTime="+1" Country="SE" Name="Nordic Growth Market" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="NIK" Suffix="" DelayMinutes="30" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:00:00 PM" UtcOffsetStandardTime="+9" Country="JP" Name="Nikkei Indices" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="NSE" Suffix=".NS" DelayMinutes="15" OpeningTimeLocal="9:25:00 AM" ClosingTimeLocal="3:00:00 PM" UtcOffsetStandardTime="+5" Country="IN" Name="National Stock Exchange of India" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="NSI" Suffix=".NS" DelayMinutes="15" OpeningTimeLocal="9:25:00 AM" ClosingTimeLocal="3:00:00 PM" UtcOffsetStandardTime="+5" Country="IN" Name="National Stock Exchange of India" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="NYB" Suffix=".NYB" DelayMinutes="30" OpeningTimeLocal="7:55:00 AM" ClosingTimeLocal="4:15:00 PM" UtcOffsetStandardTime="-5" Country="US" Name="New York Board of Trade" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="NYM" Suffix=".NYM" DelayMinutes="30" OpeningTimeLocal="8:00:00 AM" ClosingTimeLocal="5:15:00 PM" UtcOffsetStandardTime="-5" Country="US" Name="New York Mercantile Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="NYQ" Suffix="" DelayMinutes="15" OpeningTimeLocal="9:30:00 AM" ClosingTimeLocal="4:00:00 PM" UtcOffsetStandardTime="-5" Country="US" Name="New York Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" Tags="NYSE"/>
+    <StockExchange ID="NZX" Suffix=".NZ" DelayMinutes="20" OpeningTimeLocal="10:00:00 AM" ClosingTimeLocal="4:45:00 PM" UtcOffsetStandardTime="+12" Country="NZ" Name="New Zealand Stock Exchange" Tags="NZSE" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="OBB" Suffix=".OB" DelayMinutes="20" OpeningTimeLocal="9:30:00 AM" ClosingTimeLocal="4:00:00 PM" UtcOffsetStandardTime="-5" Country="US" Name="OTC Bulletin Board Market" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="OSE" Suffix="" DelayMinutes="00" OpeningTimeLocal="8:20:00 AM" ClosingTimeLocal="4:30:00 PM" UtcOffsetStandardTime="+9" Country="JP" Name="Osaka Securities Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="OSL" Suffix=".OL" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="4:30:00 PM" UtcOffsetStandardTime="+1" Country="NO" Name="Oslo Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="PAR" Suffix=".PA" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:30:00 PM" UtcOffsetStandardTime="+1" Country="FR" Name="Paris Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="PCX" Suffix="" DelayMinutes="00" OpeningTimeLocal="00:00:00 AM" ClosingTimeLocal="00:00:00 PM" UtcOffsetStandardTime="-10" Country="US" Name="Pacific Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="RTS" Suffix=".RS" DelayMinutes="00" OpeningTimeLocal="10:00:00 AM" ClosingTimeLocal="18:45:00 PM" UtcOffsetStandardTime="+3" Country="RU" Name="Russian Trading System Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="PNK" Suffix=".PK" DelayMinutes="15" OpeningTimeLocal="9:30:00 AM" ClosingTimeLocal="4:00:00 PM" UtcOffsetStandardTime="-5" Country="US" Name="Pink Sheets" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="SAO" Suffix=".SA" DelayMinutes="15" OpeningTimeLocal="10:00:00 AM" ClosingTimeLocal="5:00:00 PM" UtcOffsetStandardTime="-3" Country="BR" Name="BOVESPA - Sao Paolo Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="SES" Suffix=".SI" DelayMinutes="20" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="6:00:00 PM" UtcOffsetStandardTime="+8" Country="SG" Name="Singapore Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="SET" Suffix=".BK" DelayMinutes="00" OpeningTimeLocal="9:30:00 AM" ClosingTimeLocal="5:00:00 PM" UtcOffsetStandardTime="+7" Country="TH" Name="Stock Exchange of Thailand" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="SGO" Suffix=".SN" DelayMinutes="15" OpeningTimeLocal="9:30:00 AM" ClosingTimeLocal="1:20:00 PM" UtcOffsetStandardTime="-4" Country="CL" Name="Santiago Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="SHH" Suffix=".SS" DelayMinutes="30" OpeningTimeLocal="9:30:00 AM" ClosingTimeLocal="4:00:00 PM" UtcOffsetStandardTime="+8" Country="CN" Name="Shanghai Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="SHZ" Suffix=".SZ" DelayMinutes="30" OpeningTimeLocal="9:30:00 AM" ClosingTimeLocal="4:00:00 PM" UtcOffsetStandardTime="+8" Country="CN" Name="Shenzhen Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="SPI" Suffix="" DelayMinutes="00" OpeningTimeLocal="9:30:00 AM" ClosingTimeLocal="5:00:00 PM" UtcOffsetStandardTime="-5" Country="US" Name="S &amp; P Indices" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="STO" Suffix=".ST" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:30:00 PM" UtcOffsetStandardTime="+1" Country="SE" Name="Stockholm Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="STU" Suffix=".SG" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="8:00:00 PM" UtcOffsetStandardTime="+1" Country="DE" Name="Stuttgart Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="TAI" Suffix=".TW" DelayMinutes="20" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="1:30:00 PM" UtcOffsetStandardTime="+8" Country="TW" Name="Taiwan Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="TKD" Suffix=".DF" DelayMinutes="00" OpeningTimeLocal="00:01:00 AM" ClosingTimeLocal="00:00:00 PM" UtcOffsetStandardTime="-5" Country="US" Name="TKD" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="TLV" Suffix=".TA" DelayMinutes="20" OpeningTimeLocal="8:30:00 AM" ClosingTimeLocal="5:30:00 PM" UtcOffsetStandardTime="+2" Country="IL" Name="Tel Aviv Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="TLO" Suffix=".TI" DelayMinutes="00" OpeningTimeLocal="00:00:00 AM" ClosingTimeLocal="00:00:00 PM" UtcOffsetStandardTime="-5" Country="US" Name="TLO" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="TLX" Suffix=".TI" DelayMinutes="00" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:30:00 PM" UtcOffsetStandardTime="+1" Country="IT" Name="EuroTLX" TradingDays="Mo,Tu,We,Th,Fr" Tags="TLX,EuroTLX" />
+    <StockExchange ID="TOR" Suffix=".TO" DelayMinutes="15" OpeningTimeLocal="9:30:00 AM" ClosingTimeLocal="4:00:00 PM" UtcOffsetStandardTime="-5" Country="CA" Name="Toronto Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="TWO" Suffix=".TWO" DelayMinutes="20" OpeningTimeLocal="10:00:00 AM" ClosingTimeLocal="4:30:00 PM" UtcOffsetStandardTime="+7" Country="TW" Name="Taiwan OTC Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="VIE" Suffix=".VI" DelayMinutes="15" OpeningTimeLocal="9:15:00 AM" ClosingTimeLocal="5:35:00 PM" UtcOffsetStandardTime="+1" Country="AT" Name="Vienna Stock Exchange" TradingDays="Mo,Tu,We,Th,Fr" />
+    <StockExchange ID="VTX" Suffix=".VX" DelayMinutes="15" OpeningTimeLocal="9:00:00 AM" ClosingTimeLocal="5:30:00 PM" UtcOffsetStandardTime="1" Country="CH" Name="SWX Europe/Virt-X" TradingDays="Mo,Tu,We,Th,Fr" Tags="Virt-X" />
+    <StockExchange ID="WCB" Suffix="" DelayMinutes="00" OpeningTimeLocal="00:00:00" ClosingTimeLocal="00:00:00" UtcOffsetStandardTime="-5" Country="US" Name="WCB" TradingDays="Mo,Tu,We,Th,Fr" />
+   
+    <StockExchange ID="CDX" Suffix="" DelayMinutes="00" OpeningTimeLocal="00:00:00" ClosingTimeLocal="00:00:00" UtcOffsetStandardTime="-5" Country="CA" Name="CDX" TradingDays="Mo,Tu,We,Th,Fr" />
+
+    <StockExchange ID="AEX" Suffix="" DelayMinutes="00" OpeningTimeLocal="00:00:00" ClosingTimeLocal="00:00:00" UtcOffsetStandardTime="0" Country="US" Name="AEX" TradingDays="Mo,Tu,We,Th,Fr" />
+  </StockExchanges>
+
+  <Indices>
+    <Index Name="ALL ORDINARIES" ID="^AORD" StockExchange="ASX" />
+    <Index Name="ATX" ID="^ATX" StockExchange="VIE" />
+    <Index Name="EURONEXT BEL 20" ID="^BFX" StockExchange="ENX" />
+    <Index Name="IBOVESPA" ID="^BVSP" StockExchange="SAO" />
+    <Index Name="IBRX" ID="IBXX.SA" StockExchange="SAO" />
+    <Index Name="S&amp;P/TSX Composite Index" ID="^GSPTSE" StockExchange="TOR" />
+    <Index Name="S&amp;P/TSX SmallCap Index" ID="^SPTSES" StockExchange="TOR" />
+    <Index Name="S&amp;P/TSX MidCap Index" ID="^SPTSEM" StockExchange="TOR" />
+    <Index Name="S&amp;P/TSX 60 Capped Index" ID="^SPTSECP" StockExchange="TOR" />
+    <Index Name="S&amp;P/TSX Capped Composite Index" ID="^SPTSECP3" StockExchange="TOR" />
+    <Index Name="S&amp;P/TSX Capped Energy Index" ID="^SPTTEN" StockExchange="TOR" />
+    <Index Name="S&amp;P/TSX Capped Financials Index" ID="^SPTTFS" StockExchange="TOR" />
+    <Index Name="S&amp;P/TSX Capped Gold Index" ID="^SPTTGD" StockExchange="TOR" />
+    <Index Name="S&amp;P/TSX Capped Information Tech" ID="^SPTTTK" StockExchange="TOR" />
+    <Index Name="S&amp;P/TSX Capped Consumer Discret" ID="^GSPTTCD" StockExchange="TOR" />
+    <Index Name="S&amp;P/TSE Capped Consumer Staples" ID="^GSPTTCS" StockExchange="TOR" />
+    <Index Name="S&amp;P/TSX Capped Health Care Index" ID="^GSPTTHC" StockExchange="TOR" />
+    <Index Name="S&amp;P/TSX Capped Industrials Index" ID="^GSPTTIN" StockExchange="TOR" />
+    <Index Name="S&amp;P/TSX Capped Diversified Meta" ID="^GSPTTMN" StockExchange="TOR" />
+    <Index Name="S&amp;P/TSX Capped Materials Index" ID="^GSPTTMT" StockExchange="TOR" />
+    <Index Name="S&amp;P/TSX Capped Real Estate Index" ID="^GSPTTRE" StockExchange="TOR" />
+    <Index Name="S&amp;P/TSX Capped Telecommunication" ID="^GSPTTTS" StockExchange="TOR" />
+    <Index Name="S&amp;P/TSX Capped Utilities Index" ID="^GSPTTUT" StockExchange="TOR" />
+    <Index Name="S&amp;P/TSX Venture Composite Index" ID="^SPCDNX" StockExchange="CDX" />
+    <Index Name="Toronto Volume in 000's" ID="^TV.TO" StockExchange="TOR" />
+    <Index Name="TSX Venture Volume in 000's" ID="^TV.V" StockExchange="CDX" />
+    <Index Name="SSE Composite Index" ID="000001.SS" StockExchange="SHH" />
+    <Index Name="OMX COPENHAGEN 20" ID="OMXC20.CO" StockExchange="CPH" />
+    <Index Name="CAC 40" ID="^FCHI" StockExchange="PAR" />
+    <Index Name="DAX" ID="^GDAXI" StockExchange="GER" />
+    <Index Name="TecDAX" ID="^TECDAX" StockExchange="GER" />
+    <Index Name="MDAX" ID="^MDAXIL" StockExchange="GER" />
+    <Index Name="SDAX" ID="^SDAXI" StockExchange="GER" />
+    <Index Name="CDAX" ID="^CDAXX" StockExchange="GER" />
+    <Index Name="Hang Seng Index" ID="^HSI" StockExchange="HKG" />
+    <Index Name="Jakarta Composite Index" ID="^JKSE" StockExchange="JKT" />
+    <Index Name="BSE SENSEX 30" ID="^BSESN" StockExchange="BSE" />
+    <Index Name="S&amp;P CNX NIFTY" ID="^NSEI" StockExchange="NSE" />
+    <Index Name="ISEQ 20 PRICE" ID="^IETP" StockExchange="ISE" />
+    <Index Name="TEL AVIV TA 100" ID="^TA100" StockExchange="TLV" />
+    <Index Name="FTSE MIB" ID="FTSEMIB.MI" StockExchange="MIL" />
+    <Index Name="NIKKEI 225" ID="^N225" StockExchange="NIK" />
+    <Index Name="NIKKEI 300" ID="^N300" StockExchange="NIK" />
+    <Index Name="NETS TOPIX Japan" ID="^TYI" StockExchange="NYQ" />
+    <Index Name="KOSPI Composite Index" ID="^KS11" StockExchange="KSC" />
+    <Index Name="FTSE Bursa Malaysia KLCI" ID="^KLSE" StockExchange="KLS" />
+    <Index Name="IPC" ID="^MXX" StockExchange="MEX" />
+    <Index Name="AEX" ID="^AEX" StockExchange="AEX" />
+    <Index Name="NZX 50 INDEX" ID="^NZ50" StockExchange="ASX" />
+    <Index Name="OBX" ID="XOBX.OL" StockExchange="OSL" />
+    <Index Name="OSLO EXCHANGE ALL SHARE" ID="^OSEAX" StockExchange="OSL" />
+    <Index Name="PSI 20" ID="^PSI20" StockExchange="ENX" />
+    <Index Name="RTS" ID="RTS.RS" StockExchange="RTS" />
+    <Index Name="STI Straight Times Index" ID="^STI" StockExchange="SES" />
+    <Index Name="IGBM" ID="^SMSI" StockExchange="MAD" />
+    <Index Name="SMI" ID="^SSMI" StockExchange="VTX" />
+    <Index Name="SLI SWISS LEADER" ID="SLI.SW" StockExchange="EBS" />
+    <Index Name="TSEC Weighted Index" ID="^TWII" StockExchange="TWO" />
+    <Index Name="FTSE 100" ID="^FTSE" StockExchange="FTI" />
+    <Index Name="Dow Jones Composite" ID="^DJA" StockExchange="DJI" />
+    <Index Name="Dow Jones Industrial Average" ID="^DJI" StockExchange="DJI" />
+    <Index Name="Dow Jones Transportation" ID="^DJT" StockExchange="DJI" />
+    <Index Name="Dow Jones Utility" ID="^DJU" StockExchange="DJI" />
+    <Index Name="NASDAQ 100" ID="^NDX" StockExchange="NAS" />
+    <Index Name="NASDAQ enk" ID="^IXBK" StockExchange="NAS" />
+    <Index Name="NASDAQ Biotechnology" ID="^NBI" StockExchange="NAS" />
+    <Index Name="NASDAQ Composite" ID="^IXIC" StockExchange="NAS" />
+    <Index Name="NASDAQ Computer" ID="^IXK" StockExchange="NAS" />
+    <Index Name="NASDAQ Financial 100" ID="^IXF" StockExchange="NAS" />
+    <Index Name="NASDAQ Health Care" ID="^IXHC" StockExchange="NAS" />
+    <Index Name="NASDAQ Industrial" ID="^IXID" StockExchange="NAS" />
+    <Index Name="NASDAQ Insurance" ID="^IXIS" StockExchange="NAS" />
+    <Index Name="NASDAQ Other Finance" ID="^IXFN" StockExchange="NAS" />
+    <Index Name="NASDAQ Telecommunications" ID="^IXUT" StockExchange="NAS" />
+    <Index Name="NASDAQ Transportation" ID="^IXTR" StockExchange="NAS" />
+    <Index Name="NASDAQ Volume in 000's" ID="^TV.O" StockExchange="NAS" />
+    <Index Name="NYSE Composite Index" ID="^NYA" StockExchange="NYQ" />
+    <Index Name="NYSE International 100" ID="^NYI" StockExchange="NYQ" />
+    <Index Name="NYSE US 100" ID="^NY" StockExchange="NYQ" />
+    <Index Name="NYSE TMT" ID="^NYY" StockExchange="NYQ" />
+    <Index Name="NYSE World Leaders" ID="^NYL" StockExchange="NYQ" />
+    <Index Name="NYSE Financial" ID="^NYK" StockExchange="NYQ" />
+    <Index Name="NYSE Health Care" ID="^NYP" StockExchange="NYQ" />
+    <Index Name="NYSE Energy" ID="^NYE" StockExchange="NYQ" />
+    <Index Name="NYSE Volume in 000's" ID="^TV.N" StockExchange="NYQ" />
+    <Index Name="S&amp;P 100" ID="^OEX" StockExchange="CBO" />
+    <Index Name="S&amp;P 400 Midcap" ID="^MID" StockExchange="ASE" />
+    <Index Name="S&amp;P 500" ID="^GSPC" StockExchange="SPI" />
+    <Index Name="S&amp;P Composite 1500" ID="^SPSUPX" StockExchange="ASE" />
+    <Index Name="S&amp;P SmallCap 600" ID="^SML" StockExchange="CBO" />
+    <Index Name="Dow Jones Switzerland Titans 30" ID="^CH30D" StockExchange="DJI" />
+  </Indices>
+
+</WorldMarket>

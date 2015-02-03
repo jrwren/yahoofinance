@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema id="market"
-    targetNamespace="http://yahoofinance.codeplex.com/1/market.xsd"
+    targetNamespace="http://yahoofinance.codeplex.com/market.xsd"
     elementFormDefault="qualified"
-    xmlns="http://yahoofinance.codeplex.com/1/market.xsd"
+    xmlns="http://yahoofinance.codeplex.com/market.xsd"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
 >
 
@@ -53,13 +53,6 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="DelayMinutes">
-    <xs:restriction base="xs:int">
-      <xs:minInclusive value="0"/>
-      <xs:maxInclusive value="1440"/>
-    </xs:restriction>
-  </xs:simpleType>
-
   <xs:simpleType name="Day">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Mo"></xs:enumeration>
@@ -72,12 +65,6 @@
     </xs:restriction>
   </xs:simpleType>
 
-  
-  
-  
-  
-  
-  
   <xs:element name="WorldMarket">
     <xs:complexType>
       <xs:sequence>
@@ -141,44 +128,21 @@
               <xs:element name="StockExchange" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:sequence>
-                    
-                    <xs:element name="TradingTime">
-                      <xs:complexType>
-                        <xs:sequence>
-                          
-                          <xs:element name="TradingDays" minOccurs="0" maxOccurs="1" default="Mo Tu We Th Fr">
-                            <xs:simpleType>
-                              <xs:list itemType="Day">
-                              </xs:list>
-                            </xs:simpleType>
-                          </xs:element>
-                          
-                          <xs:element name="NonTradingDays" minOccurs="0" maxOccurs="1">
-                            <xs:complexType>
-                              <xs:sequence>
-                                <xs:element name="NonTradingDay" minOccurs="0" maxOccurs="unbounded">
-                                  <xs:complexType>
-                                    <xs:attribute name="Date" type="xs:date" use="required"></xs:attribute>
-                                  </xs:complexType>
-                                </xs:element>
-                              </xs:sequence>
-                            </xs:complexType>
-                          </xs:element>
-                          
-                        </xs:sequence>
-                        <xs:attribute name="OpeningTimeLocal" type="xs:time" use="required"></xs:attribute>
-                        <xs:attribute name="ClosingTimeLocal" type="xs:time" use="required"></xs:attribute>
-                        <xs:attribute name="DelayMinutes" type="DelayMinutes" use="required"></xs:attribute>
-                        <xs:attribute name="TimeZone" type="xs:string" use="required"></xs:attribute>
-                      </xs:complexType>
+                    <xs:element name="TradingDays" minOccurs="0" maxOccurs="1">
+                      <xs:simpleType>
+                        <xs:list itemType="Day">
+                        </xs:list>
+                      </xs:simpleType>
                     </xs:element>
-                    
                   </xs:sequence>
                   <xs:attribute name="ID" type="StockExchangeID" use="required"></xs:attribute>
                   <xs:attribute name="Country" type="CountryID" use="required"></xs:attribute>
+                  <xs:attribute name="OpeningTimeLocal" type="xs:time" use="required"></xs:attribute>
+                  <xs:attribute name="ClosingTimeLocal" type="xs:time" use="required"></xs:attribute>
                   <xs:attribute name="Suffix" type="Suffix" default="" use="optional"></xs:attribute>
                   <xs:attribute name="Name" type="xs:string" use="required"></xs:attribute>
-                  <xs:attribute name="Location" type="xs:string" default="" use="optional"></xs:attribute>
+                  <xs:attribute name="LocationName" type="xs:string" use="optional"></xs:attribute>
+                  <xs:attribute name="TimeZoneString" type="xs:string" use="required"></xs:attribute>
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
@@ -199,34 +163,7 @@
           </xs:complexType>
         </xs:element>
 
-        <xs:element name="FundCategories">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Category" minOccurs="0" maxOccurs="unbounded">
-                <xs:complexType>
-                  <xs:attribute name="ID" type="xs:string" use="required"></xs:attribute>
-                  <xs:attribute name="Name" type="xs:string" use="required"></xs:attribute>
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
 
-        <xs:element name="FundFamilies">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Family" minOccurs="0" maxOccurs="unbounded">
-                <xs:complexType>
-                  <xs:attribute name="ID" type="xs:string" use="required"></xs:attribute>
-                  <xs:attribute name="Name" type="xs:string" use="required"></xs:attribute>
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-
-
-        <xs:any minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
 
       </xs:sequence>
     </xs:complexType>

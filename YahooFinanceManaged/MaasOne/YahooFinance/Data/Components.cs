@@ -16,20 +16,22 @@
 // **  
 // **  
 // **************************************************************************************************
-#if (PORTABLE40 || PORTABLE45)
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace MaasOne.Net.Mail
+namespace MaasOne.YahooFinance.Data
 {
-    public class MailAddress
+
+    public class ComponentsItem : IQuotePrice
     {
-        public string Address { get; set; }
-        public string DisplayName { get; set; }
-        public MailAddress(string address) { this.Address = address; }
-        public MailAddress(string address, string displayName) : this(address) { this.DisplayName = displayName; }
+        public string ID { get; set; }
+        public string Name { get; set; }
+        public double? LastTradePriceOnly { get; set; }
+        public double? ChangeInPercent { get; set; }
+        public int? Volume { get; set; }
+
+        public ComponentsItem() { }
+
     }
+
 }
-#endif

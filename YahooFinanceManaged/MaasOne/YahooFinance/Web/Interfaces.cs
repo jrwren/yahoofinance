@@ -16,20 +16,36 @@
 // **  
 // **  
 // **************************************************************************************************
-#if (PORTABLE40 || PORTABLE45)
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace MaasOne.Net.Mail
+namespace MaasOne.YahooFinance.Web
 {
-    public class MailAddress
+
+    /// <summary>
+    /// Provides properties for a webservice query.
+    /// </summary>
+    public interface ITextSearchQuery
     {
-        public string Address { get; set; }
-        public string DisplayName { get; set; }
-        public MailAddress(string address) { this.Address = address; }
-        public MailAddress(string address, string displayName) : this(address) { this.DisplayName = displayName; }
+        /// <summary>
+        /// The query text.
+        /// </summary>
+        string LookupText { get; set; }
     }
+
+
+    /// <summary>
+    /// Provides properties to set the start index and count number for a query in results queue.
+    /// </summary>
+    public interface IResultIndexSettings
+    {
+        /// <summary>
+        /// The results queue start index.
+        /// </summary>
+        int Index { get; set; }
+        /// <summary>
+        /// The total number of results.
+        /// </summary>
+        int Count { get; set; }
+    }
+
 }
-#endif

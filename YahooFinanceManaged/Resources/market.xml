@@ -779,55 +779,175 @@
     <Category ID="2;" Name="Any Hybrid Funds" />
     <Category ID="3;" Name="Any Int'l Stock Funds" />
     <Category ID="4;" Name="Any Bond Funds" />
-    <Category ID="HY" Name="Bond - High Yield" />
-    <Category ID="CI" Name="Bond - Interm-Term" />
-    <Category ID="CL" Name="Bond - Long-Term" />
-    <Category ID="MU" Name="Bond - Multisector" />
-    <Category ID="CS" Name="Bond - Short-Term" />
+    <Category ID="AL" Name="Aggressive Allocation" />
+    <Category ID="BL" Name="Bank Loan" />
+    <Category ID="BM" Name="Bear Market" />
+    <Category ID="CH" Name="China Region" />
+    <Category ID="AA" Name="Commodities Agriculture" />
+    <Category ID="BB" Name="Commodities Broad Basket" />
+    <Category ID="CE" Name="Commodities Energy" />
+    <Category ID="IM" Name="Commodities Industrial Metals" />
+    <Category ID="CM" Name="Commodities Miscellaneous" />
+    <Category ID="CP" Name="Commodities Precious Metals" />
+    <Category ID="SC" Name="Communications" />
+    <Category ID="CA" Name="Conservative Allocation" />
+    <Category ID="CD" Name="Consumer Cyclical" />
+    <Category ID="CC" Name="Consumer Defensive" />
     <Category ID="CV" Name="Convertibles" />
-    <Category ID="DH" Name="Domestic Hybrid" />
-    <Category ID="GI" Name="Government - Intermediate" />
-    <Category ID="GL" Name="Government - Long" />
-    <Category ID="GS" Name="Government - Short" />
-    <Category ID="IB" Name="Int'l - Bond" />
-    <Category ID="EM" Name="Int'l - Divers. Emerging Mkts" />
-    <Category ID="DP" Name="Int'l - Diversified Pacific Stock" />
-    <Category ID="EB" Name="Int'l - Emerging Mkts Bond" />
-    <Category ID="ES" Name="Int'l - Europe Stock" />
-    <Category ID="FS" Name="Int'l - Foreign Stock" />
-    <Category ID="IH" Name="Int'l - Hybrid" />
-    <Category ID="JS" Name="Int'l - Japan Stock" />
-    <Category ID="LS" Name="Int'l - Latin America Stock" />
-    <Category ID="PJ" Name="Int'l - Pacific ex-Japan Stock" />
-    <Category ID="WS" Name="Int'l - World Stock" />
+    <Category ID="TW" Name="Corporate Bond" />
+    <Category ID="EM" Name="Diversified Emerging Mkts" />
+    <Category ID="DP" Name="Diversified Pacific/Asia" />
+    <Category ID="EB" Name="Emerging Markets Bond" />
+    <Category ID="LP" Name="Energy Limited Partnership" />
+    <Category ID="EE" Name="Equity Energy" />
+    <Category ID="SP" Name="Equity Precious Metals" />
+    <Category ID="ES" Name="Europe Stock" />
+    <Category ID="SF" Name="Financial" />
+    <Category ID="FB" Name="Foreign Large Blend" />
+    <Category ID="FG" Name="Foreign Large Growth" />
+    <Category ID="FV" Name="Foreign Large Value" />
+    <Category ID="FQ" Name="Foreign Small/Mid Blend" />
+    <Category ID="FR" Name="Foreign Small/Mid Growth" />
+    <Category ID="FA" Name="Foreign Small/Mid Value" />
+    <Category ID="GR" Name="Global Real Estate" />
+    <Category ID="SH" Name="Health" />
+    <Category ID="HY" Name="High Yield Bond" />
+    <Category ID="HM" Name="High Yield Muni" />
+    <Category ID="EI" Name="India Equity" />
+    <Category ID="ID" Name="Industrials" />
+    <Category ID="IP" Name="Inflation-Protected Bond" />
+    <Category ID="GI" Name="Intermediate Government" />
+    <Category ID="CI" Name="Intermediate-Term Bond" />
+    <Category ID="JS" Name="Japan Stock" />
     <Category ID="LB" Name="Large Blend" />
     <Category ID="LG" Name="Large Growth" />
     <Category ID="LV" Name="Large Value" />
+    <Category ID="LS" Name="Latin America Stock" />
+    <Category ID="GL" Name="Long Government" />
+    <Category ID="CL" Name="Long-Term Bond" />
+    <Category ID="LO" Name="Long/Short Equity" />
+    <Category ID="13" Name="Managed Futures" />
+    <Category ID="NE" Name="Market Neutral" />
     <Category ID="MB" Name="Mid-Cap Blend" />
     <Category ID="MG" Name="Mid-Cap Growth" />
     <Category ID="MV" Name="Mid-Cap Value" />
-    <Category ID="MF" Name="Muni - California Interm" />
-    <Category ID="MC" Name="Muni - California Long" />
-    <Category ID="MI" Name="Muni - National Interm" />
-    <Category ID="ML" Name="Muni - National Long" />
-    <Category ID="MN" Name="Muni - New York Interm" />
-    <Category ID="MY" Name="Muni - New York Long" />
-    <Category ID="MS" Name="Muni - Short" />
-    <Category ID="SI" Name="Muni - Single State Interm" />
-    <Category ID="SL" Name="Muni - Single State Long" />
+    <Category ID="MQ" Name="Miscellaneous Region" />
+    <Category ID="MR" Name="Miscellaneous Sector" />
+    <Category ID="MA" Name="Moderate Allocation" />
+    <Category ID="GY" Name="Multialternative" />
+    <Category ID="CR" Name="Multicurrency" />
+    <Category ID="MF" Name="Muni California Intermediate" />
+    <Category ID="MC" Name="Muni California Long" />
+    <Category ID="MI" Name="Muni National Interm" />
+    <Category ID="ML" Name="Muni National Long" />
+    <Category ID="MS" Name="Muni National Short" />
+    <Category ID="MN" Name="Muni New York Intermediate" />
+    <Category ID="MY" Name="Muni New York Long" />
+    <Category ID="SN" Name="Natural Resources" />
+    <Category ID="NT" Name="Nontraditional Bond" />
+    <Category ID="PJ" Name="Pacific/Asia ex-Japan Stk" />
+    <Category ID="RR" Name="Preferred Stock" />
+    <Category ID="SR" Name="Real Estate" />
+    <Category ID="RI" Name="Retirement Income" />
+    <Category ID="GS" Name="Short Government" />
+    <Category ID="CS" Name="Short-Term Bond" />
+    <Category ID="FX" Name="Single Currency" />
     <Category ID="SB" Name="Small Blend" />
     <Category ID="SG" Name="Small Growth" />
     <Category ID="SV" Name="Small Value" />
-    <Category ID="SC" Name="Specialty - Communications" />
-    <Category ID="SF" Name="Specialty - Financial" />
-    <Category ID="SH" Name="Specialty - Health" />
-    <Category ID="SN" Name="Specialty - Natural Resources" />
-    <Category ID="SP" Name="Specialty - Precious Metals" />
-    <Category ID="SR" Name="Specialty - Real Estate" />
-    <Category ID="ST" Name="Specialty - Technology" />
-    <Category ID="SU" Name="Specialty - Utilities" />
+    <Category ID="TV" Name="Tactical Allocation" />
+    <Category ID="TE" Name="Target Date 2016-2020" />
+    <Category ID="TH" Name="Target Date 2026-2030" />
+    <Category ID="TJ" Name="Target Date 2036-2040" />
+    <Category ID="ST" Name="Technology" />
+    <Category ID="IC" Name="Trading-Inverse Commodities" />
+    <Category ID="ND" Name="Trading-Inverse Debt" />
+    <Category ID="IE" Name="Trading-Inverse Equity" />
+    <Category ID="LC" Name="Trading-Leveraged Commodities" />
+    <Category ID="VD" Name="Trading-Leveraged Debt" />
+    <Category ID="LE" Name="Trading-Leveraged Equity" />
+    <Category ID="IS" Name="Trading-Miscellaneous" />
     <Category ID="UB" Name="Ultrashort Bond" />
+    <Category ID="SU" Name="Utilities" />
+    <Category ID="VO" Name="Volatility" />
+    <Category ID="IH" Name="World Allocation" />
+    <Category ID="IB" Name="World Bond" />
+    <Category ID="WS" Name="World Stock" />
   </FundCategories>
+  <FundFamilies>
+    <Family ID="0C00004HZR" Name="AdvisorShares" />
+    <Family ID="0C00009AH4" Name="AlphaClone" />
+    <Family ID="0C00001Z4B" Name="ALPS" />
+    <Family ID="0C00001HTG" Name="ALPS ETF" />
+    <Family ID="0C0000ACJZ" Name="ARK ETF Trust" />
+    <Family ID="0C00009C7Q" Name="ArrowShares" />
+    <Family ID="0C00001YX8" Name="Barclays" />
+    <Family ID="0C00009CP3" Name="Barclays Funds" />
+    <Family ID="0C00001YQ6" Name="Calamos" />
+    <Family ID="0C00009CXM" Name="CAMBRIA ETF TRUST" />
+    <Family ID="0C000034E5" Name="Citigroup" />
+    <Family ID="0C00001YQG" Name="Columbia" />
+    <Family ID="0C0000ACK5" Name="Compass EMP Funds" />
+    <Family ID="0C00001MK8" Name="Credit Suisse AG" />
+    <Family ID="0C000033F6" Name="Deutsche Bank" />
+    <Family ID="0C00001IA5" Name="Direxion Funds" />
+    <Family ID="0C0000A46X" Name="ELEMENTS" />
+    <Family ID="0C00001FYB" Name="Emerging Global Advisors" />
+    <Family ID="0C00009ECR" Name="ETF Series Trust" />
+    <Family ID="0C00004BRO" Name="ETFS Palladium Trust" />
+    <Family ID="0C00004BRP" Name="ETFS Platinum Trust" />
+    <Family ID="0C00004HWH" Name="ETFS Precious Metals Basket Trust" />
+    <Family ID="0C00003GM2" Name="ETFS Silver Trust" />
+    <Family ID="0C0000A4AJ" Name="ETFS Swiss Gold Trust" />
+    <Family ID="0C00008G0K" Name="ETFS White Metals Basket Trust" />
+    <Family ID="0C000093CM" Name="Exchange Traded Concepts Trust" />
+    <Family ID="0C00008WAC" Name="Exchange Traded Concepts, LLC" />
+    <Family ID="0C00001YR0" Name="Fidelity Investments" />
+    <Family ID="0C00001ZPA" Name="First Trust" />
+    <Family ID="0C0000927U" Name="Flexshares Trust" />
+    <Family ID="0C00004AKN" Name="Franklin Templeton Investments" />
+    <Family ID="0C000021O8" Name="Global X Funds" />
+    <Family ID="0C00001YRF" Name="Goldman Sachs" />
+    <Family ID="0C00004AKU" Name="GreenHaven" />
+    <Family ID="0C00001AHV" Name="Guggenheim Investments" />
+    <Family ID="0C00001Z16" Name="Highland Funds" />
+    <Family ID="0C00009CJJ" Name="Horizons ETFs" />
+    <Family ID="0C00008FNF" Name="Huntington Strategy Shares" />
+    <Family ID="0C00001Z51" Name="IndexIQ" />
+    <Family ID="0C0000AQYQ" Name="InfraCap" />
+    <Family ID="0C00004AL1" Name="iShares" />
+    <Family ID="0C00001YRR" Name="JPMorgan" />
+    <Family ID="0C0000A6KM" Name="KraneShares" />
+    <Family ID="0C00009FDU" Name="LocalShares" />
+    <Family ID="0C0000A46S" Name="Market Vectors" />
+    <Family ID="0C0000AT20" Name="Master Shares" />
+    <Family ID="0C00001Z21" Name="Merk Funds" />
+    <Family ID="0C00001YSY" Name="Pax World" />
+    <Family ID="0C00004ALK" Name="PIMCO" />
+    <Family ID="0C000023YB" Name="PowerShares" />
+    <Family ID="0C0000AADD" Name="PowerShares DB" />
+    <Family ID="0C00008VNC" Name="Precidian Funds LLC" />
+    <Family ID="0C00003IHW" Name="ProShares" />
+    <Family ID="0C0000AQYW" Name="Pure Funds" />
+    <Family ID="0C00009EYM" Name="QuantShares" />
+    <Family ID="0C0000AIVP" Name="Reality Shares ETF Trust" />
+    <Family ID="0C0000A4OF" Name="Renaissance Capital" />
+    <Family ID="0C00002Z67" Name="RevenueShares" />
+    <Family ID="0C000008UN" Name="Royal Bank Of Canada" />
+    <Family ID="0C000051AE" Name="Royal Bank of Scotland NV" />
+    <Family ID="0C00001YWW" Name="Russell" />
+    <Family ID="0C000033BK" Name="Russell Investments" />
+    <Family ID="0C00009UPE" Name="Schwab ETFs" />
+    <Family ID="0C00009TSS" Name="SPDR State Street Global Advisors" />
+    <Family ID="0C0000556M" Name="Teucrium" />
+    <Family ID="0C00000CSM" Name="UBS Group AG" />
+    <Family ID="0C00001SIM" Name="United States Commodity Funds LLC" />
+    <Family ID="0C0000AR8Q" Name="valueshares" />
+    <Family ID="0C00001YUF" Name="Vanguard" />
+    <Family ID="0C00009VXD" Name="Vident Financial" />
+    <Family ID="0C000091ZR" Name="WBI Investments" />
+    <Family ID="0C00004AM7" Name="WisdomTree" />
+  </FundFamilies>
 </WorldMarket>
 
 

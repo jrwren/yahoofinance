@@ -16,20 +16,22 @@
 // **  
 // **  
 // **************************************************************************************************
-#if (PORTABLE40 || PORTABLE45)
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace MaasOne.Net.Mail
+
+namespace MaasOne.Net
 {
-    public class MailAddress
+
+    public abstract class Query<T> : IQuery where T : class
     {
-        public string Address { get; set; }
-        public string DisplayName { get; set; }
-        public MailAddress(string address) { this.Address = address; }
-        public MailAddress(string address, string displayName) : this(address) { this.DisplayName = displayName; }
+        protected abstract void ValidateQuery(ValidationResult result);
+        protected abstract Uri CreateUrl();
+        protected abstract T ConvertResult(System.IO.Stream stream);
+        public abstract Query<T> Clone();
+        internal void ValidateQueryInternal(ValidationResult result) { this.ValidateQuery(result); }
+        internal Uri GetUrlInternal() { return this.CreateUrl(); }
+        internal T ConvertResultInternal(System.IO.Stream stream) { return this.ConvertResult(stream); }
+        IQuery IQuery.GetCloneDeep() { return this.Clone(); }
     }
+
 }
-#endif

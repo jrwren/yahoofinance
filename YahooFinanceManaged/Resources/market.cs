@@ -48,6 +48,8 @@ namespace MaasOne.Resources
 
         private WorldMarketCategory[] fundCategoriesField;
 
+        private WorldMarketFamily[] fundFamiliesField;
+
 #if (PORTABLE40 || PORTABLE45)
         private System.Xml.Linq.XElement[] anyField;
 #else
@@ -149,6 +151,20 @@ namespace MaasOne.Resources
             set
             {
                 this.fundCategoriesField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute("FundFamilies", IsNullable = false)]
+        public WorldMarketFamily[] FundFamilies
+        {
+            get
+            {
+                return this.fundFamiliesField;
+            }
+            set
+            {
+                this.fundFamiliesField = value;
             }
         }
 
@@ -652,6 +668,46 @@ namespace MaasOne.Resources
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://yahoofinance.codeplex.com/1/market.xsd")]
     public partial class WorldMarketCategory
+    {
+
+        private string idField;
+
+        private string nameField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ID
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.0.30319.33440")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://yahoofinance.codeplex.com/1/market.xsd")]
+    public partial class WorldMarketFamily
     {
 
         private string idField;

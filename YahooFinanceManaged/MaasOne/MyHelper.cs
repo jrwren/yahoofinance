@@ -18,7 +18,7 @@
 // **************************************************************************************************
 using System;
 using System.IO;
-using System.Net;
+using MaasOne.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
@@ -81,127 +81,6 @@ namespace MaasOne
             return copy;
         }
 
-
-        public static string CharEnumToString(IEnumerable<char> arr)
-        {
-            string s = string.Empty;
-            if (arr != null)
-            {
-                foreach (char c in arr)
-                {
-                    s += c;
-                }
-            }
-            return s;
-        }
-        public static T GetEnumItemAt<T>(IEnumerable<T> values, int index)
-        {
-            int cnt = 0;
-            foreach (T itm in values)
-            {
-                if (cnt == index) return itm;
-                cnt++;
-            }
-            return default(T);
-        }
-
-        public static object StringToObject(string str, System.Globalization.CultureInfo ci)
-        {
-            if (str == null) return null;
-            string value = str.Replace("%", "").Replace("\"", "").Replace("<b>", "").Replace("</b>", "").Replace("N/A", "").Trim();
-            if (value != string.Empty)
-            {
-                double dbl;
-                if (value.EndsWith("M") || value.EndsWith("B") || value.EndsWith("K"))
-                {
-                    string val2 = value.Substring(0, value.Length - 1);
-                    if (double.TryParse(val2, System.Globalization.NumberStyles.Any, ci, out dbl))
-                    {
-                        return Finance.Yahoo.YFHelper.GetMillionValue(value);
-                    }
-                }
-
-                if (value == "-") { return string.Empty; }
-
-                if (value.Contains(" - "))
-                {
-                    String[] values = value.Split(new string[] { " - " }, StringSplitOptions.RemoveEmptyEntries);
-                    List<object> results = new List<object>();
-                    foreach (String v in values)
-                    {
-                        results.Add(StringToObject(v, ci));
-                    }
-                    if (results.Count == 0) { return string.Empty; }
-                    else if (results.Count == 0) { return results[0]; }
-                    else { return results.ToArray(); }
-                }
-
-                if (value.Contains(ci.NumberFormat.NumberDecimalSeparator) && double.TryParse(value, System.Globalization.NumberStyles.Any, ci, out dbl))
-                {
-                    return dbl;
-                }
-                else
-                {
-                    int lng = 0;
-                    if (int.TryParse(value, NumberStyles.Any, ci, out lng))
-                    {
-                        return lng;
-                    }
-                    else
-                    {
-                        System.DateTime dte;
-                        if (value.IndexOf(':') != value.LastIndexOf(':') && System.DateTime.TryParse(value, ci, System.Globalization.DateTimeStyles.AdjustToUniversal, out dte))
-                        {
-                            return dte;
-                        }
-                        else
-                        {
-                            return str;
-                        }
-                    }
-                }
-
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-        public static string ObjectToString(object value, System.Globalization.CultureInfo ci)
-        {
-            if (value != null)
-            {
-                if (value is double)
-                {
-                    return Convert.ToDouble(value).ToString(ci);
-                }
-                else if (value is System.DateTime)
-                {
-                    return Convert.ToDateTime(value).ToString(ci);
-                }
-                else if (value is object[])
-                {
-                    object[] values = (object[])value;
-                    System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                    foreach (object obj in values)
-                    {
-                        sb.Append(ObjectToString(obj, ci));
-                        if (!object.ReferenceEquals(obj, values[values.Length - 1]))
-                            sb.Append(" - ");
-                    }
-                    return sb.ToString();
-                }
-                else
-                {
-                    return value.ToString();
-                }
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
         public static string[][] CsvTextToStringTable(string csv, char delimiter)
         {
             string[] rows = csv.Split(new String[] { "\n", "\r" }, StringSplitOptions.RemoveEmptyEntries);
@@ -213,7 +92,6 @@ namespace MaasOne
             }
             return lst.ToArray();
         }
-
         public static string[] CsvRowToStringArray(string row, char delimiter, bool withQuoteMarks = true)
         {
             if (withQuoteMarks)
@@ -278,74 +156,17 @@ namespace MaasOne
             }
         }
 
-        public static double ParseToDouble(string s)
+        public static string GetRestTagValue(string url, string tag)
         {
-            double v = 0;
-            double.TryParse(s, System.Globalization.NumberStyles.Any, MyHelper.ConverterCulture, out v);
-            return v;
-        }
-        public static DateTime ParseToDateTime(string s)
-        {
-            DateTime d = new DateTime();
-            DateTime.TryParse(s, MyHelper.ConverterCulture, System.Globalization.DateTimeStyles.AdjustToUniversal, out d);
-            return d;
-        }
-
-        private static char[] TrimChars = new char[] { ' ', ',', '\n', '\r', '\t' };
-        public static double? ParseDouble(string s, CultureInfo c = null)
-        {
-            if (c == null) c = MyHelper.ConverterCulture;
-            double tmp;
-            return double.TryParse(s.Trim(TrimChars), NumberStyles.Any, c, out tmp) ? tmp : new double?();
-        }
-        public static int? ParseInt(string s, CultureInfo c = null)
-        {
-            if (c == null) c= MyHelper.ConverterCulture;
-            int tmp;
-            return int.TryParse(s.Trim(TrimChars), NumberStyles.Any, c, out tmp) ? tmp : new int?();
-        }
-
-        public static JObject HtmlInnerTable(JObject table)
-        {
-            if (table["tr"] is JObject && table["tr"]["td"] is JObject && table["tr"]["td"]["table"] is JObject)
+            url = Uri.UnescapeDataString(url);
+            if (!url.IsNullOrWhiteSpace())
             {
-                table = (JObject)table["tr"]["td"]["table"];
-            }
-            return table;
-        }
-
-        private static string[] ContentTags = new string[] { "content", "p", "a", "span", "b", "strong", "small", "font", "div" };
-
-
-        public static string HtmlFirstContent(JToken t, bool includeDiv = false)
-        {
-            if (t != null)
-            {
-                if (t is JValue) return t.ToString().Trim(new char[] { ',', ' ', '\n', '\r', '\t' });
-                foreach (JProperty p in t.Children<JProperty>())
+                var i = url.LastIndexOf(tag + "=");
+                if (i > -1)
                 {
-                    if ((includeDiv || p.Name != "div") && ContentTags.EnumContains(p.Name))
-                    {
-                        var result = HtmlFirstContent(p.Value, includeDiv);
-                        if (result != null) return result;
-                    }
+                    var iNext = url.LastIndexOf("&");
+                    return url.Substring(0, iNext > -1 ? iNext : url.Length).Substring(i + tag.Length + 2);
                 }
-            }
-            return null;
-        }
-        public static string HtmlFirstLink(JToken t, bool includeDiv = false)
-        {
-            if (t.HasValues)
-            {
-                if (t["href"] != null) { return t["href"].ToString(); }
-                if (t["a"] != null) { return HtmlFirstLink(t["a"], includeDiv); }
-                if (t["p"] != null) { return HtmlFirstLink(t["p"], includeDiv); }
-                if (t["span"] != null) { return HtmlFirstLink(t["span"], includeDiv); }
-                if (t["b"] != null) { return HtmlFirstLink(t["b"], includeDiv); }
-                if (t["small"] != null) { return HtmlFirstLink(t["small"], includeDiv); }
-                if (t["strong"] != null) { return HtmlFirstLink(t["strong"], includeDiv); }
-                if (t["font"] != null) { return HtmlFirstLink(t["font"], includeDiv); }
-                if (includeDiv && t["div"] != null) { return HtmlFirstLink(t["div"], includeDiv); }
             }
             return null;
         }

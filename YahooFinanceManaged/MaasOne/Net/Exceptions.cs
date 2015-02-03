@@ -16,20 +16,18 @@
 // **  
 // **  
 // **************************************************************************************************
-#if (PORTABLE40 || PORTABLE45)
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace MaasOne.Net.Mail
+namespace MaasOne.Net
 {
-    public class MailAddress
+
+    public class ParseException : Exception
     {
-        public string Address { get; set; }
-        public string DisplayName { get; set; }
-        public MailAddress(string address) { this.Address = address; }
-        public MailAddress(string address, string displayName) : this(address) { this.DisplayName = displayName; }
+        public ParseException(string message) : base(message) { }
+        public ParseException(Exception innerException) : base(innerException is ParseException ? innerException.Message : "An Exception was thrown during result conversion process. See InnerException for more details.", innerException is ParseException ? innerException.InnerException : innerException) { }
+        public ParseException(string message, Exception innerException) : base(innerException is ParseException ? innerException.Message : message, innerException is ParseException ? innerException.InnerException : innerException) { }
+
     }
+
 }
-#endif
