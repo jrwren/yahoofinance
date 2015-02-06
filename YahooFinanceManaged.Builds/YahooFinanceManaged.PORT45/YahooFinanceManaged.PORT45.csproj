@@ -200,6 +200,9 @@
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\CompanyCompetitors.cs">
       <Link>MaasOne\YahooFinance\Web\CompanyCompetitors.cs</Link>
     </Compile>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\CompanyComponents.cs">
+      <Link>MaasOne\YahooFinance\Web\CompanyComponents.cs</Link>
+    </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\CompanyEvents.cs">
       <Link>MaasOne\YahooFinance\Web\CompanyEvents.cs</Link>
     </Compile>
@@ -208,9 +211,6 @@
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\CompanyProfile.cs">
       <Link>MaasOne\YahooFinance\Web\CompanyProfile.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\Components.cs">
-      <Link>MaasOne\YahooFinance\Web\Components.cs</Link>
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\Enums.cs">
       <Link>MaasOne\YahooFinance\Web\Enums.cs</Link>
@@ -221,11 +221,17 @@
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\FundScreener.cs">
       <Link>MaasOne\YahooFinance\Web\FundScreener.cs</Link>
     </Compile>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\HistoricalQuotes.cs">
+      <Link>MaasOne\YahooFinance\Web\HistoricalQuotes.cs</Link>
+    </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\IDSearch.cs">
       <Link>MaasOne\YahooFinance\Web\IDSearch.cs</Link>
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\IDSearchInstant.cs">
       <Link>MaasOne\YahooFinance\Web\IDSearchInstant.cs</Link>
+    </Compile>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\IndexComponents.cs">
+      <Link>MaasOne\YahooFinance\Web\IndexComponents.cs</Link>
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\IndustryCompanies.cs">
       <Link>MaasOne\YahooFinance\Web\IndustryCompanies.cs</Link>
@@ -244,9 +250,6 @@
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\Quotes.cs">
       <Link>MaasOne\YahooFinance\Web\Quotes.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\QuotesHistorical.cs">
-      <Link>MaasOne\YahooFinance\Web\QuotesHistorical.cs</Link>
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\QuotesOptions.cs">
       <Link>MaasOne\YahooFinance\Web\QuotesOptions.cs</Link>
