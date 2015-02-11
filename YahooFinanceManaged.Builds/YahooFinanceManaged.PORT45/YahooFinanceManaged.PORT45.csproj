@@ -59,8 +59,8 @@
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\DownloadEventArgs.cs">
       <Link>MaasOne\Net\DownloadEventArgs.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\DownloadSession.cs">
-      <Link>MaasOne\Net\DownloadSession.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\DownloadOperation.cs">
+      <Link>MaasOne\Net\DownloadOperation.cs</Link>
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\Enums.cs">
       <Link>MaasOne\Net\Enums.cs</Link>
@@ -71,20 +71,26 @@
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\HtmlToJson.cs">
       <Link>MaasOne\Net\HtmlToJson.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\Interfaces.cs">
-      <Link>MaasOne\Net\Interfaces.cs</Link>
-    </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\Query.cs">
       <Link>MaasOne\Net\Query.cs</Link>
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\Response.cs">
       <Link>MaasOne\Net\Response.cs</Link>
     </Compile>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\Result.cs">
+      <Link>MaasOne\Net\Result.cs</Link>
+    </Compile>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\StreamResponse.cs">
+      <Link>MaasOne\Net\StreamResponse.cs</Link>
+    </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\StringQuery.cs">
       <Link>MaasOne\Net\StringQuery.cs</Link>
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\ValidationResult.cs">
       <Link>MaasOne\Net\ValidationResult.cs</Link>
+    </Compile>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\Net\Yql.cs">
+      <Link>MaasOne\Net\Yql.cs</Link>
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\Rss\Category.cs">
       <Link>MaasOne\Rss\Category.cs</Link>
@@ -197,17 +203,14 @@
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\Chart.cs">
       <Link>MaasOne\YahooFinance\Web\Chart.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\CompanyCompetitors.cs">
-      <Link>MaasOne\YahooFinance\Web\CompanyCompetitors.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\CompanyComponents.cs">
-      <Link>MaasOne\YahooFinance\Web\CompanyComponents.cs</Link>
-    </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\CompanyEvents.cs">
       <Link>MaasOne\YahooFinance\Web\CompanyEvents.cs</Link>
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\CompanyKeyStatistics.cs">
       <Link>MaasOne\YahooFinance\Web\CompanyKeyStatistics.cs</Link>
+    </Compile>
+    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\CompanyMemberships.cs">
+      <Link>MaasOne\YahooFinance\Web\CompanyMemberships.cs</Link>
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\CompanyProfile.cs">
       <Link>MaasOne\YahooFinance\Web\CompanyProfile.cs</Link>
@@ -262,9 +265,6 @@
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\StockScreener.cs">
       <Link>MaasOne\YahooFinance\Web\StockScreener.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\YQL.cs">
-      <Link>MaasOne\YahooFinance\Web\YQL.cs</Link>
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\WorldMarket.cs">
       <Link>MaasOne\YahooFinance\WorldMarket.cs</Link>
@@ -402,20 +402,17 @@
       <Link>Resources\market.cs</Link>
       <DependentUpon>market.xsd</DependentUpon>
     </Compile>
+    <Compile Include="..\..\YahooFinanceManaged\Resources\YQL.cs">
+      <Link>Resources\YQL.cs</Link>
+    </Compile>
     <Compile Include="..\..\YahooFinanceManaged\System\ComponentModel\Enums.cs">
       <Link>System\ComponentModel\Enums.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\System\Extensions.cs">
-      <Link>System\Extensions.cs</Link>
+    <Compile Include="..\..\YahooFinanceManaged\System\Extensions2.cs">
+      <Link>System\Extensions2.cs</Link>
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\System\TimeZoneInfo.cs">
       <Link>System\TimeZoneInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\System\Xml\Linq\XObject.cs">
-      <Link>System\Xml\Linq\XObject.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\System\Xml\XPath\Extensions.cs">
-      <Link>System\Xml\XPath\Extensions.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

@@ -18,7 +18,6 @@
 // **************************************************************************************************
 using System;
 using System.Collections.Generic;
-using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace MaasOne.Rss
@@ -29,7 +28,7 @@ namespace MaasOne.Rss
     /// </summary>
     /// <remarks></remarks>
     [XmlRootAttribute(ElementName = "rss")]
-    public class Feed
+    public class Feed : MaasOne.Net.ResultBase
     {
 
         [XmlElement(ElementName = "channel")]
