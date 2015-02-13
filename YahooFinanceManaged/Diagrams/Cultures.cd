@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MaasOne.YahooFinance.Culture" Collapsed="true">
+    <Position X="1" Y="1" Width="2.5" />
+    <Members>
+      <Method Name="Clone" Hidden="true" />
+      <Method Name="CloneStrict" Hidden="true" />
+      <Method Name="Culture" Hidden="true" />
+      <Field Name="mCountry" Hidden="true" />
+      <Field Name="mLanguage" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAEAIAAAAAAAAIAAAAAAAAQAAAAABA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Culture.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Language" />
+      <Property Name="Country" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Cultures">
+    <Position X="7.25" Y="1.25" Width="1.5" />
+    <Members>
+      <Method Name="Cultures" Hidden="true" />
+      <Field Name="mItems" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>gEAQICCRIQAMmAgBAQAAQEAoAgQmJQAAAyISCABAEME=</HashCode>
+      <FileName>MaasOne\YahooFinance\Culture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="MaasOne.YahooFinance.Country">
+    <Position X="4.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ogAAAMEhACGCkmgAgABEhAAAMLHIFgAAgABIAABAQMA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MaasOne.YahooFinance.Language">
+    <Position X="2" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACgBggCAIAAgAIAAgAIoAECwAARAkSABBwGYBQJCgE=</HashCode>
+      <FileName>MaasOne\YahooFinance\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

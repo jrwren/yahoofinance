@@ -60,7 +60,7 @@ namespace MaasOne.UnitTest
 
         private void Download(DownloadClientBase dl)
         {
-            ResponseBase response = ((IPreparedDownload)dl).Download();
+            IQueryResponse response = ((IQueryDownload)dl).Download();
 
             Assert.AreEqual(ConnectionState.Success, response.Connection.State);
 

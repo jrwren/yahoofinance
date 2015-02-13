@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MaasOne.YahooFinance.WorldMarket">
+    <Position X="11" Y="5.25" Width="3" />
+    <Members>
+      <Field Name="mCountries" Hidden="true" />
+      <Field Name="mCurrencies" Hidden="true" />
+      <Field Name="mFundCategories" Hidden="true" />
+      <Field Name="mFundFamilies" Hidden="true" />
+      <Field Name="mIndices" Hidden="true" />
+      <Field Name="mIndustries" Hidden="true" />
+      <Field Name="mSectors" Hidden="true" />
+      <Field Name="mStockExchanges" Hidden="true" />
+      <Method Name="WorldMarket" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AkAAACAAIAAIAgAQAAAAAIEoIAAEBAAAAAAAACAQIUY=</HashCode>
+      <FileName>MaasOne\YahooFinance\WorldMarket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.StockExchange">
+    <Position X="5.5" Y="8.25" Width="2.25" />
+    <Members>
+      <Method Name="StockExchange" Hidden="true" />
+      <Property Name="Tags" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAgEAEAAAAAAQAAAIAAEAAACAAAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\StockExchange.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TradingTime" />
+      <Property Name="Country" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Indices" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.TradingTimeInfo">
+    <Position X="1.5" Y="8.25" Width="2.25" />
+    <Members>
+      <Method Name="TradingTimeInfo" Hidden="true" />
+    </Members>
+    <AssociationLine Name="TimeZone" Type="System.TimeZoneInfo" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.5" Y="11.536" />
+        <Point X="3.5" Y="12.875" />
+        <Point X="2.5" Y="12.875" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAMAAAAgQgAABAAAAAAAAgAAACDAAAAAAEA=</HashCode>
+      <FileName>MaasOne\YahooFinance\TradingTimeInfo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TimeZone" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.CountryInfo">
+    <Position X="5.5" Y="4.5" Width="2.25" />
+    <Members>
+      <Method Name="CountryInfo" Hidden="true" />
+      <Method Name="Equals" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAEgAAAAAQACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\CountryInfo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Currency" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.CurrencyInfo">
+    <Position X="1.5" Y="4.5" Width="2.25" />
+    <Members>
+      <Method Name="CurrencyInfo" Hidden="true" />
+      <Method Name="Equals" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAEgAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\CurrencyInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.YID">
+    <Position X="11.5" Y="11.75" Width="2.25" />
+    <Members>
+      <Field Name="mID" Hidden="true" />
+      <Field Name="mIndustry" Hidden="true" />
+      <Field Name="mISIN" Hidden="true" />
+      <Field Name="mName" Hidden="true" />
+      <Field Name="mStockExchange" Hidden="true" />
+      <Field Name="mType" Hidden="true" />
+      <Method Name="OnPropertyChanged" Hidden="true" />
+      <Event Name="PropertyChanged" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+      <Method Name="YID" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAgEAAAAQAAgAEUIAAAABQAgAAAAAAgCSgAAACAAAQ=</HashCode>
+      <FileName>MaasOne\YahooFinance\YID.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="StockExchange" />
+      <Property Name="ISIN" />
+      <Property Name="Type" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaasOne.YahooFinance.ISIN">
+    <Position X="15.25" Y="11.75" Width="2.25" />
+    <Members>
+      <Method Name="CharToISINDigit" Hidden="true" />
+      <Method Name="ISIN" Hidden="true" />
+      <Field Name="mChars" Hidden="true" />
+      <Field Name="mCheckDigit" Hidden="true" />
+      <Method Name="ToSingleDigits" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Enum Name="MaasOne.YahooFinance.ISIN.ISINDigits" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MaasOne\YahooFinance\ISIN.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ACAAAQAAABAAIAAEAEAAIAAAAAAAAAAAAAAgAAACACA=</HashCode>
+      <FileName>MaasOne\YahooFinance\ISIN.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Industry">
+    <Position X="9.75" Y="1.5" Width="2.25" />
+    <Members>
+      <Method Name="Industry" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAEgAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Industry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Sector">
+    <Position X="12.75" Y="1.5" Width="2.25" />
+    <Members>
+      <Method Name="Sector" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAEgAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Industry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.FundCategory">
+    <Position X="17" Y="4.75" Width="2.25" />
+    <Members>
+      <Method Name="FundCategory" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAEgAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Fund.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.FundFamily">
+    <Position X="17" Y="7.25" Width="2.25" />
+    <Members>
+      <Method Name="FundFamily" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAgAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Fund.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.TimeZoneInfo">
+    <Position X="0.75" Y="12.5" Width="1.75" />
+    <Members>
+      <Property Name="BaseUtcOffset" Hidden="true" />
+      <Method Name="ClearCachedData" Hidden="true" />
+      <Method Name="ConvertTimeBySystemTimeZoneId" Hidden="true" />
+      <Method Name="ConvertTimeFromUtc" Hidden="true" />
+      <Method Name="ConvertTimeToUtc" Hidden="true" />
+      <Method Name="CreateCustomTimeZone" Hidden="true" />
+      <Property Name="DaylightName" Hidden="true" />
+      <Property Name="DisplayName" Hidden="true" />
+      <Method Name="Equals" Hidden="true" />
+      <Method Name="FindSystemTimeZoneById" Hidden="true" />
+      <Method Name="FromSerializedString" Hidden="true" />
+      <Method Name="GetAdjustmentRules" Hidden="true" />
+      <Method Name="GetAmbiguousTimeOffsets" Hidden="true" />
+      <Method Name="GetHashCode" Hidden="true" />
+      <Method Name="GetSystemTimeZones" Hidden="true" />
+      <Method Name="HasSameRules" Hidden="true" />
+      <Property Name="Id" Hidden="true" />
+      <Method Name="IsAmbiguousTime" Hidden="true" />
+      <Method Name="IsDaylightSavingTime" Hidden="true" />
+      <Method Name="IsInvalidTime" Hidden="true" />
+      <Property Name="Local" Hidden="true" />
+      <Property Name="StandardName" Hidden="true" />
+      <Property Name="SupportsDaylightSavingTime" Hidden="true" />
+      <Method Name="ToSerializedString" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+      <Property Name="Utc" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Class Name="System.TimeZoneInfo.AdjustmentRule" Collapsed="true">
+        <TypeIdentifier />
+        <Lollipop Position="0.2" />
+      </Class>
+      <Struct Name="System.TimeZoneInfo.TransitionTime" Collapsed="true">
+        <TypeIdentifier />
+        <Lollipop Position="0.2" />
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="MaasOne.YahooFinance.SecurityType">
+    <Position X="12" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAgAAAAAAAAAAAAAAAAAAAAAiAAAAAAAACMAAAEAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

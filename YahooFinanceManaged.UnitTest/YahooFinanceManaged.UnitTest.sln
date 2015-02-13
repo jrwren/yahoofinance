@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YahooFinanceManaged.UnitTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YahooFinanceManaged.NET45", "..\YahooFinanceManaged.Builds\YahooFinanceManaged.NET45\YahooFinanceManaged.NET45.csproj", "{F26DE47E-C936-405A-9C2A-9D23A8F1252B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagrams", "Diagrams", "{7A3EB969-AE7B-4C6C-9913-73F7AA95624D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

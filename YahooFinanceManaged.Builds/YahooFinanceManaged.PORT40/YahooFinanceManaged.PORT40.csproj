@@ -166,12 +166,6 @@
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Data\Screener.cs">
       <Link>MaasOne\YahooFinance\Data\Screener.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\DaylightSavingTime.cs">
-      <Link>MaasOne\YahooFinance\DaylightSavingTime.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\DefaultData.cs">
-      <Link>MaasOne\YahooFinance\DefaultData.cs</Link>
-    </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Enums.cs">
       <Link>MaasOne\YahooFinance\Enums.cs</Link>
     </Compile>
@@ -243,9 +237,6 @@
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\IndustryList.cs">
       <Link>MaasOne\YahooFinance\Web\IndustryList.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\Interfaces.cs">
-      <Link>MaasOne\YahooFinance\Web\Interfaces.cs</Link>
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\Pagination.cs">
       <Link>MaasOne\YahooFinance\Web\Pagination.cs</Link>

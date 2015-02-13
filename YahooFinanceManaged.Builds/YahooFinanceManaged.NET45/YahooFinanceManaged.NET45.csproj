@@ -169,12 +169,6 @@
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Data\Screener.cs">
       <Link>MaasOne\YahooFinance\Data\Screener.cs</Link>
     </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\DaylightSavingTime.cs">
-      <Link>MaasOne\YahooFinance\DaylightSavingTime.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\DefaultData.cs">
-      <Link>MaasOne\YahooFinance\DefaultData.cs</Link>
-    </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Enums.cs">
       <Link>MaasOne\YahooFinance\Enums.cs</Link>
     </Compile>
@@ -246,9 +240,6 @@
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\IndustryList.cs">
       <Link>MaasOne\YahooFinance\Web\IndustryList.cs</Link>
-    </Compile>
-    <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\Interfaces.cs">
-      <Link>MaasOne\YahooFinance\Web\Interfaces.cs</Link>
     </Compile>
     <Compile Include="..\..\YahooFinanceManaged\MaasOne\YahooFinance\Web\Pagination.cs">
       <Link>MaasOne\YahooFinance\Web\Pagination.cs</Link>
@@ -899,6 +890,21 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\YahooFinanceManaged\Diagrams\Cultures.cd">
+      <Link>Diagrams\Cultures.cd</Link>
+    </None>
+    <None Include="..\..\YahooFinanceManaged\Diagrams\DownloadProcess.cd">
+      <Link>Diagrams\DownloadProcess.cd</Link>
+    </None>
+    <None Include="..\..\YahooFinanceManaged\Diagrams\IID.cd">
+      <Link>Diagrams\IID.cd</Link>
+    </None>
+    <None Include="..\..\YahooFinanceManaged\Diagrams\Screener.cd">
+      <Link>Diagrams\Screener.cd</Link>
+    </None>
+    <None Include="..\..\YahooFinanceManaged\Diagrams\WorldMarket.cd">
+      <Link>Diagrams\WorldMarket.cd</Link>
+    </None>
     <None Include="..\..\YahooFinanceManaged\Resources\market.xsd">
       <Link>Resources\market.xsd</Link>
       <SubType>Designer</SubType>
