@@ -23,12 +23,12 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 #endregion
 
-#if !PORTABLE40
+#if !PCL40
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Xml;
-#if !(NET20 || PORTABLE40)
+#if !(NET20 || PCL40)
 using System.Xml.Linq;
 #endif
 using Newtonsoft.Json.Utilities;
@@ -41,7 +41,7 @@ using System.Linq;
 namespace Newtonsoft.Json.Converters
 {
     #region XmlNodeWrappers
-#if !NETFX_CORE && !PORTABLE && !PORTABLE40
+#if !NETFX_CORE && !PORTABLE && !PCL40
     internal class XmlDocumentWrapper : XmlNodeWrapper, IXmlDocument
     {
         private readonly XmlDocument _document;

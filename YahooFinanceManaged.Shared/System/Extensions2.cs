@@ -22,7 +22,7 @@ namespace System
     internal static class Extensions2
     {
 
-#if (PORTABLE40 || PORTABLE45)
+#if (PCL40 || PCL45)
 
 
         public static string ToLongTimeString(this DateTime d) { return d.ToString("T"); }

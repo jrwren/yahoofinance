@@ -25,7 +25,7 @@
 
 using System;
 using System.Collections.Generic;
-#if !(PORTABLE || PORTABLE40 || NET35 || NET20)
+#if !(PORTABLE || PCL40 || NET35 || NET20)
 using System.Numerics;
 #endif
 using System.Reflection;
@@ -43,7 +43,7 @@ using Newtonsoft.Json.Serialization;
 
 namespace Newtonsoft.Json.Utilities
 {
-#if (NETFX_CORE || PORTABLE || PORTABLE40)
+#if (NETFX_CORE || PORTABLE || PCL40)
     internal enum MemberTypes
     {
         Property = 0,
@@ -87,7 +87,7 @@ namespace Newtonsoft.Json.Utilities
 
         static ReflectionUtils()
         {
-#if !(NETFX_CORE || PORTABLE40 || PORTABLE)
+#if !(NETFX_CORE || PCL40 || PORTABLE)
             EmptyTypes = Type.EmptyTypes;
 #else
             EmptyTypes = new Type[0];
@@ -717,7 +717,7 @@ namespace Newtonsoft.Json.Utilities
                 return (attributeType != null) ? Attribute.GetCustomAttributes(m, attributeType, inherit) : Attribute.GetCustomAttributes(m, inherit);
             }
 
-#if !PORTABLE40
+#if !PCL40
             if (provider is Module)
             {
                 Module m = (Module)provider;
@@ -731,7 +731,7 @@ namespace Newtonsoft.Json.Utilities
                 return (attributeType != null) ? Attribute.GetCustomAttributes(p, attributeType, inherit) : Attribute.GetCustomAttributes(p, inherit);
             }
 
-#if !PORTABLE40
+#if !PCL40
             ICustomAttributeProvider customAttributeProvider = (ICustomAttributeProvider)attributeProvider;
             object[] result = (attributeType != null) ? customAttributeProvider.GetCustomAttributes(attributeType, inherit) : customAttributeProvider.GetCustomAttributes(inherit);
 
@@ -1008,7 +1008,7 @@ namespace Newtonsoft.Json.Utilities
                     return 0m;
                 case PrimitiveTypeCode.DateTime:
                     return new DateTime();
-#if !(PORTABLE || PORTABLE40 || NET35 || NET20)
+#if !(PORTABLE || PCL40 || NET35 || NET20)
                 case PrimitiveTypeCode.BigInteger:
                     return new BigInteger();
 #endif

@@ -132,7 +132,7 @@ namespace Newtonsoft.Json.Serialization
                     || ReflectionUtils.IsGenericDefinition(underlyingType, typeof(IList<>)))
                     CreatedType = typeof(List<>).MakeGenericType(CollectionItemType);
 
-#if !(NET20 || NET35 || PORTABLE40)
+#if !(NET20 || NET35 || PCL40)
                 if (ReflectionUtils.IsGenericDefinition(underlyingType, typeof(ISet<>)))
                     CreatedType = typeof(HashSet<>).MakeGenericType(CollectionItemType);
 #endif
@@ -141,7 +141,7 @@ namespace Newtonsoft.Json.Serialization
                 canDeserialize = true;
                 ShouldCreateWrapper = true;
             }
-#if !(NET40 || NET35 || NET20 || PORTABLE40)
+#if !(NET40 || NET35 || NET20 || PCL40)
             else if (ReflectionUtils.ImplementsGenericDefinition(underlyingType, typeof(IReadOnlyCollection<>), out tempCollectionType))
             {
                 CollectionItemType = tempCollectionType.GetGenericArguments()[0];
@@ -212,7 +212,7 @@ namespace Newtonsoft.Json.Serialization
             }
 #endif
 
-#if !(NET20 || NET35 || NET40 || PORTABLE40)
+#if !(NET20 || NET35 || NET40 || PCL40)
             Type immutableCreatedType;
             ObjectConstructor<object> immutableParameterizedCreator;
             if (ImmutableCollectionsUtils.TryBuildImmutableForArrayContract(underlyingType, CollectionItemType, out immutableCreatedType, out immutableParameterizedCreator))

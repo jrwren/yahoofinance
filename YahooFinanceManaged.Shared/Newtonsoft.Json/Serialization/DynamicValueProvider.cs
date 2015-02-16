@@ -23,7 +23,7 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 #endregion
 
-#if !(PORTABLE40 || PORTABLE || NETFX_CORE)
+#if !(PCL40 || PORTABLE || NETFX_CORE)
 using System;
 using System.Collections.Generic;
 #if NET20

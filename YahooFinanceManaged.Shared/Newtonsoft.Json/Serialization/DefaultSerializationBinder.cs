@@ -49,7 +49,7 @@ namespace Newtonsoft.Json.Serialization
             {
                 Assembly assembly;
 
-#if !(NETFX_CORE || PORTABLE40 || PORTABLE)
+#if !(NETFX_CORE || PCL40 || PORTABLE)
                 // look, I don't like using obsolete methods as much as you do but this is the only way
                 // Assembly.Load won't check the GAC for a partial name
 #pragma warning disable 618,612
@@ -61,7 +61,7 @@ namespace Newtonsoft.Json.Serialization
                 assembly = Assembly.Load(assemblyName);
 #endif
 
-#if !(PORTABLE40 || PORTABLE || NETFX_CORE)
+#if !(PCL40 || PORTABLE || NETFX_CORE)
                 if (assembly == null)
                 {
                     // will find assemblies loaded with Assembly.LoadFile outside of the main directory

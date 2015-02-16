@@ -1305,7 +1305,7 @@ namespace Newtonsoft.Json
                     }
                     else if (parseResult == ParseResult.Overflow)
                     {
-#if !(NET20 || NET35 || PORTABLE40 || PORTABLE)
+#if !(NET20 || NET35 || PCL40 || PORTABLE)
                         string number = _stringReference.ToString();
 
                         if (number.Length > MaximumJavascriptIntegerCharacterLength)
@@ -1349,7 +1349,7 @@ namespace Newtonsoft.Json
             SetToken(numberType, numberValue, false);
         }
 
-#if !(NET20 || NET35 || PORTABLE40 || PORTABLE)
+#if !(NET20 || NET35 || PCL40 || PORTABLE)
         // By using the BigInteger type in a separate method,
         // the runtime can execute the ParseNumber even if 
         // the System.Numerics.BigInteger.Parse method is
@@ -1619,7 +1619,7 @@ namespace Newtonsoft.Json
             base.Close();
 
             if (CloseInput && _reader != null)
-#if !(NETFX_CORE || PORTABLE40 || PORTABLE)
+#if !(NETFX_CORE || PCL40 || PORTABLE)
                 _reader.Close();
 #else
                 _reader.Dispose();

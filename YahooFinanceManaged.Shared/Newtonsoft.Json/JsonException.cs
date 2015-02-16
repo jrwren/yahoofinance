@@ -35,7 +35,7 @@ namespace Newtonsoft.Json
     /// <summary>
     /// The exception thrown when an error occurs during Json serialization or deserialization.
     /// </summary>
-#if !(NETFX_CORE || PORTABLE40 || PORTABLE)
+#if !(NETFX_CORE || PCL40 || PORTABLE)
     [Serializable]
 #endif
     internal class JsonException : Exception
@@ -68,7 +68,7 @@ namespace Newtonsoft.Json
         {
         }
 
-#if !(NETFX_CORE || PORTABLE40 || PORTABLE)
+#if !(NETFX_CORE || PCL40 || PORTABLE)
         /// <summary>
         /// Initializes a new instance of the <see cref="JsonException"/> class.
         /// </summary>

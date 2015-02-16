@@ -97,7 +97,7 @@ namespace Newtonsoft.Json.Utilities
 
         public static MemberTypes MemberType(this MemberInfo memberInfo)
         {
-#if !(NETFX_CORE || PORTABLE || PORTABLE40)
+#if !(NETFX_CORE || PORTABLE || PCL40)
             return memberInfo.MemberType;
 #else
             if (memberInfo is PropertyInfo)
@@ -194,7 +194,7 @@ namespace Newtonsoft.Json.Utilities
 #endif
         }
 
-#if PORTABLE40
+#if PCL40
         public static PropertyInfo GetProperty(this Type type, string name, BindingFlags bindingFlags, object placeholder1, Type propertyType, IList<Type> indexParameters, object placeholder2)
         {
             IList<PropertyInfo> propertyInfos = type.GetProperties(bindingFlags);

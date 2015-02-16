@@ -54,7 +54,7 @@ namespace Newtonsoft.Json.Bson
 
         public void Close()
         {
-#if !(NETFX_CORE || PORTABLE40 || PORTABLE)
+#if !(NETFX_CORE || PCL40 || PORTABLE)
             _writer.Close();
 #else
             _writer.Dispose();

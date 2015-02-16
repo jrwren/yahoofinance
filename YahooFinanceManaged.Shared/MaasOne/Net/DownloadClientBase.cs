@@ -15,7 +15,7 @@ namespace MaasOne.Net
         /// </summary>
         public DownloadOperationCollection ActiveOperations { get; private set; }
 
-#if !(PORTABLE40)
+#if !(PCL40)
         /// <summary>
         /// Gets or sets the network proxy to use to access this Internet resource.
         /// </summary>
@@ -42,7 +42,7 @@ namespace MaasOne.Net
 
         #region "Sync"
 
-#if !(PORTABLE40 || PORTABLE45)
+#if !(PCL40 || PCL45)
         /// <summary>
         /// Starts a data download and conversion operation.
         /// </summary>
@@ -112,18 +112,18 @@ namespace MaasOne.Net
                 this.AddDownload(wr, startTime, userArgs);
 
                 AsyncDownloadArgs asyncArgs = new AsyncDownloadArgs(wr, queries, userArgs, startTime);
-#if !(PORTABLE40 || PORTABLE45)
+#if !(PCL40 || PCL45)
                 asyncArgs.Timeout = this.Timeout;
 #endif
                 IAsyncResult res = wr.BeginGetResponse(new AsyncCallback(this.ResponseDownloadCompleted), asyncArgs);
-#if !(PORTABLE40 || PORTABLE45)
+#if !(PCL40 || PCL45)
                 System.Threading.ThreadPool.RegisterWaitForSingleObject(res.AsyncWaitHandle, new System.Threading.WaitOrTimerCallback(this.ResponseDownloadTimeout), asyncArgs, this.Timeout, true);
 #endif
             }
             catch (Exception ex)
             {
                 System.Net.WebException dlException = this.GetOrCreateWebException(ex);
-#if (PORTABLE40)
+#if (PCL40)
                 ConnectionInfo conn = new ConnectionInfo(dlException, 0, startTime, DateTime.UtcNow);
 #else
                 ConnectionInfo conn = new ConnectionInfo(dlException, this.Timeout, 0, startTime, DateTime.UtcNow);
@@ -144,14 +144,14 @@ namespace MaasOne.Net
             {
                 using (HttpWebResponse resp = (HttpWebResponse)asyncArgs.WR.EndGetResponse(result))
                 {
-#if !(PORTABLE40 || PORTABLE45)
+#if !(PCL40 || PCL45)
                     if (!asyncArgs.TimedOut)
                     {
 #endif
                         using (System.IO.Stream stream = resp.GetResponseStream())
                         {
                             res = MyHelper.CopyStream(stream);
-#if !(PORTABLE40 || PORTABLE45)
+#if !(PCL40 || PCL45)
                             resp.Close();
 #else
                             resp.Dispose();
@@ -159,7 +159,7 @@ namespace MaasOne.Net
                             endTime = DateTime.UtcNow;
                             if (res != null && res.CanSeek) int.TryParse(res.Length.ToString(), out size);
                         }
-#if !(PORTABLE40 || PORTABLE45)
+#if !(PCL40 || PCL45)
                     }
                     else
                     {
@@ -178,13 +178,13 @@ namespace MaasOne.Net
             this.RemoveDownload(asyncArgs.WR);
 
 
-#if (PORTABLE40)
+#if (PCL40)
             ConnectionInfo conn = new ConnectionInfo(dlException, size, asyncArgs.StartTime, endTime);
 #else
             ConnectionInfo conn = new ConnectionInfo(dlException, asyncArgs.Timeout, size, asyncArgs.StartTime, endTime);
 #endif
             StreamResponse strResp = new StreamResponse(conn, res);
-#if (PORTABLE40 || PORTABLE45)
+#if (PCL40 || PCL45)
             RaiseAsyncDownloadCompleted(strResp, asyncArgs.Queries, asyncArgs.UserArgs);
 #else
             System.ComponentModel.AsyncOperationManager.CreateOperation(this).Post(new System.Threading.SendOrPostCallback(delegate(object obj)
@@ -200,7 +200,7 @@ namespace MaasOne.Net
 #endif
         }
 
-#if !(PORTABLE40 || PORTABLE45)
+#if !(PCL40 || PCL45)
         private void ResponseDownloadTimeout(object state, bool timedOut)
         {
             if (timedOut)
@@ -218,7 +218,7 @@ namespace MaasOne.Net
             public DateTime StartTime { get; private set; }
             public HttpWebRequest WR { get; private set; }
             public QueryBase[] Queries { get; private set; }
-#if !(PORTABLE40)
+#if !(PCL40)
             public int Timeout { get; internal set; }
             public bool TimedOut { get; set; }
 #endif
@@ -237,7 +237,7 @@ namespace MaasOne.Net
 
         #region "TaskAsync"
 
-#if !(NET20 || PORTABLE40)
+#if !(NET20 || PCL40)
         /// <summary>
         /// Starts an async data download and conversion operation.
         /// </summary>
@@ -301,11 +301,11 @@ namespace MaasOne.Net
 
             HttpWebRequest wr = (HttpWebRequest)HttpWebRequest.Create(url);
             wr.Method = "GET";
-#if !(PORTABLE40 || PORTABLE45)
+#if !(PCL40 || PCL45)
             wr.Timeout = this.Timeout;
             wr.ReadWriteTimeout = this.Timeout;
 #endif
-#if !(PORTABLE40)
+#if !(PCL40)
             if (this.Proxy != null) wr.Proxy = this.Proxy;
 #endif
 

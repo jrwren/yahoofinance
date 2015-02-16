@@ -19,6 +19,7 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Reflection;
 
 namespace MaasOne.Net
 {
@@ -54,7 +55,7 @@ namespace MaasOne.Net
 
 
 
-#if !(PORTABLE40 || PORTABLE45)
+#if !(PCL40 || PCL45)
         public YqlResponse<T> Download() { return this.Download(this.DefaultQueries); }
 
         public YqlResponse<T> Download(YqlQuery<T> query) { return this.Download(new YqlQuery<T>[] { query }); }
@@ -131,7 +132,7 @@ namespace MaasOne.Net
 
 
 
-#if !(NET20 || PORTABLE40)
+#if !(NET20 || PCL40)
         public async System.Threading.Tasks.Task<YqlResponse<T>> DownloadTaskAsync() { return await this.DownloadTaskAsync(this.DefaultQueries); }
 
         public async System.Threading.Tasks.Task<YqlResponse<T>> DownloadTaskAsync(YqlQuery<T> query) { return await this.DownloadTaskAsync(new YqlQuery<T>[] { query }); }
@@ -163,7 +164,14 @@ namespace MaasOne.Net
 
 
 
-        bool IQueryDownload.IsCorrespondingType(Type queryType) { return typeof(YqlQuery<T>).IsAssignableFrom(queryType); }
+        bool IQueryDownload.IsCorrespondingType(Type queryType)
+        {
+#if PCL45
+            return typeof(YqlQuery<T>).GetTypeInfo().IsAssignableFrom(queryType.GetTypeInfo());
+#else
+            return typeof(YqlQuery<T>).IsAssignableFrom(queryType);
+#endif
+        }
 
         bool IQueryDownload.IsCorrespondingType(QueryBase query) { return ((IQueryDownload)this).IsCorrespondingType(query.GetType()); }
 
@@ -263,7 +271,7 @@ namespace MaasOne.Net
             }
             return new YqlResponse<T>(new ConnectionInfo(
                         exc,
-#if !(PORTABLE40)
+#if !(PCL40)
  response.Connection.Timeout,
 #endif
  response.Connection.SizeInBytes,

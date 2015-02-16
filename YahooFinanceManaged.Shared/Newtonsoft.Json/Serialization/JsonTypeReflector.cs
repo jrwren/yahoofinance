@@ -29,7 +29,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Reflection;
 using System.Security;
-#if !(NETFX_CORE || PORTABLE || PORTABLE40)
+#if !(NETFX_CORE || PORTABLE || PCL40)
 using System.Security.Permissions;
 #endif
 using Newtonsoft.Json.Utilities;
@@ -131,7 +131,7 @@ namespace Newtonsoft.Json.Serialization
                 return MemberSerialization.OptIn;
 #endif
 
-#if !(NETFX_CORE || PORTABLE40 || PORTABLE)
+#if !(NETFX_CORE || PCL40 || PORTABLE)
             if (!ignoreSerializableAttribute)
             {
                 SerializableAttribute serializableAttribute = GetCachedAttribute<SerializableAttribute>(objectType);
@@ -214,7 +214,7 @@ namespace Newtonsoft.Json.Serialization
             };
         }
 
-#if !(NETFX_CORE || PORTABLE40 || PORTABLE)
+#if !(NETFX_CORE || PCL40 || PORTABLE)
         public static TypeConverter GetTypeConverter(Type type)
         {
             return TypeDescriptor.GetConverter(type);
@@ -355,7 +355,7 @@ namespace Newtonsoft.Json.Serialization
             {
                 if (_dynamicCodeGeneration == null)
                 {
-#if !(NETFX_CORE || PORTABLE40 || PORTABLE)
+#if !(NETFX_CORE || PCL40 || PORTABLE)
                     try
                     {
                         new ReflectionPermission(ReflectionPermissionFlag.MemberAccess).Demand();
@@ -384,9 +384,9 @@ namespace Newtonsoft.Json.Serialization
             {
                 if (_fullyTrusted == null)
                 {
-#if (NETFX_CORE || PORTABLE || PORTABLE40)
+#if (NETFX_CORE || PORTABLE || PCL40)
                     _fullyTrusted = false;
-#elif !(NET20 || NET35 || PORTABLE40)
+#elif !(NET20 || NET35 || PCL40)
                     AppDomain appDomain = AppDomain.CurrentDomain;
 
                     _fullyTrusted = appDomain.IsHomogenous && appDomain.IsFullyTrusted;
@@ -411,7 +411,7 @@ namespace Newtonsoft.Json.Serialization
         {
             get
             {
-#if !(PORTABLE40 || PORTABLE || NETFX_CORE)
+#if !(PCL40 || PORTABLE || NETFX_CORE)
                 if (DynamicCodeGeneration)
                     return DynamicReflectionDelegateFactory.Instance;
 

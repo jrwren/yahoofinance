@@ -26,10 +26,10 @@
 using System;
 using System.IO;
 using System.Globalization;
-#if !(NET20 || NET35 || PORTABLE40 || PORTABLE)
+#if !(NET20 || NET35 || PCL40 || PORTABLE)
 using System.Numerics;
 #endif
-#if !(NET20 || NET35 || PORTABLE40)
+#if !(NET20 || NET35 || PCL40)
 using System.Threading.Tasks;
 #endif
 using Newtonsoft.Json.Linq;
@@ -38,7 +38,7 @@ using System.Xml;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using System.Text;
-#if !(NET20 || PORTABLE40)
+#if !(NET20 || PCL40)
 using System.Xml.Linq;
 #endif
 
@@ -237,7 +237,7 @@ namespace Newtonsoft.Json
             return value.ToString(null, CultureInfo.InvariantCulture);
         }
 
-#if !(NET20 || NET35 || PORTABLE40 || PORTABLE)
+#if !(NET20 || NET35 || PCL40 || PORTABLE)
         private static string ToStringInternal(BigInteger value)
         {
             return value.ToString(null, CultureInfo.InvariantCulture);
@@ -357,7 +357,7 @@ namespace Newtonsoft.Json
         {
             string text;
             string qc;
-#if !(NETFX_CORE || PORTABLE40 || PORTABLE)
+#if !(NETFX_CORE || PCL40 || PORTABLE)
             text = value.ToString("D", CultureInfo.InvariantCulture);
             qc = quoteChar.ToString(CultureInfo.InvariantCulture);
 #else
@@ -495,7 +495,7 @@ namespace Newtonsoft.Json
                     return ToString((Uri)value);
                 case PrimitiveTypeCode.TimeSpan:
                     return ToString((TimeSpan)value);
-#if !(NET20 || NET35 || PORTABLE40 || PORTABLE)
+#if !(NET20 || NET35 || PCL40 || PORTABLE)
                 case PrimitiveTypeCode.BigInteger:
                     return ToStringInternal((BigInteger)value);
 #endif
@@ -646,7 +646,7 @@ namespace Newtonsoft.Json
             return sw.ToString();
         }
 
-#if !(NET20 || NET35 || PORTABLE40)
+#if !(NET20 || NET35 || PCL40)
         /// <summary>
         /// Asynchronously serializes the specified object to a JSON string.
         /// Serialization will happen on a new thread.
@@ -847,7 +847,7 @@ namespace Newtonsoft.Json
             }
         }
 
-#if !(NET20 || NET35 || PORTABLE40)
+#if !(NET20 || NET35 || PCL40)
         /// <summary>
         /// Asynchronously deserializes the JSON to the specified .NET type.
         /// Deserialization will happen on a new thread.
@@ -949,7 +949,7 @@ namespace Newtonsoft.Json
             }
         }
 
-#if !(NET20 || NET35 || PORTABLE40)
+#if !(NET20 || NET35 || PCL40)
         /// <summary>
         /// Asynchronously populates the object with values from the JSON string using <see cref="JsonSerializerSettings"/>.
         /// </summary>
@@ -969,7 +969,7 @@ namespace Newtonsoft.Json
         }
 #endif
 
-#if !(PORTABLE40 || PORTABLE || NETFX_CORE)
+#if !(PCL40 || PORTABLE || NETFX_CORE)
         /// <summary>
         /// Serializes the XML node to a JSON string.
         /// </summary>
@@ -1049,7 +1049,7 @@ namespace Newtonsoft.Json
         }
 #endif
 
-#if !NET20 && !PORTABLE40
+#if !NET20 && !PCL40
         /// <summary>
         /// Serializes the <see cref="XNode"/> to a JSON string.
         /// </summary>

@@ -23,7 +23,7 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 #endregion
 
-#if !(NET35 || NET20 || PORTABLE40)
+#if !(NET35 || NET20 || PCL40)
 
 using System;
 using System.Collections.Generic;

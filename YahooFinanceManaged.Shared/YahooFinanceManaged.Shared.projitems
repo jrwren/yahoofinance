@@ -285,7 +285,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)System\TimeZoneInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)Newtonsoft.Json\Dynamic.snk" />
     <None Include="$(MSBuildThisFileDirectory)Resources\market.xsd" />
   </ItemGroup>
   <ItemGroup>
