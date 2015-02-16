@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YahooFinanceManaged.NET20", "YahooFinanceManaged.NET20\YahooFinanceManaged.NET20.csproj", "{6505CC5C-7C5E-4511-9ECD-AB35ACE13261}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "YahooFinanceManaged.Shared", "..\YahooFinanceManaged.Shared\YahooFinanceManaged.Shared.shproj", "{903486B9-76BE-4D9C-BD8D-88D248BA9020}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\YahooFinanceManaged.Shared\YahooFinanceManaged.Shared.projitems*{6505cc5c-7c5e-4511-9ecd-ab35ace13261}*SharedItemsImports = 4
+		..\YahooFinanceManaged.Shared\YahooFinanceManaged.Shared.projitems*{903486b9-76be-4d9c-bd8d-88d248ba9020}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6505CC5C-7C5E-4511-9ECD-AB35ACE13261}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6505CC5C-7C5E-4511-9ECD-AB35ACE13261}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6505CC5C-7C5E-4511-9ECD-AB35ACE13261}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6505CC5C-7C5E-4511-9ECD-AB35ACE13261}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

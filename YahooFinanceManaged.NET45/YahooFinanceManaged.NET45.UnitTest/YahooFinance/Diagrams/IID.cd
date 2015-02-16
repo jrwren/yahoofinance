@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MaasOne.YahooFinance.YID">
+    <Position X="3.75" Y="2" Width="1.5" />
+    <Members>
+      <Property Name="BaseID" Hidden="true" />
+      <Property Name="Industry" Hidden="true" />
+      <Property Name="ISIN" Hidden="true" />
+      <Field Name="mID" Hidden="true" />
+      <Field Name="mIndustry" Hidden="true" />
+      <Field Name="mISIN" Hidden="true" />
+      <Field Name="mName" Hidden="true" />
+      <Field Name="mStockExchange" Hidden="true" />
+      <Field Name="mType" Hidden="true" />
+      <Property Name="Name" Hidden="true" />
+      <Method Name="OnPropertyChanged" Hidden="true" />
+      <Event Name="PropertyChanged" Hidden="true" />
+      <Method Name="RssFinancialBlogsURL" Hidden="true" />
+      <Method Name="RssNewsURL" Hidden="true" />
+      <Property Name="StockExchange" Hidden="true" />
+      <Property Name="Suffix" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+      <Property Name="Type" Hidden="true" />
+      <Method Name="YID" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAgEAAAAQAAgAEUIAAAABQAgAAAAAAgCSgAAACAAAQ=</HashCode>
+      <FileName>MaasOne\YahooFinance\YID.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaasOne.YahooFinance.YCurrencyID">
+    <Position X="6.25" Y="2" Width="1.5" />
+    <Members>
+      <Property Name="BaseCurrency" Hidden="true" />
+      <Property Name="DepCurrency" Hidden="true" />
+      <Property Name="DisplayName" Hidden="true" />
+      <Field Name="mBaseCurrency" Hidden="true" />
+      <Field Name="mDepCurrency" Hidden="true" />
+      <Method Name="OnPropertyChanged" Hidden="true" />
+      <Event Name="PropertyChanged" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+      <Method Name="YCurrencyID" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAgAAEKQAAAAAAgAAAAAAAAAAAAAAQAAE=</HashCode>
+      <FileName>MaasOne\YahooFinance\YCurrencyID.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Data.CompanyKeyStatistics">
+    <Position X="6.25" Y="4" Width="1.5" />
+    <Members>
+      <Method Name="CompanyKeyStatistics" Hidden="true" />
+      <Property Name="FinancialHighlights" Hidden="true" />
+      <Property Name="TradingInfo" Hidden="true" />
+      <Property Name="ValuationMeasures" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAgAAAAAAAAAIAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Data\CompanyKeyStatistics.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Data.CompanyProfile">
+    <Position X="3.75" Y="4" Width="1.5" />
+    <Members>
+      <Property Name="Address" Hidden="true" />
+      <Property Name="BusinessSummary" Hidden="true" />
+      <Property Name="CompanyName" Hidden="true" />
+      <Method Name="CompanyProfile" Hidden="true" />
+      <Property Name="CompanyWebsites" Hidden="true" />
+      <Property Name="CorporateGovernance" Hidden="true" />
+      <Property Name="Details" Hidden="true" />
+      <Property Name="KeyExecutives" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAYAAAAACBgAAAAAAAACAAAAAAAAACAAgAAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Data\CompanyProfile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Data.ETFSearchItem">
+    <Position X="11.25" Y="4" Width="1.5" />
+    <Members>
+      <Method Name="ETFSearchItem" Hidden="true" />
+      <Property Name="Name" Hidden="true" />
+      <Property Name="Values" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Data\ETF.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Data.HistoricalQuotesCollection">
+    <Position X="11.25" Y="2" Width="1.5" />
+    <Members>
+      <Method Name="GetCloseAdjustedValues" Hidden="true" />
+      <Method Name="GetCloseValues" Hidden="true" />
+      <Method Name="GetEnumerator" Hidden="true" />
+      <Method Name="GetHighValues" Hidden="true" />
+      <Method Name="GetLowValues" Hidden="true" />
+      <Method Name="GetOpenValues" Hidden="true" />
+      <Method Name="HistoricalQuotesCollection" Hidden="true" />
+      <Property Name="Items" Hidden="true" />
+      <Method Name="Sort" Hidden="true" />
+      <Method Name="System.Collections.IEnumerable.GetEnumerator" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Class Name="MaasOne.YahooFinance.Data.HistoricalQuotesCollection.HistQuotesSorter" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MaasOne\YahooFinance\Data\Quotes.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ACAAABAAAAAQiBAAAAAQAAAAAAAAAAIAIAAAAAAAAEA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Data\Quotes.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Data.IDSearchInstantItem">
+    <Position X="3.75" Y="6" Width="1.5" />
+    <Members>
+      <Property Name="Exchange" Hidden="true" />
+      <Method Name="IDSearchInstantItem" Hidden="true" />
+      <Property Name="Name" Hidden="true" />
+      <Property Name="Type" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAQAQAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Data\IDSearch.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Data.IDSearchItem">
+    <Position X="3.75" Y="9.25" Width="1.5" />
+    <Members>
+      <Method Name="IDSearchItem" Hidden="true" />
+      <Property Name="Industry" Hidden="true" />
+      <Property Name="ISIN" Hidden="true" />
+      <Method Name="SetType" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAEAAAAQAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Data\IDSearch.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Data.IndexComponentsItem" Collapsed="true">
+    <Position X="11.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Data\Components.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Data.MembershipItem">
+    <Position X="11.25" Y="9.25" Width="1.5" />
+    <Members>
+      <Property Name="ChangeInPercent" Hidden="true" />
+      <Method Name="MembershipItem" Hidden="true" />
+      <Property Name="Name" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAQAAQAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>MaasOne\YahooFinance\Data\Components.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Data.Quotes" Collapsed="true">
+    <Position X="8.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAgAAACAAQAAQAAAAAAAAAAAAgAAAQABI=</HashCode>
+      <FileName>MaasOne\YahooFinance\Data\Quotes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Data.QuotesBase">
+    <Position X="8.75" Y="9.25" Width="1.5" />
+    <Members>
+      <Property Name="Change" Hidden="true" />
+      <Property Name="ChangeInPercent" Hidden="true" />
+      <Property Name="Name" Hidden="true" />
+      <Method Name="UpdateLastTradePriceOnly" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAgAAAAAAQAAQQAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>MaasOne\YahooFinance\Data\Quotes.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.AnalyseUpDowngradesResult">
+    <Position X="8.75" Y="4" Width="1.5" />
+    <Members>
+      <Method Name="AnalyseUpDowngradesResult" Hidden="true" />
+      <Property Name="History" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\AnalyseUpDowngrades.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Data.ScreenerItem">
+    <Position X="8.75" Y="2" Width="1.5" />
+    <Members>
+      <Property Name="Name" Hidden="true" />
+      <Method Name="ScreenerItem" Hidden="true" />
+      <Property Name="Values" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Data\Screener.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Data.QuotesPeriod">
+    <Position X="6.25" Y="9.25" Width="1.5" />
+    <Members>
+      <Property Name="High" Hidden="true" />
+      <Property Name="Low" Hidden="true" />
+      <Property Name="Open" Hidden="true" />
+      <Method Name="QuotesPeriod" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAoAAAAgAAACAAAAgAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Data\Quotes.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Data.HistoricalQuotes" Collapsed="true">
+    <Position X="6.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQIAAAIAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Data\Quotes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="MaasOne.YahooFinance.IID">
+    <Position X="1" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Interfaces.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MaasOne.YahooFinance.IQuotePrice">
+    <Position X="1" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Interfaces.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

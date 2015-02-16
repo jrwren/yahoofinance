@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MaasOne.YahooFinance.Web.ScreenerQuery">
+    <Position X="8.75" Y="1" Width="2.25" />
+    <Members>
+      <Method Name="ScreenerQuery" Hidden="true" />
+      <Method Name="Validate" Hidden="true" />
+      <Method Name="YqlConvertToken" Hidden="true" />
+      <Method Name="YqlTokenFromDirectSource" Hidden="true" />
+      <Method Name="YqlXPath" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAQAEIAAACAAAAAAAgAAAAAIAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\Screener.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Criterias" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.ScreenerCriteria">
+    <Position X="41" Y="1" Width="2.25" />
+    <Members>
+      <Method Name="IsValid" Hidden="true" />
+      <Method Name="IsValidInternal" Hidden="true" />
+      <Method Name="ScreenerCriteria" Hidden="true" />
+      <Method Name="TagParameter" Hidden="true" />
+      <Method Name="TagParameterInternal" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Property" Type="MaasOne.YahooFinance.Data.ScreenerProperty" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="41" Y="1.937" />
+        <Point X="28.75" Y="1.937" />
+        <Point X="28.75" Y="16.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAACAAQAgAAAAAAAAAAAAAAAAAAQAAQAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\Screener.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Property" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.StockScreenerQuery" Collapsed="true">
+    <Position X="16.5" Y="5.25" Width="2.25" />
+    <Members>
+      <Method Name="Clone" Hidden="true" />
+      <Method Name="CreateUrl" Hidden="true" />
+      <Method Name="StockScreenerQuery" Hidden="true" />
+      <Method Name="Validate" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Pagination" Type="MaasOne.YahooFinance.Web.StockScreenerPagination" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.75" Y="5.625" />
+        <Point X="19.125" Y="5.625" />
+        <Point X="19.125" Y="8.096" />
+        <Point X="20.25" Y="8.096" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="RankDirection" Type="System.ComponentModel.ListSortDirection" FixedToPoint="true">
+      <Path>
+        <Point X="16.5" Y="5.562" />
+        <Point X="14.5" Y="5.562" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="RankedBy" Type="MaasOne.YahooFinance.Data.ScreenerProperty" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.5" Y="5.75" />
+        <Point X="16.125" Y="5.75" />
+        <Point X="16.125" Y="6.339" />
+        <Point X="19.042" Y="6.339" Type="JumpStart" />
+        <Point X="19.208" Y="6.339" Type="JumpEnd" />
+        <Point X="27.688" Y="6.339" />
+        <Point X="27.688" Y="16.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="View" Type="MaasOne.YahooFinance.Web.StockScreenerView" FixedToPoint="true">
+      <Path>
+        <Point X="18.75" Y="5.375" />
+        <Point X="20" Y="5.375" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAACAAAAAAAQAAAAAIQABAAAAAAAAAAAAABA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\StockScreener.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Pagination" />
+      <Property Name="RankDirection" />
+      <Property Name="RankedBy" />
+      <Property Name="View" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.StockPriceCriteria" Collapsed="true">
+    <Position X="47.5" Y="7.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\StockScreener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.ScreenerMinMaxCriteria&lt;T&gt;">
+    <Position X="44.5" Y="3.25" Width="2.25" />
+    <Members>
+      <Method Name="ScreenerMinMaxCriteria" Hidden="true" />
+      <Method Name="TagParameter" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>gAAAAACAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\Screener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.ScreenerResult" Collapsed="true">
+    <Position X="20.5" Y="18" Width="2.25" />
+    <Members>
+      <Method Name="ScreenerResult" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Pagination" Type="MaasOne.YahooFinance.Web.LimitedPagination" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.5" Y="18.375" />
+        <Point X="20.125" Y="18.375" />
+        <Point X="20.125" Y="15.866" />
+        <Point X="14.75" Y="15.866" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\Screener.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Pagination" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Items" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.BondScreenerQuery" Collapsed="true">
+    <Position X="1" Y="5.25" Width="2.25" />
+    <Members>
+      <Method Name="BondScreenerQuery" Hidden="true" />
+      <Method Name="Clone" Hidden="true" />
+      <Method Name="CreateUrl" Hidden="true" />
+      <Method Name="Validate" Hidden="true" />
+    </Members>
+    <InheritanceLine Type="MaasOne.YahooFinance.Web.ScreenerQuery" ManuallyRouted="true">
+      <Path>
+        <Point X="9.875" Y="2.425" />
+        <Point X="9.875" Y="2.811" />
+        <Point X="2.125" Y="2.811" />
+        <Point X="2.125" Y="5.25" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Pagination" Type="MaasOne.YahooFinance.Web.BondScreenerPagination" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.25" Y="5.625" />
+        <Point X="3.441" Y="5.625" />
+        <Point X="3.441" Y="8.096" />
+        <Point X="4.5" Y="8.096" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAACAAAAAAAAAAAAAIAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\BondScreener.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Pagination" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.FundScreenerQuery" Collapsed="true">
+    <Position X="8.75" Y="5.25" Width="2.25" />
+    <Members>
+      <Method Name="Clone" Hidden="true" />
+      <Method Name="CreateUrl" Hidden="true" />
+      <Method Name="FundScreenerQuery" Hidden="true" />
+      <Method Name="Validate" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Pagination" Type="MaasOne.YahooFinance.Web.FundScreenerPagination" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.75" Y="5.625" />
+        <Point X="8.375" Y="5.625" />
+        <Point X="8.375" Y="8.096" />
+        <Point X="12.5" Y="8.096" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="RankDirection" Type="System.ComponentModel.ListSortDirection" FixedFromPoint="true">
+      <Path>
+        <Point X="11" Y="5.562" />
+        <Point X="13" Y="5.562" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="RankedBy" Type="MaasOne.YahooFinance.Data.ScreenerProperty" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11" Y="5.75" />
+        <Point X="11.247" Y="5.75" />
+        <Point X="11.247" Y="6.316" />
+        <Point X="19.042" Y="6.316" Type="JumpStart" />
+        <Point X="19.208" Y="6.316" Type="JumpEnd" />
+        <Point X="27.688" Y="6.316" />
+        <Point X="27.688" Y="16.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="View" Type="MaasOne.YahooFinance.Web.FundScreenerView" FixedFromPoint="true">
+      <Path>
+        <Point X="8.75" Y="5.438" />
+        <Point X="7.25" Y="5.438" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAACAAAAAAAQAAAAAIQABAAAAAAAAAAAAABA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\FundScreener.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Pagination" />
+      <Property Name="RankDirection" />
+      <Property Name="RankedBy" />
+      <Property Name="View" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.FundNetAssetsCriteria" Collapsed="true">
+    <Position X="44.5" Y="7.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAACAAAAgAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\FundScreener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.BondPriceCriteria">
+    <Position X="31.5" Y="7.75" Width="2.25" />
+    <Members>
+      <Method Name="BondPriceCriteria" Hidden="true" />
+      <Property Name="DisplayName" Hidden="true" />
+      <Method Name="IsValid" Hidden="true" />
+      <Property Name="Property" Hidden="true" />
+      <Method Name="TagParameter" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAQAAACAAAAgAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\BondScreener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.BondFitchRatingCriteria" Collapsed="true">
+    <Position X="41.5" Y="7.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAACAAAAgAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\BondScreener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.FundCategoryCriteria">
+    <Position X="34.5" Y="7.75" Width="2.25" />
+    <Members>
+      <Property Name="DisplayName" Hidden="true" />
+      <Method Name="FundCategoryCriteria" Hidden="true" />
+      <Method Name="IsValid" Hidden="true" />
+      <Property Name="Property" Hidden="true" />
+      <Method Name="TagParameter" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAACAAAAgAAAAAAAAAAAAAAAAAAQAACAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\FundScreener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.StockIndustryCriteria">
+    <Position X="37.5" Y="7.75" Width="2.25" />
+    <Members>
+      <Property Name="DisplayName" Hidden="true" />
+      <Method Name="IsValid" Hidden="true" />
+      <Property Name="Property" Hidden="true" />
+      <Method Name="StockIndustryCriteria" Hidden="true" />
+      <Method Name="TagParameter" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAACAAAAgAAAAAAAAAAAAAAAAAAQAAEAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\StockScreener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Data.ScreenerItem">
+    <Position X="25.25" Y="18" Width="1.5" />
+    <Members>
+      <Method Name="ScreenerItem" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Data\Screener.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.LimitedPagination">
+    <Position X="12.5" Y="15.25" Width="2.25" />
+    <Members>
+      <Method Name="LimitedPagination" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\Pagination.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.Pagination">
+    <Position X="12.5" Y="12.75" Width="2.25" />
+    <Members>
+      <Method Name="Pagination" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\Pagination.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.StockScreenerPagination" Collapsed="true">
+    <Position X="20.25" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\StockScreener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.StartIndexPagination">
+    <Position X="12.5" Y="10.5" Width="2.25" />
+    <Members>
+      <Method Name="Clone" Hidden="true" />
+      <Method Name="StartIndexPagination" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\Pagination.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.FundScreenerPagination" Collapsed="true">
+    <Position X="12.5" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\FundScreener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.BondScreenerPagination" Collapsed="true">
+    <Position X="4.5" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\BondScreener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="MaasOne.YahooFinance.Data.ScreenerProperty">
+    <Position X="27.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAEBAIZAAQgQAKMARoAABgSBABSAABhBJQQAQAIFDAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Data\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MaasOne.YahooFinance.Web.StockScreenerView">
+    <Position X="20" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAABAACABACAIAAAACAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MaasOne.YahooFinance.Web.FundScreenerView">
+    <Position X="5.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQCABAAAAAAAgAAAAAAAAAAABACAIAAAAAAAAA=</HashCode>
+      <FileName>MaasOne\YahooFinance\Web\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="System.ComponentModel.ListSortDirection">
+    <Position X="13" Y="5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

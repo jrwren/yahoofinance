@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "YahooFinanceManaged.Shared", "..\YahooFinanceManaged.Shared\YahooFinanceManaged.Shared.shproj", "{903486B9-76BE-4D9C-BD8D-88D248BA9020}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YahooFinanceManaged.PORT40", "YahooFinanceManaged.PORT40\YahooFinanceManaged.PORT40.csproj", "{EA4F98EF-AF88-42B3-A55C-53BA724CD09E}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\YahooFinanceManaged.Shared\YahooFinanceManaged.Shared.projitems*{ea4f98ef-af88-42b3-a55c-53ba724cd09e}*SharedItemsImports = 4
+		..\YahooFinanceManaged.Shared\YahooFinanceManaged.Shared.projitems*{903486b9-76be-4d9c-bd8d-88d248ba9020}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA4F98EF-AF88-42B3-A55C-53BA724CD09E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA4F98EF-AF88-42B3-A55C-53BA724CD09E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA4F98EF-AF88-42B3-A55C-53BA724CD09E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA4F98EF-AF88-42B3-A55C-53BA724CD09E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
