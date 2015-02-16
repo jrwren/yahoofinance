@@ -25,7 +25,7 @@ using MaasOne.YahooFinance;
 using MaasOne.YahooFinance.Web;
 using MaasOne.YahooFinance.Data;
 
-namespace MaasOne.UnitTest.YahooFinance
+namespace MaasOne.YahooFinance.UnitTest
 {
     [TestClass]
     public class FundScreenerTest : DownloadTest<ScreenerResult>

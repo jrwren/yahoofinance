@@ -23,7 +23,7 @@ using MaasOne.Net;
 using MaasOne.Net.UnitTest;
 using MaasOne.Rss;
 
-namespace MaasOne.UnitTest.YahooFinance
+namespace MaasOne.YahooFinance.UnitTest
 {
     [TestClass]
     public class RssFeedTest : DownloadTest<Feed>
