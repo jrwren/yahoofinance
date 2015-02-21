@@ -23,13 +23,13 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 #endregion
 
-#if !(NET35 || NET20 || PCL40)
+#if !(NET35 || NET20 || SILVERLIGHT)
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
 using System.Linq.Expressions;
-#if !(PORTABLE)
+#if !(NETFX_CORE)
 using System.Reflection;
 #else
 using Microsoft.CSharp.RuntimeBinder;
@@ -45,7 +45,7 @@ namespace Newtonsoft.Json.Utilities
     {
         internal static class BinderWrapper
         {
-#if !(PORTABLE)
+#if !(NETFX_CORE)
             public const string CSharpAssemblyName = "Microsoft.CSharp, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a";
 
             private const string BinderTypeName = "Microsoft.CSharp.RuntimeBinder.Binder, " + CSharpAssemblyName;
@@ -112,7 +112,7 @@ namespace Newtonsoft.Json.Utilities
 
             public static CallSiteBinder GetMember(string name, Type context)
             {
-#if !(PORTABLE)
+#if !(NETFX_CORE)
                 Init();
                 return (CallSiteBinder)_getMemberCall(null, 0, name, context, _getCSharpArgumentInfoArray);
 #else
@@ -123,7 +123,7 @@ namespace Newtonsoft.Json.Utilities
 
             public static CallSiteBinder SetMember(string name, Type context)
             {
-#if !(PORTABLE)
+#if !(NETFX_CORE)
                 Init();
                 return (CallSiteBinder)_setMemberCall(null, 0, name, context, _setCSharpArgumentInfoArray);
 #else

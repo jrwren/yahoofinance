@@ -16,24 +16,28 @@
 // *********************************************************************************************
 #endregion
 using System;
-using System.Collections.Generic;
 
 namespace MaasOne.Net
 {
     public class StreamResponse : ResponseBase, IDisposable
     {
-        public System.IO.Stream Result { get { return (System.IO.Stream)base.ResultBase; } }      
+        private bool mDisposed = false;
+
 
 
         internal StreamResponse(ConnectionInfo connInfo, System.IO.Stream result) : base(connInfo, result) { }
 
 
-        private bool mDisposed = false;
+
+        public System.IO.Stream Result { get { return (System.IO.Stream)base.ResultBase; } }      
+
+
 
         public void Dispose()
         {
             Dispose(true);
         }
+
 
         protected virtual void Dispose(bool disposing)
         {
@@ -52,5 +56,4 @@ namespace MaasOne.Net
             }
         }
     }
-
 }

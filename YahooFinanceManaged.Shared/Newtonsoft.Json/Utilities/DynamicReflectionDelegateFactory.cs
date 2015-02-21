@@ -23,7 +23,7 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 #endregion
 
-#if !(PORTABLE || NETFX_CORE || PCL40)
+#if !(NETFX_CORE || SILVERLIGHT)
 using System;
 using System.Collections.Generic;
 #if NET20

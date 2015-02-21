@@ -49,19 +49,19 @@ namespace Newtonsoft.Json.Serialization
             {
                 Assembly assembly;
 
-#if !(NETFX_CORE || PCL40 || PORTABLE)
+#if !(NETFX_CORE || SILVERLIGHT)
                 // look, I don't like using obsolete methods as much as you do but this is the only way
                 // Assembly.Load won't check the GAC for a partial name
 #pragma warning disable 618,612
                 assembly = Assembly.LoadWithPartialName(assemblyName);
 #pragma warning restore 618,612
-#elif NETFX_CORE || PORTABLE
+#elif NETFX_CORE && !SILVERLIGHT
                 assembly = Assembly.Load(new AssemblyName(assemblyName));
 #else
                 assembly = Assembly.Load(assemblyName);
 #endif
 
-#if !(PCL40 || PORTABLE || NETFX_CORE)
+#if !(SILVERLIGHT || NETFX_CORE)
                 if (assembly == null)
                 {
                     // will find assemblies loaded with Assembly.LoadFile outside of the main directory
@@ -145,7 +145,7 @@ namespace Newtonsoft.Json.Serialization
         /// <param name="typeName">Specifies the <see cref="T:System.Type"/> name of the serialized object. </param>
         public override void BindToName(Type serializedType, out string assemblyName, out string typeName)
         {
-#if NETFX_CORE || PORTABLE
+#if NETFX_CORE && !SILVERLIGHT
             assemblyName = serializedType.GetTypeInfo().Assembly.FullName;
             typeName = serializedType.FullName;
 #else

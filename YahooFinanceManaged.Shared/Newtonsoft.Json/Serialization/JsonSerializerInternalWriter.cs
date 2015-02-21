@@ -27,7 +27,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-#if !(NET35 || NET20 || PCL40)
+#if !(NET35 || NET20 || SILVERLIGHT)
 using System.Dynamic;
 #endif
 using System.Diagnostics;
@@ -177,12 +177,12 @@ namespace Newtonsoft.Json.Serialization
                     JsonDictionaryContract dictionaryContract = (JsonDictionaryContract)valueContract;
                     SerializeDictionary(writer, (value is IDictionary) ? (IDictionary)value : dictionaryContract.CreateWrapper(value), dictionaryContract, member, containerContract, containerProperty);
                     break;
-#if !(NET35 || NET20 || PCL40)
+#if !(NET35 || NET20 || SILVERLIGHT)
                 case JsonContractType.Dynamic:
                     SerializeDynamic(writer, (IDynamicMetaObjectProvider)value, (JsonDynamicContract)valueContract, member, containerContract, containerProperty);
                     break;
 #endif
-#if !(NETFX_CORE || PCL40 || PORTABLE)
+#if !(NETFX_CORE || SILVERLIGHT)
                 case JsonContractType.Serializable:
                     SerializeISerializable(writer, (ISerializable)value, (JsonISerializableContract)valueContract, member, containerContract, containerProperty);
                     break;
@@ -321,7 +321,7 @@ namespace Newtonsoft.Json.Serialization
 
         internal static bool TryConvertToString(object value, Type type, out string s)
         {
-#if !(NETFX_CORE || PCL40 || PORTABLE)
+#if !(NETFX_CORE || SILVERLIGHT)
             TypeConverter converter = ConvertUtils.GetConverter(type);
 
             // use the objectType's TypeConverter if it has one and can convert to a string
@@ -337,7 +337,7 @@ namespace Newtonsoft.Json.Serialization
             }
 #endif
 
-#if NETFX_CORE || PORTABLE
+#if NETFX_CORE
       if (value is Guid || value is Uri || value is TimeSpan)
       {
         s = value.ToString();
@@ -725,7 +725,7 @@ namespace Newtonsoft.Json.Serialization
             return writeMetadataObject;
         }
 
-#if !(NETFX_CORE || PCL40 || PORTABLE)
+#if !(NETFX_CORE || SILVERLIGHT)
 #if !(NET20 || NET35)
         [SecuritySafeCritical]
 #endif
@@ -771,7 +771,7 @@ namespace Newtonsoft.Json.Serialization
         }
 #endif
 
-#if !(NET35 || NET20 || PCL40)
+#if !(NET35 || NET20 || SILVERLIGHT)
         private void SerializeDynamic(JsonWriter writer, IDynamicMetaObjectProvider value, JsonDynamicContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
         {
             OnSerializing(writer, contract, value);

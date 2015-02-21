@@ -25,7 +25,7 @@
 
 using System;
 using System.Collections.Generic;
-#if !(NET20 || NET35 || PCL40 || PORTABLE)
+#if !(NET20 || NET35 || SILVERLIGHT)
 using System.Numerics;
 #endif
 using Newtonsoft.Json.Linq;
@@ -734,7 +734,7 @@ namespace Newtonsoft.Json
             if (schema.DivisibleBy != null)
             {
                 bool notDivisible;
-#if !(NET20 || NET35 || PCL40 || PORTABLE)
+#if !(NET20 || NET35 || SILVERLIGHT)
                 if (value is BigInteger)
                 {
                     // not that this will lose any decimal point on DivisibleBy
@@ -748,7 +748,7 @@ namespace Newtonsoft.Json
                 }
                 else
 #endif
-                    notDivisible = !IsZero(Convert.ToInt64(value, CultureInfo.InvariantCulture) % schema.DivisibleBy.Value);
+                notDivisible = !IsZero(Convert.ToInt64(value, CultureInfo.InvariantCulture) % schema.DivisibleBy.Value);
 
                 if (notDivisible)
                     RaiseError("Integer {0} is not evenly divisible by {1}.".FormatWith(CultureInfo.InvariantCulture, JsonConvert.ToString(value), schema.DivisibleBy), schema);

@@ -76,7 +76,7 @@ namespace Newtonsoft.Json.Utilities
             }
         }
 
-#if (NET20 || NET35 || PCL40)
+#if (NET20 || NET35 || SILVERLIGHT)
         public static void AddRange<T>(this IList<T> initial, IEnumerable collection)
         {
             ValidationUtils.ArgumentNotNull(initial, "initial");
@@ -94,7 +94,7 @@ namespace Newtonsoft.Json.Utilities
                 return true;
             if (ReflectionUtils.ImplementsGenericDefinition(type, typeof(IDictionary<,>)))
                 return true;
-#if !(NET40 || NET35 || NET20 || PCL40)
+#if !(NET40 || NET35 || NET20 || SILVERLIGHT)
             if (ReflectionUtils.ImplementsGenericDefinition(type, typeof(IReadOnlyDictionary<,>)))
                 return true;
 #endif

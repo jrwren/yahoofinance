@@ -37,7 +37,7 @@ namespace Newtonsoft.Json.Converters
     /// <summary>
     /// Converts a <see cref="IJsonValue"/> to and from JSON.
     /// </summary>
-    internal class JsonValueConverter : JsonConverter
+    internal class JsonValueConverter2 : JsonConverter
     {
         /// <summary>
         /// Writes the JSON representation of the object.

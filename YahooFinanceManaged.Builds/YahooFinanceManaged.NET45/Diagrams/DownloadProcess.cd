@@ -1,0 +1,588 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="--&gt; IQueryResponse">
+    <Position X="28.357" Y="14.268" Height="0.309" Width="1.32" />
+  </Comment>
+  <Comment CommentText="--&gt; YqlResponse&lt;T&gt;">
+    <Position X="28.34" Y="8.384" Height="0.309" Width="1.401" />
+  </Comment>
+  <Comment CommentText="--&gt; Response&lt;T&gt;">
+    <Position X="28.29" Y="20.521" Height="0.309" Width="1.263" />
+  </Comment>
+  <Comment CommentText="one single query!">
+    <Position X="12.52" Y="19.486" Height="0.298" Width="1.255" />
+  </Comment>
+  <Comment CommentText="multiple queries!">
+    <Position X="8.744" Y="9.85" Height="0.291" Width="1.255" />
+  </Comment>
+  <Comment CommentText="multiple queries --&gt; multiple results">
+    <Position X="37.984" Y="9.002" Height="0.291" Width="2.375" />
+  </Comment>
+  <Comment CommentText="one single query --&gt; one single result">
+    <Position X="38.112" Y="20.817" Height="0.305" Width="2.421" />
+  </Comment>
+  <Comment CommentText="In case of DownloadClient&lt;T&gt; / YqlDownloadClient&lt;T&gt;: one OR multiple queries --&gt; one OR multiple results. Single ResultBase object OR Array of ResultBase objects.">
+    <Position X="35.229" Y="14.507" Height="0.647" Width="3.503" />
+  </Comment>
+  <Comment CommentText="   cloned">
+    <Position X="6.488" Y="10.452" Height="0.291" Width="0.748" />
+  </Comment>
+  <Comment CommentText="where T : ResultBase">
+    <Position X="10.145" Y="14.868" Height="0.367" Width="1.425" />
+  </Comment>
+  <Comment CommentText="where T : ResultBase">
+    <Position X="40.698" Y="13.793" Height="0.331" Width="1.334" />
+  </Comment>
+  <Comment CommentText="DownloadClient&lt;T&gt;.Download(Query&lt;T&gt; query)">
+    <Position X="24.062" Y="20.866" Height="0.309" Width="2.964" />
+  </Comment>
+  <Comment CommentText="DownloadClient&lt;T&gt;.Download() DefaultQuery &lt;--">
+    <Position X="24.074" Y="20.165" Height="0.456" Width="2.036" />
+  </Comment>
+  <Comment CommentText="IQueryDownload.Download()        DefaultQuery &lt;--           Checks for correct query type.">
+    <Position X="24.996" Y="13.63" Height="0.634" Width="1.866" />
+  </Comment>
+  <Comment CommentText="YqlDownloadClient&lt;T&gt;.Download(YqlQuery&lt;T&gt; query)">
+    <Position X="24.085" Y="8.384" Height="0.309" Width="3.319" />
+  </Comment>
+  <Comment CommentText="YqlDownloadClient&lt;T&gt;.Download() DefaultQueries &lt;--">
+    <Position X="24.091" Y="7.511" Height="0.481" Width="2.268" />
+  </Comment>
+  <Comment CommentText="YqlDownloadClient&lt;T&gt;.Download(YqlQuery&lt;T&gt;[] queries)">
+    <Position X="24.08" Y="9.023" Height="0.309" Width="3.535" />
+  </Comment>
+  <Comment CommentText="result/results structure for YQL download sample">
+    <Position X="46.655" Y="8.193" Height="0.315" Width="2.999" />
+  </Comment>
+  <Comment CommentText="result structure for direct download sample">
+    <Position X="46.649" Y="20.344" Height="0.302" Width="2.633" />
+  </Comment>
+  <Comment CommentText="query for direct download sample">
+    <Position X="6.572" Y="19.479" Height="0.302" Width="2.153" />
+  </Comment>
+  <Comment CommentText="query/queries for YQL download sample">
+    <Position X="2.807" Y="7.202" Height="0.302" Width="2.471" />
+  </Comment>
+  <Comment CommentText="IQueryResponse implementation:             IQueryDownload/IQueryResponse intends to provide a download with a SINGLE QUERY.For accessing multiple results the concrete YQL class is necessary. IQueryResponse.Result returns always the FIRST RESULT. Same with Query.">
+    <Position X="38" Y="7.75" Height="1.104" Width="2.967" />
+  </Comment>
+  <Comment CommentText="IQueryDownload.DefaultQuery implementation:               IQueryDownload/IQueryResponse intends to provide a download with a SINGLE QUERY.For using multiple queries the concrete YQL class is necessary. IQueryDownload.DefaultQuery gets and sets only the FIRST QUERY. Setting the IQueryDownload.DefaultQuery property sets a new Array with one single item to YqlDownload&lt;T&gt;.DefaultQueries..">
+    <Position X="11.56" Y="7.946" Height="1.292" Width="3.993" />
+  </Comment>
+  <Comment CommentText="   cloned">
+    <Position X="10.25" Y="18.246" Height="0.291" Width="0.748" />
+  </Comment>
+  <Comment CommentText="IQueryDownload.Download(QueryBase query) Checks for correct query type.">
+    <Position X="25.008" Y="14.593" Height="0.49" Width="2.812" />
+  </Comment>
+  <Class Name="MaasOne.Net.DownloadClientBase">
+    <Position X="20" Y="13.5" Width="2" />
+    <Members>
+      <Method Name="AddDownload" Hidden="true" />
+      <Method Name="CreateWebRequest" Hidden="true" />
+      <Method Name="Download" Hidden="true" />
+      <Method Name="DownloadAsync" Hidden="true" />
+      <Method Name="DownloadClientBase" Hidden="true" />
+      <Method Name="DownloadTaskAsync" Hidden="true" />
+      <Method Name="GetOrCreateParseException" Hidden="true" />
+      <Method Name="GetOrCreateWebException" Hidden="true" />
+      <Method Name="RaiseAsyncDownloadCompleted" Hidden="true" />
+      <Method Name="RemoveDownload" Hidden="true" />
+      <Method Name="ResponseDownloadCompleted" Hidden="true" />
+      <Field Name="timeout" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Class Name="MaasOne.Net.DownloadClientBase.AsyncDownloadArgs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MaasOne\Net\DownloadClientBase.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AABAAAAACAAAABAAIAgBgAAAACEgAAIAAAECAAAAAAA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\Net\DownloadClientBase.cs</FileName>
+      <NewMemberFileName>MaasOne\Net\DownloadClient.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.Net.DownloadClient&lt;T&gt;">
+    <Position X="16" Y="20" Width="3" />
+    <Members>
+      <Event Name="AsyncDownloadCompleted" Hidden="true" />
+      <Event Name="AsyncDownloadCompletedBase" Hidden="true" />
+      <Method Name="CheckAndCloneQuery" Hidden="true" />
+      <Method Name="ConvertResponse" Hidden="true" />
+      <Method Name="CreateUrl" Hidden="true" />
+      <Method Name="DownloadAsync" Hidden="true" />
+      <Method Name="DownloadClient" Hidden="true" />
+      <Method Name="DownloadTaskAsync" Hidden="true" />
+      <Property Name="IQueryDownload.DefaultQuery" Hidden="true" />
+      <Method Name="IQueryDownload.Download" Hidden="true" />
+      <Method Name="IQueryDownload.DownloadAsync" Hidden="true" />
+      <Method Name="IQueryDownload.DownloadTaskAsync" Hidden="true" />
+      <Method Name="IQueryDownload.IsCorrespondingType" Hidden="true" />
+      <Method Name="RaiseAsyncDownloadCompleted" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Delegate Name="MaasOne.Net.DownloadClient&lt;T&gt;.AsyncDownloadCompletedEventHandler&lt;T&gt;" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\Net\DownloadClientT.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <InheritanceLine Type="MaasOne.Net.DownloadClientBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20" Y="14.626" />
+        <Point X="19.625" Y="14.626" />
+        <Point X="19.625" Y="20.303" />
+        <Point X="19" Y="20.303" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="DefaultQuery" Type="MaasOne.Net.Query&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.562" Y="20" />
+        <Point X="16.562" Y="19.625" />
+        <Point X="12.25" Y="19.625" />
+        <Point X="12.25" Y="17.691" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AQAAAwAAAAAAIBgAIAABAAAAGAAgAAAAAAECAIAAAIA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\Net\DownloadClientT.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DefaultQuery" />
+    </ShowAsAssociation>
+    <Lollipop Orientation="Right" Position="0.663" />
+  </Class>
+  <Class Name="MaasOne.Net.QueryBase">
+    <Position X="13.75" Y="13.75" Width="2.25" />
+    <Members>
+      <Method Name="CreateUrl" Hidden="true" />
+      <Method Name="CreateUrlInternal" Hidden="true" />
+      <Method Name="ValidateInternal" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Class Name="MaasOne.Net.QueryBase.ConvertInfo" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MaasOne\Net\Query.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAACAAAAAAAgAAIAAAAAAAAAAEAAAAAAAABA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\Net\Query.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.CompanyProfileQuery">
+    <Position X="3" Y="7.75" Width="2.25" />
+    <Members>
+      <Method Name="Clone" Hidden="true" />
+      <Method Name="CompanyProfileQuery" Hidden="true" />
+      <Method Name="CreateUrl" Hidden="true" />
+      <Method Name="Validate" Hidden="true" />
+      <Method Name="YqlConvertToken" Hidden="true" />
+      <Method Name="YqlTokenFromDirectSource" Hidden="true" />
+      <Method Name="YqlXPath" Hidden="true" />
+    </Members>
+    <InheritanceLine Type="MaasOne.Net.YqlQuery&lt;T&gt;" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="6.5" Y="11.625" />
+        <Point X="5.834" Y="11.625" />
+        <Point X="5.834" Y="8.366" />
+        <Point X="5.25" Y="8.366" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAQAgIAAACAgAAAAAgAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\YahooFinance\Web\CompanyProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.Net.ResponseBase">
+    <Position X="32.25" Y="14" Width="2.25" />
+    <Members>
+      <Method Name="ResponseBase" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Connection" Type="MaasOne.Net.ConnectionInfo" FixedFromPoint="true">
+      <Path>
+        <Point X="32.75" Y="15.103" />
+        <Point X="32.75" Y="16.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\Net\ResponseBase.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Connection" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MaasOne.Net.ResultBase" Collapsed="true">
+    <Position X="40.25" Y="14.25" Width="2.25" />
+    <AssociationLine Name="Integrity" Type="MaasOne.Net.DataIntegrityInfo" FixedToPoint="true">
+      <Path>
+        <Point X="40.938" Y="14.812" />
+        <Point X="40.938" Y="16" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\Net\ResultBase.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Integrity" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.CompanyProfileResult" Collapsed="true">
+    <Position X="43.5" Y="8" Width="2.25" />
+    <Members>
+      <Method Name="CompanyProfileResult" Hidden="true" />
+    </Members>
+    <InheritanceLine Type="MaasOne.Net.ResultBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="42.5" Y="14.5" />
+        <Point X="42.875" Y="14.5" />
+        <Point X="42.875" Y="8.375" />
+        <Point X="43.5" Y="8.375" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Profile" Type="MaasOne.YahooFinance.Data.CompanyProfile" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="45.188" Y="8" />
+        <Point X="45.188" Y="7.625" />
+        <Point X="48.062" Y="7.625" />
+        <Point X="48.062" Y="6.507" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="ShortInfo" Type="MaasOne.YahooFinance.Data.QuotesBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="45.188" Y="8.691" />
+        <Point X="45.188" Y="9.066" />
+        <Point X="48.438" Y="9.066" />
+        <Point X="48.438" Y="10.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\YahooFinance\Web\CompanyProfile.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Profile" />
+      <Property Name="ShortInfo" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.QuotesQuery">
+    <Position X="6.5" Y="20" Width="2.25" />
+    <Members>
+      <Method Name="CheckPropertiesOfQuotesData" Hidden="true" />
+      <Method Name="Clone" Hidden="true" />
+      <Method Name="ConvertResult" Hidden="true" />
+      <Method Name="CreateUrl" Hidden="true" />
+      <Method Name="CsvNewRowItems" Hidden="true" />
+      <Method Name="CsvQuotePropertyTags" Hidden="true" />
+      <Method Name="CsvRowToQuotesData" Hidden="true" />
+      <Method Name="GetAllActiveProperties" Hidden="true" />
+      <Field Name="mAlternateQuoteProperties" Hidden="true" />
+      <Method Name="MaxThreePerm" Hidden="true" />
+      <Field Name="QuotePropertyTags" Hidden="true" />
+      <Method Name="QuotesQuery" Hidden="true" />
+      <Method Name="QuoteStringToObject" Hidden="true" />
+      <Method Name="ToQuotesData" Hidden="true" />
+      <Method Name="Validate" Hidden="true" />
+    </Members>
+    <InheritanceLine Type="MaasOne.Net.Query&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="10.25" Y="17.375" />
+        <Point X="9.875" Y="17.375" />
+        <Point X="9.875" Y="20.713" />
+        <Point X="8.75" Y="20.713" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAgAgAAQCCggAAAAAAAAAAEAAYAAAAgAAAiAAACEBA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\YahooFinance\Web\Quotes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Web.QuotesResult" Collapsed="true">
+    <Position X="43.5" Y="20.25" Width="2.25" />
+    <Members>
+      <Method Name="QuotesResult" Hidden="true" />
+    </Members>
+    <InheritanceLine Type="MaasOne.Net.ResultBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="42.5" Y="14.5" />
+        <Point X="42.875" Y="14.5" />
+        <Point X="42.875" Y="20.562" />
+        <Point X="43.5" Y="20.562" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Items" Type="MaasOne.YahooFinance.Data.Quotes" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="45.188" Y="20.941" />
+        <Point X="45.188" Y="21.316" />
+        <Point X="47.938" Y="21.316" />
+        <Point X="47.938" Y="22.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\YahooFinance\Web\Quotes.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Items" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Data.Quotes" HideInheritanceLine="true">
+    <Position X="47" Y="22.25" Width="2.25" />
+    <Members>
+      <Method Name="Clone" Hidden="true" />
+      <Method Name="Quotes" Hidden="true" />
+      <Property Name="this" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAgAAACAAQAAQAAAAAAAAAAAAgAAAQABI=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\YahooFinance\Data\Quotes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Data.CompanyProfile">
+    <Position X="47.5" Y="4.25" Width="2.25" />
+    <Members>
+      <Method Name="CompanyProfile" Hidden="true" />
+    </Members>
+    <AssociationLine Name="KeyExecutives" Type="MaasOne.YahooFinance.Data.CompanyProfileExecutivePerson" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="49.25" Y="4.25" />
+        <Point X="49.25" Y="3.875" />
+        <Point X="52.375" Y="3.875" />
+        <Point X="52.375" Y="2.873" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAYAAAAACBgAAAAAAAACAAAAAAAAACAAgAAAAAAAA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\YahooFinance\Data\CompanyProfile.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="KeyExecutives" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Data.QuotesBase">
+    <Position X="48" Y="10.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAgAAAAAAQAAQQAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\YahooFinance\Data\Quotes.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="1.549" />
+  </Class>
+  <Class Name="MaasOne.Net.ConnectionInfo">
+    <Position X="31.25" Y="16.25" Width="2" />
+    <Members>
+      <Method Name="ConnectionInfo" Hidden="true" />
+      <Property Name="Timeout" Hidden="true" />
+      <Property Name="TimeSpan" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAIAAgAAIAAARABAAAAAQ=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\Net\ConnectionInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.Net.YqlDiagnostics">
+    <Position X="37" Y="10.25" Width="1.5" />
+    <Members>
+      <Method Name="YqlDiagnostics" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAABAAAAAAAAAQBAACAAAAAAAAAA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\Net\Yql.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.YahooFinance.Data.CompanyProfileExecutivePerson">
+    <Position X="51" Y="1" Width="2.5" />
+    <Members>
+      <Method Name="CompanyProfileExecutivePerson" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAgAEEAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\YahooFinance\Data\CompanyProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.Net.DataIntegrityInfo">
+    <Position X="39.5" Y="16" Width="2" />
+    <Members>
+      <Method Name="DataIntegrityInfo" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\Net\DataIntegrityInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.Net.Query&lt;T&gt;" Collapsed="true">
+    <Position X="10.25" Y="17" Width="2.25" />
+    <InheritanceLine Type="MaasOne.Net.QueryBase" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="13.75" Y="14.688" />
+        <Point X="13.151" Y="14.688" />
+        <Point X="13.151" Y="17.346" />
+        <Point X="12.5" Y="17.346" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\Net\QueryT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.Net.Response&lt;T&gt;">
+    <Position X="35.5" Y="20" Width="2.25" />
+    <Members>
+      <Property Name="IQueryResponse.Query" Hidden="true" />
+      <Property Name="IQueryResponse.Result" Hidden="true" />
+      <Method Name="Response" Hidden="true" />
+    </Members>
+    <InheritanceLine Type="MaasOne.Net.ResponseBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="34.5" Y="14.562" />
+        <Point X="34.875" Y="14.562" />
+        <Point X="34.875" Y="20.25" />
+        <Point X="35.5" Y="20.25" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Query" Type="MaasOne.Net.Query&lt;T&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="36" Y="21.233" />
+        <Point X="36" Y="25.523" />
+        <Point X="10.688" Y="25.523" />
+        <Point X="10.688" Y="17.691" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAQAAAAAAAiAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\Net\ResponseT.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Query" />
+    </ShowAsAssociation>
+    <Lollipop Orientation="Left" Position="0.585" />
+  </Class>
+  <Class Name="MaasOne.Net.YqlResponse&lt;T&gt;">
+    <Position X="35.5" Y="7.75" Width="2.25" />
+    <Members>
+      <Method Name="YqlResponse" Hidden="true" />
+    </Members>
+    <InheritanceLine Type="MaasOne.Net.ResponseBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="34.5" Y="14.562" />
+        <Point X="34.875" Y="14.562" />
+        <Point X="34.875" Y="9.125" />
+        <Point X="35.5" Y="9.125" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Diagnostics" Type="MaasOne.Net.YqlDiagnostics" FixedFromPoint="true">
+      <Path>
+        <Point X="37.438" Y="9.367" />
+        <Point X="37.438" Y="10.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Queries" Type="MaasOne.Net.YqlQuery&lt;T&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="36.125" Y="7.75" />
+        <Point X="36.125" Y="3.23" />
+        <Point X="6.875" Y="3.23" />
+        <Point X="6.875" Y="11.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAIAAAAAAAAACAAAAASAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\Net\YqlResponseT.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Diagnostics" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Queries" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Orientation="Left" Position="0.742" />
+  </Class>
+  <Class Name="MaasOne.Net.YqlQuery&lt;T&gt;" Collapsed="true">
+    <Position X="6.5" Y="11.25" Width="2.25" />
+    <InheritanceLine Type="MaasOne.Net.Query&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.25" Y="17.375" />
+        <Point X="9.875" Y="17.375" />
+        <Point X="9.875" Y="11.625" />
+        <Point X="8.75" Y="11.625" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAQAAIAAAAAAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\Net\YqlQueryT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaasOne.Net.YqlDownloadClient&lt;T&gt;">
+    <Position X="16" Y="7.5" Width="3" />
+    <Members>
+      <Event Name="AsyncDownloadCompleted" Hidden="true" />
+      <Event Name="AsyncDownloadCompletedBase" Hidden="true" />
+      <Method Name="CheckQueries" Hidden="true" />
+      <Method Name="ConvertResponse" Hidden="true" />
+      <Method Name="CreateUrl" Hidden="true" />
+      <Method Name="DownloadAsync" Hidden="true" />
+      <Method Name="DownloadTaskAsync" Hidden="true" />
+      <Method Name="IQueryDownload.Download" Hidden="true" />
+      <Method Name="IQueryDownload.DownloadAsync" Hidden="true" />
+      <Method Name="IQueryDownload.DownloadTaskAsync" Hidden="true" />
+      <Method Name="IQueryDownload.IsCorrespondingType" Hidden="true" />
+      <Method Name="RaiseAsyncDownloadCompleted" Hidden="true" />
+      <Method Name="YqlDownloadClient" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Delegate Name="MaasOne.Net.YqlDownloadClient&lt;T&gt;.YqlAsyncDownloadCompletedEventHandler&lt;T&gt;" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\Net\YqlDownloadClientT.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <InheritanceLine Type="MaasOne.Net.DownloadClientBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20" Y="14.626" />
+        <Point X="19.625" Y="14.626" />
+        <Point X="19.625" Y="9.317" />
+        <Point X="19" Y="9.317" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="DefaultQueries" Type="MaasOne.Net.YqlQuery&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.75" Y="9.636" />
+        <Point X="16.75" Y="10.011" />
+        <Point X="8.438" Y="10.011" />
+        <Point X="8.438" Y="11.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AQAAAwCAAAAAIhAAIAABAAAAGAAgAAAAAAEKAIAAAAA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\Net\YqlDownloadClientT.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="DefaultQueries" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Orientation="Right" Position="0.797" />
+  </Class>
+  <Interface Name="MaasOne.Net.IQueryDownload">
+    <Position X="22.5" Y="13.25" Width="2" />
+    <Members>
+      <Event Name="AsyncDownloadCompletedBase" Hidden="true" />
+      <Method Name="DownloadAsync" Hidden="true" />
+      <Method Name="DownloadTaskAsync" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAIIAAIAABAAAAAAAgAAIAAAEAAAAAAIA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\Net\IQueryDownload.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MaasOne.Net.IQueryResponse">
+    <Position X="30.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>D:\Projects\YahooFinanceManaged\YahooFinanceManaged.Shared\MaasOne\Net\IQueryResponse.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

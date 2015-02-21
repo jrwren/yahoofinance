@@ -33,7 +33,7 @@ namespace Newtonsoft.Json
     /// <summary>
     /// The exception thrown when an error occurs while reading Json text.
     /// </summary>
-#if !(NETFX_CORE || PORTABLE || PCL40)
+#if !(NETFX_CORE || SILVERLIGHT)
     [Serializable]
 #endif
     internal class JsonReaderException : JsonException
@@ -84,7 +84,7 @@ namespace Newtonsoft.Json
         {
         }
 
-#if !(NETFX_CORE || PCL40 || PORTABLE)
+#if !(NETFX_CORE || SILVERLIGHT)
         /// <summary>
         /// Initializes a new instance of the <see cref="JsonReaderException"/> class.
         /// </summary>

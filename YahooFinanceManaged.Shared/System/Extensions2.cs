@@ -22,15 +22,13 @@ namespace System
     internal static class Extensions2
     {
 
-#if (PCL40 || PCL45)
-
-
+#if (SILVERLIGHT)
         public static string ToLongTimeString(this DateTime d) { return d.ToString("T"); }
         public static string ToLongDateString(this DateTime d) { return d.ToString("D"); }
 #endif
         public static bool IsNullOrWhiteSpace(this string self)
         {
-#if (NET20)
+#if (NET20 || NET35)
             if (self != null) { foreach (char c in self) { if (!Char.IsWhiteSpace(c)) return false; } }
             return true;
 #else

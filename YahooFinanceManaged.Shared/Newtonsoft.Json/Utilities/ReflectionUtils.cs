@@ -25,7 +25,7 @@
 
 using System;
 using System.Collections.Generic;
-#if !(PORTABLE || PCL40 || NET35 || NET20)
+#if !(SILVERLIGHT || NET35 || NET20)
 using System.Numerics;
 #endif
 using System.Reflection;
@@ -43,7 +43,7 @@ using Newtonsoft.Json.Serialization;
 
 namespace Newtonsoft.Json.Utilities
 {
-#if (NETFX_CORE || PORTABLE || PCL40)
+#if (NETFX_CORE)
     internal enum MemberTypes
     {
         Property = 0,
@@ -54,7 +54,7 @@ namespace Newtonsoft.Json.Utilities
     }
 #endif
 
-#if NETFX_CORE || PORTABLE
+#if NETFX_CORE && !(SILVERLIGHT || NET40)
     [Flags]
     internal enum BindingFlags
     {
@@ -87,7 +87,7 @@ namespace Newtonsoft.Json.Utilities
 
         static ReflectionUtils()
         {
-#if !(NETFX_CORE || PCL40 || PORTABLE)
+#if !(NETFX_CORE || SILVERLIGHT)
             EmptyTypes = Type.EmptyTypes;
 #else
             EmptyTypes = new Type[0];
@@ -669,7 +669,7 @@ namespace Newtonsoft.Json.Utilities
             return (attributes != null) ? attributes.FirstOrDefault() : null;
         }
 
-#if !(NETFX_CORE || PORTABLE)
+#if !(NETFX_CORE && !SILVERLIGHT)
         public static T[] GetAttributes<T>(object attributeProvider, bool inherit) where T : Attribute
         {
             Attribute[] a = GetAttributes(attributeProvider, typeof(T), inherit);
@@ -717,7 +717,7 @@ namespace Newtonsoft.Json.Utilities
                 return (attributeType != null) ? Attribute.GetCustomAttributes(m, attributeType, inherit) : Attribute.GetCustomAttributes(m, inherit);
             }
 
-#if !PCL40
+#if !SILVERLIGHT
             if (provider is Module)
             {
                 Module m = (Module)provider;
@@ -731,7 +731,7 @@ namespace Newtonsoft.Json.Utilities
                 return (attributeType != null) ? Attribute.GetCustomAttributes(p, attributeType, inherit) : Attribute.GetCustomAttributes(p, inherit);
             }
 
-#if !PCL40
+#if !SILVERLIGHT
             ICustomAttributeProvider customAttributeProvider = (ICustomAttributeProvider)attributeProvider;
             object[] result = (attributeType != null) ? customAttributeProvider.GetCustomAttributes(attributeType, inherit) : customAttributeProvider.GetCustomAttributes(inherit);
 
@@ -848,7 +848,7 @@ namespace Newtonsoft.Json.Utilities
             ValidationUtils.ArgumentNotNull(targetType, "targetType");
 
             List<MemberInfo> fieldInfos = new List<MemberInfo>(targetType.GetFields(bindingAttr));
-#if !(NETFX_CORE || PORTABLE)
+#if !(NETFX_CORE)
             // Type.GetFields doesn't return inherited private fields
             // manually find private fields from base class
             GetChildPrivateFields(fieldInfos, targetType, bindingAttr);
@@ -857,7 +857,7 @@ namespace Newtonsoft.Json.Utilities
             return fieldInfos.Cast<FieldInfo>();
         }
 
-#if !(NETFX_CORE || PORTABLE)
+#if !(NETFX_CORE)
         private static void GetChildPrivateFields(IList<MemberInfo> initialFields, Type targetType, BindingFlags bindingAttr)
         {
             // fix weirdness with private FieldInfos only being returned for the current Type
@@ -1008,7 +1008,7 @@ namespace Newtonsoft.Json.Utilities
                     return 0m;
                 case PrimitiveTypeCode.DateTime:
                     return new DateTime();
-#if !(PORTABLE || PCL40 || NET35 || NET20)
+#if !(SILVERLIGHT || NET35 || NET20)
                 case PrimitiveTypeCode.BigInteger:
                     return new BigInteger();
 #endif

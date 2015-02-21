@@ -23,7 +23,7 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 #endregion
 
-#if !(NETFX_CORE || PORTABLE || PCL40)
+#if !(NETFX_CORE || SILVERLIGHT)
 using System;
 using System.Runtime.Serialization;
 

@@ -26,7 +26,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-#if !(NET20 || NET35 || PCL40 || PORTABLE)
+#if !(NET20 || NET35 || SILVERLIGHT)
 using System.Numerics;
 #endif
 using Newtonsoft.Json.Utilities;
@@ -527,7 +527,7 @@ namespace Newtonsoft.Json
                     break;
                 case JsonToken.Integer:
                     ValidationUtils.ArgumentNotNull(value, "value");
-#if !(NET20 || NET35 || PORTABLE || PCL40)
+#if !(NET20 || NET35 || SILVERLIGHT)
                     if (value is BigInteger)
                     {
                         WriteValue((BigInteger)value);
@@ -1228,7 +1228,7 @@ namespace Newtonsoft.Json
             }
             else
             {
-#if !(NET20 || NET35 || PORTABLE || PCL40)
+#if !(NET20 || NET35 || SILVERLIGHT)
                 // this is here because adding a WriteValue(BigInteger) to JsonWriter will
                 // mean the user has to add a reference to System.Numerics.dll
                 if (value is BigInteger)
@@ -1377,7 +1377,7 @@ namespace Newtonsoft.Json
                 case PrimitiveTypeCode.TimeSpanNullable:
                     writer.WriteValue((value == null) ? (TimeSpan?)null : (TimeSpan)value);
                     break;
-#if !(PORTABLE || PCL40 || NET35 || NET20)
+#if !(SILVERLIGHT || NET35 || NET20)
                 case PrimitiveTypeCode.BigInteger:
                     // this will call to WriteValue(object)
                     writer.WriteValue((BigInteger)value);
@@ -1396,13 +1396,13 @@ namespace Newtonsoft.Json
                 case PrimitiveTypeCode.Bytes:
                     writer.WriteValue((byte[])value);
                     break;
-#if !(PORTABLE || NETFX_CORE)
+#if !(NETFX_CORE)
                 case PrimitiveTypeCode.DBNull:
                     writer.WriteNull();
                     break;
 #endif
                 default:
-#if !(PORTABLE || NETFX_CORE)
+#if !(NETFX_CORE)
                     if (value is IConvertible)
                     {
                         // the value is a non-standard IConvertible

@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YahooFinanceManaged.UnitTest.NET45", "YahooFinanceManaged.UnitTest.NET45.csproj", "{4CFD0BF4-677E-422D-AA6B-0DFD09D33889}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "YahooFinanceManaged.UnitTest.Shared", "..\YahooFinanceManaged.UnitTest.Shared\YahooFinanceManaged.UnitTest.Shared.shproj", "{B9F0A63C-8DE7-462A-96E8-5F89B95EC91C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YahooFinanceManaged.NET45", "..\..\YahooFinanceManaged.Builds\YahooFinanceManaged.NET45\YahooFinanceManaged.NET45.csproj", "{F26DE47E-C936-405A-9C2A-9D23A8F1252B}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\..\YahooFinanceManaged.Shared\YahooFinanceManaged.Shared.projitems*{f26de47e-c936-405a-9c2a-9d23a8f1252b}*SharedItemsImports = 4
+		..\YahooFinanceManaged.UnitTest.Shared\YahooFinanceManaged.UnitTest.Shared.projitems*{4cfd0bf4-677e-422d-aa6b-0dfd09d33889}*SharedItemsImports = 4
+		..\YahooFinanceManaged.UnitTest.Shared\YahooFinanceManaged.UnitTest.Shared.projitems*{b9f0a63c-8de7-462a-96e8-5f89b95ec91c}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CFD0BF4-677E-422D-AA6B-0DFD09D33889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CFD0BF4-677E-422D-AA6B-0DFD09D33889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CFD0BF4-677E-422D-AA6B-0DFD09D33889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CFD0BF4-677E-422D-AA6B-0DFD09D33889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F26DE47E-C936-405A-9C2A-9D23A8F1252B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F26DE47E-C936-405A-9C2A-9D23A8F1252B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F26DE47E-C936-405A-9C2A-9D23A8F1252B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F26DE47E-C936-405A-9C2A-9D23A8F1252B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

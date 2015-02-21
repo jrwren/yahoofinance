@@ -31,7 +31,7 @@ namespace Newtonsoft.Json.Schema
     /// <summary>
     /// Returns detailed information about the schema exception.
     /// </summary>
-#if !(NETFX_CORE || PCL40 || PORTABLE)
+#if !(NETFX_CORE || SILVERLIGHT)
     [Serializable]
 #endif
     internal class JsonSchemaException : JsonException
@@ -83,7 +83,7 @@ namespace Newtonsoft.Json.Schema
         {
         }
 
-#if !(NETFX_CORE || PCL40 || PORTABLE)
+#if !(NETFX_CORE || SILVERLIGHT)
         /// <summary>
         /// Initializes a new instance of the <see cref="JsonSchemaException"/> class.
         /// </summary>

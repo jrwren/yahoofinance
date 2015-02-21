@@ -23,7 +23,7 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 #endregion
 
-#if !(NET35 || NET20 || PCL40)
+#if !(NET35 || NET20 || SILVERLIGHT)
 using System;
 using System.Collections.Generic;
 using System.Dynamic;

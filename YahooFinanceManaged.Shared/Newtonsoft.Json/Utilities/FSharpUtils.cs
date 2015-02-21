@@ -95,7 +95,7 @@ namespace Newtonsoft.Json.Utilities
 
                         _mapType = fsharpCoreAssembly.GetType("Microsoft.FSharp.Collections.FSharpMap`2");
 
-#if !(NETFX_CORE || PORTABLE)
+#if !(NETFX_CORE)
                         Thread.MemoryBarrier();
 #endif
                         _initialized = true;

@@ -179,7 +179,7 @@ namespace Newtonsoft.Json.Converters
             // all fsharp objects have CompilationMappingAttribute
             // get the fsharp assembly from the attribute and initialize latebound methods
             object[] attributes;
-#if !(NETFX_CORE || PORTABLE)
+#if !(NETFX_CORE)
             attributes = objectType.GetCustomAttributes(true);
 #else
             attributes = objectType.GetTypeInfo().GetCustomAttributes(true).ToArray();

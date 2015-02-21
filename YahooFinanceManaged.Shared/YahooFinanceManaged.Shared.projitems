@@ -6,27 +6,43 @@
     <SharedGUID>903486b9-76be-4d9c-bd8d-88d248ba9020</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>YahooFinanceManaged</Import_RootNamespace>
+    <Import_RootNamespace>
+    </Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Extensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\MyHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\ConnectionInfo.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\DownloadClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\DataIntegrityInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\DownloadClientT.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\DownloadClientBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\DownloadCompletedEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\DownloadCompletedEventArgsT.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\DownloadEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\DownloadOperation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\Enums.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\Exceptions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\HtmlToJson.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\ConnectionState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\DownloadOperationCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\IQueryDownload.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\IQueryDownloadCompletedEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\IQueryResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\ParseException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\HtmlToJsonParser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\Query.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\Response.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\Result.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\QueryT.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\ResponseBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\ResponseT.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\ResultBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\StreamResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\StringQuery.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\StringResult.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\ValidationResult.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\Yql.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\YqlDownloadClientT.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\YqlDownloadCompletedEventArgsT.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\YqlQueryT.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Net\YqlResponseT.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Rss\Category.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Rss\Channel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Rss\Cloud.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Rss\Enclosure.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Rss\Feed.cs" />
@@ -37,6 +53,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Rss\Skip.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Rss\Source.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\Rss\TextInputBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\Country.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\CountryInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\Culture.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\CurrencyInfo.cs" />
@@ -51,11 +68,15 @@
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\Data\Industry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\Data\Quotes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\Data\Screener.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\Enums.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\Fund.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\FinanceType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\FundCategory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\FundFamily.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\Industry.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\Interfaces.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\IID.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\IQuotePrice.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\ISIN.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\Language.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\Sector.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\StockExchange.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\TradingTimeInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\Web\AnalyseUpDowngrades.cs" />
@@ -82,6 +103,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\Web\Screener.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\Web\StockScreener.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\WorldMarket.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\YahooServer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\YCurrencyID.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\YFHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaasOne\YahooFinance\YID.cs" />
@@ -104,7 +126,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Newtonsoft.Json\Converters\ExpandoObjectConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Newtonsoft.Json\Converters\IsoDateTimeConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Newtonsoft.Json\Converters\JavaScriptDateTimeConverter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Newtonsoft.Json\Converters\JsonValueConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Newtonsoft.Json\Converters\KeyValuePairConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Newtonsoft.Json\Converters\RegexConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Newtonsoft.Json\Converters\StringEnumConverter.cs" />
@@ -288,6 +309,6 @@
     <None Include="$(MSBuildThisFileDirectory)Resources\market.xsd" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="$(MSBuildThisFileDirectory)Resources\market.xml" />
+    <None Include="$(MSBuildThisFileDirectory)Resources\market.xml" />
   </ItemGroup>
 </Project>

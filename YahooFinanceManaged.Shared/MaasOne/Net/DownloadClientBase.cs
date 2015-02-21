@@ -1,4 +1,21 @@
-﻿using System;
+﻿#region "License"
+// *********************************************************************************************
+// **                                                                                         **
+// **  Yahoo! Finance Managed                                                                 **
+// **                                                                                         **
+// **  Copyright (c) Marius Häusler 2009-2015                                                 **
+// **                                                                                         **
+// **  Licensed under GNU Lesser General Public License (LGPL) (Version 2.1, February 1999).  **
+// **                                                                                         **
+// **  License: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt                        **
+// **                                                                                         **
+// **  Project: https://yahoofinance.codeplex.com/                                            **
+// **                                                                                         **
+// **  Contact: maasone@live.com                                                              **
+// **                                                                                         **
+// *********************************************************************************************
+#endregion
+using System;
 using System.Net;
 using System.Collections.Generic;
 
@@ -10,27 +27,8 @@ namespace MaasOne.Net
     /// <remarks></remarks>
     public abstract class DownloadClientBase
     {
-        /// <summary>
-        /// Gets a collection of active download operations.
-        /// </summary>
-        public DownloadOperationCollection ActiveOperations { get; private set; }
+        private int timeout = 30000;
 
-#if !(PCL40)
-        /// <summary>
-        /// Gets or sets the network proxy to use to access this Internet resource.
-        /// </summary>
-        public IWebProxy Proxy { get; set; }
-
-        /// <summary>
-        /// Gets or sets the length of time, in milliseconds, before the request times out.
-        /// </summary>
-        public int Timeout
-        {
-            get { return mTimeout; }
-            set { mTimeout = Math.Min(Math.Max(0, value), 360000); }
-        }
-        private int mTimeout = 30000;
-#endif
 
 
         public DownloadClientBase()
@@ -40,9 +38,30 @@ namespace MaasOne.Net
 
 
 
-        #region "Sync"
+        /// <summary>
+        /// Gets a collection of active download operations.
+        /// </summary>
+        public DownloadOperationCollection ActiveOperations { get; private set; }
 
-#if !(PCL40 || PCL45)
+#if !(SILVERLIGHT)
+        /// <summary>
+        /// Gets or sets the network proxy to use to access this Internet resource.
+        /// </summary>
+        public IWebProxy Proxy { get; set; }
+#endif
+
+        /// <summary>
+        /// Gets or sets the length of time, in milliseconds, before the request times out.
+        /// </summary>
+        public int Timeout
+        {
+            get { return this.timeout; }
+            set { this.timeout = Math.Min(Math.Max(0, value), 300000); }
+        }
+
+
+
+#if !(NETFX_CORE || SILVERLIGHT)
         /// <summary>
         /// Starts a data download and conversion operation.
         /// </summary>
@@ -52,7 +71,7 @@ namespace MaasOne.Net
         protected StreamResponse Download(Uri url)
         {
             DateTime startTime = DateTime.UtcNow;
-            DateTime endTime = startTime;
+            ConnectionState state = ConnectionState.Success;
             Exception dlException = null;
             int size = -1;
             System.IO.Stream result = null;
@@ -69,30 +88,32 @@ namespace MaasOne.Net
                     {
                         result = MaasOne.MyHelper.CopyStream(stream);
                         resp.Close();
-                        endTime = DateTime.UtcNow;
                         if (result != null && result.CanSeek) int.TryParse(result.Length.ToString(), out size);
                     }
                 }
             }
+            catch (WebException ex)
+            {
+                state = ConnectionState.ErrorOccured;
+                if (ex.Status == WebExceptionStatus.RequestCanceled)
+                { state = ConnectionState.Canceled; }
+                else if (ex.Status == WebExceptionStatus.Timeout)
+                { state = ConnectionState.Timeout; }
+                dlException = ex;
+            }
             catch (Exception ex)
             {
+                state = ConnectionState.ErrorOccured;
                 dlException = this.GetOrCreateWebException(ex);
-                endTime = DateTime.UtcNow;
             }
 
             this.RemoveDownload(wr);
 
-            ConnectionInfo conn = new ConnectionInfo(dlException, wr.Timeout, size, startTime, endTime);
+            ConnectionInfo conn = new ConnectionInfo(state, dlException, wr.Timeout, size, startTime, DateTime.UtcNow);
 
             return new StreamResponse(conn, result);
         }
 #endif
-
-        #endregion
-
-
-
-        #region "Async"
 
         /// <summary>
         /// Starts an asynchronous data download and conversion operation.
@@ -101,7 +122,7 @@ namespace MaasOne.Net
         /// <param name="query">The query that is used for creating the request.</param>
         /// <param name="userArgs">Individual user arguments that will be passed to the <see cref="AsyncDownloadCompletedEventHandler{T}"/> when <see cref="AsyncDownloadCompleted"/> event is fired.</param>
         /// <remarks><see cref="AsyncDownloadCompleted"/> event is fired when download and conversion operation is completed.</remarks>
-        protected void DownloadAsync(Uri url, QueryBase[] queries, object userArgs)
+        protected void DownloadAsync(Uri url, object userArgs)
         {
             DateTime startTime = DateTime.UtcNow;
 
@@ -111,133 +132,34 @@ namespace MaasOne.Net
             {
                 this.AddDownload(wr, startTime, userArgs);
 
-                AsyncDownloadArgs asyncArgs = new AsyncDownloadArgs(wr, queries, userArgs, startTime);
-#if !(PCL40 || PCL45)
-                asyncArgs.Timeout = this.Timeout;
-#endif
+                AsyncDownloadArgs asyncArgs = new AsyncDownloadArgs(wr, userArgs, startTime, this.Timeout);
+
                 IAsyncResult res = wr.BeginGetResponse(new AsyncCallback(this.ResponseDownloadCompleted), asyncArgs);
-#if !(PCL40 || PCL45)
-                System.Threading.ThreadPool.RegisterWaitForSingleObject(res.AsyncWaitHandle, new System.Threading.WaitOrTimerCallback(this.ResponseDownloadTimeout), asyncArgs, this.Timeout, true);
+#if !(NETFX_CORE)
+                System.Threading.ThreadPool.RegisterWaitForSingleObject(res.AsyncWaitHandle,
+                                                                        new System.Threading.WaitOrTimerCallback((object state, bool timedOut) =>
+                                                                        { if (timedOut) this.TimeoutAsync(state); }),
+                                                                        asyncArgs,
+                                                                        this.Timeout,
+                                                                        true);
+#else
+                System.Threading.Tasks.Task.Factory.StartNew(() =>
+                {
+                    if (res.AsyncWaitHandle.WaitOne(asyncArgs.Timeout) == false)
+                        this.TimeoutAsync(asyncArgs);
+                    return;
+                });
 #endif
             }
             catch (Exception ex)
             {
                 System.Net.WebException dlException = this.GetOrCreateWebException(ex);
-#if (PCL40)
-                ConnectionInfo conn = new ConnectionInfo(dlException, 0, startTime, DateTime.UtcNow);
-#else
-                ConnectionInfo conn = new ConnectionInfo(dlException, this.Timeout, 0, startTime, DateTime.UtcNow);
-#endif
-                this.RaiseAsyncDownloadCompleted(new StreamResponse(conn, null), queries, userArgs);
+                ConnectionInfo conn = new ConnectionInfo(ConnectionState.ErrorOccured, dlException, this.Timeout, -1, startTime, DateTime.UtcNow);
+                this.RaiseAsyncDownloadCompleted(new StreamResponse(conn, null), userArgs);
             }
         }
 
-        private void ResponseDownloadCompleted(IAsyncResult result)
-        {
-            AsyncDownloadArgs asyncArgs = (AsyncDownloadArgs)result.AsyncState;
-            DateTime endTime = DateTime.UtcNow;
-            Exception dlException = null;
-            int size = 0;
-            System.IO.Stream res = null;
-
-            try
-            {
-                using (HttpWebResponse resp = (HttpWebResponse)asyncArgs.WR.EndGetResponse(result))
-                {
-#if !(PCL40 || PCL45)
-                    if (!asyncArgs.TimedOut)
-                    {
-#endif
-                        using (System.IO.Stream stream = resp.GetResponseStream())
-                        {
-                            res = MyHelper.CopyStream(stream);
-#if !(PCL40 || PCL45)
-                            resp.Close();
-#else
-                            resp.Dispose();
-#endif
-                            endTime = DateTime.UtcNow;
-                            if (res != null && res.CanSeek) int.TryParse(res.Length.ToString(), out size);
-                        }
-#if !(PCL40 || PCL45)
-                    }
-                    else
-                    {
-                        dlException = new WebException("Timeout Exception.", null, WebExceptionStatus.Timeout, resp);
-                        endTime = DateTime.UtcNow;
-                    }
-#endif
-                }
-            }
-            catch (Exception ex)
-            {
-                dlException = this.GetOrCreateWebException(ex);
-                endTime = DateTime.UtcNow;
-            }
-
-            this.RemoveDownload(asyncArgs.WR);
-
-
-#if (PCL40)
-            ConnectionInfo conn = new ConnectionInfo(dlException, size, asyncArgs.StartTime, endTime);
-#else
-            ConnectionInfo conn = new ConnectionInfo(dlException, asyncArgs.Timeout, size, asyncArgs.StartTime, endTime);
-#endif
-            StreamResponse strResp = new StreamResponse(conn, res);
-#if (PCL40 || PCL45)
-            RaiseAsyncDownloadCompleted(strResp, asyncArgs.Queries, asyncArgs.UserArgs);
-#else
-            System.ComponentModel.AsyncOperationManager.CreateOperation(this).Post(new System.Threading.SendOrPostCallback(delegate(object obj)
-            {
-                object[] arr = (object[])obj;
-                RaiseAsyncDownloadCompleted((StreamResponse)arr[0], (QueryBase[])arr[1], arr[2]);
-
-            }), new object[] {
-                    strResp,
-                    asyncArgs.Queries,
-                    asyncArgs.UserArgs
-                });
-#endif
-        }
-
-#if !(PCL40 || PCL45)
-        private void ResponseDownloadTimeout(object state, bool timedOut)
-        {
-            if (timedOut)
-            {
-                AsyncDownloadArgs asyncArgs = (AsyncDownloadArgs)state;
-                asyncArgs.TimedOut = true;
-                asyncArgs.WR.Abort();
-            }
-        }
-#endif
-        protected abstract void RaiseAsyncDownloadCompleted(StreamResponse response, QueryBase[] queries, object userArgs);
-
-        private class AsyncDownloadArgs : DownloadEventArgs
-        {
-            public DateTime StartTime { get; private set; }
-            public HttpWebRequest WR { get; private set; }
-            public QueryBase[] Queries { get; private set; }
-#if !(PCL40)
-            public int Timeout { get; internal set; }
-            public bool TimedOut { get; set; }
-#endif
-            public AsyncDownloadArgs(HttpWebRequest wr, QueryBase[] queries, object userArgs, DateTime st)
-                : base(userArgs)
-            {
-                this.WR = wr;
-                this.Queries = queries;
-                this.StartTime = st;
-            }
-        }
-
-        #endregion
-
-
-
-        #region "TaskAsync"
-
-#if !(NET20 || PCL40)
+#if !(NET20 || NET35 || NET40 || SILVERLIGHT)
         /// <summary>
         /// Starts an async data download and conversion operation.
         /// </summary>
@@ -246,53 +168,62 @@ namespace MaasOne.Net
         /// <returns>The task object representing the async download operation.</returns>
         protected async System.Threading.Tasks.Task<StreamResponse> DownloadTaskAsync(Uri url)
         {
+            DateTime startTime = DateTime.UtcNow;
 
             System.Net.Http.HttpClient hc = new System.Net.Http.HttpClient();
             hc.Timeout = TimeSpan.FromMilliseconds(this.Timeout);
 
-            DateTime startTime = DateTime.Now;
-            DateTime endTime = startTime;
 
+            ConnectionState state = ConnectionState.Success;
             Exception dlException = null;
             int size = -1;
             System.IO.Stream result = null;
 
             this.AddDownload(hc, startTime, null);
 
+            var cts = new System.Threading.CancellationTokenSource();
             try
             {
                 startTime = DateTime.Now;
-                using (System.Net.Http.HttpResponseMessage resp = await hc.GetAsync(url))
+                using (System.Net.Http.HttpResponseMessage resp = await hc.GetAsync(url, cts.Token))
                 {
                     using (System.IO.Stream stream = await resp.Content.ReadAsStreamAsync())
                     {
                         result = MaasOne.MyHelper.CopyStream(stream);
 
-                        endTime = DateTime.Now;
                         resp.Dispose();
                         if (result != null && result.CanSeek) int.TryParse(result.Length.ToString(), out size);
                     }
                 }
             }
+            catch (WebException ex)
+            {
+                state = ConnectionState.ErrorOccured;
+                if (ex.Status == WebExceptionStatus.RequestCanceled)
+                { state = ConnectionState.Canceled; }
+                dlException = ex;
+            }
+            catch (System.Threading.Tasks.TaskCanceledException ex)
+            {
+                if (ex.CancellationToken == cts.Token)
+                { state = ConnectionState.Canceled; }
+                else
+                { state = ConnectionState.Timeout; }
+                dlException = this.GetOrCreateWebException(ex);
+            }
             catch (Exception ex)
             {
+                state = ConnectionState.ErrorOccured;
                 dlException = this.GetOrCreateWebException(ex);
-                endTime = DateTime.Now;
             }
 
             this.RemoveDownload(hc);
 
-            ConnectionInfo conn = new ConnectionInfo(dlException, (int)hc.Timeout.TotalMilliseconds, size, startTime, endTime);
+            ConnectionInfo conn = new ConnectionInfo(state, dlException, (int)hc.Timeout.TotalMilliseconds, size, startTime, DateTime.UtcNow);
 
             return new StreamResponse(conn, result);
         }
 #endif
-
-        #endregion
-
-
-
-        #region "Private"
 
         protected HttpWebRequest CreateWebRequest(Uri url)
         {
@@ -301,18 +232,18 @@ namespace MaasOne.Net
 
             HttpWebRequest wr = (HttpWebRequest)HttpWebRequest.Create(url);
             wr.Method = "GET";
-#if !(PCL40 || PCL45)
+#if !(NETFX_CORE || SILVERLIGHT)
             wr.Timeout = this.Timeout;
             wr.ReadWriteTimeout = this.Timeout;
 #endif
-#if !(PCL40)
+#if !(SILVERLIGHT)
             if (this.Proxy != null) wr.Proxy = this.Proxy;
 #endif
 
             return wr;
         }
 
-        private WebException GetOrCreateWebException(Exception ex)
+        protected WebException GetOrCreateWebException(Exception ex)
         {
             if (ex is WebException) { return (WebException)ex; }
             else { return new System.Net.WebException("An Exception was thrown during download operation. See InnerException for more details.", ex, System.Net.WebExceptionStatus.UnknownError, null); }
@@ -324,16 +255,102 @@ namespace MaasOne.Net
             else { return new ParseException(ex); }
         }
 
-        private void AddDownload(object clientObject, DateTime startTime, object args)
+
+        protected abstract void RaiseAsyncDownloadCompleted(StreamResponse response, object userArgs);
+
+
+        private void AddDownload(object clientObject, DateTime startTime, object args) { this.ActiveOperations.Add(new Net.DownloadOperation(clientObject, args)); }
+
+        private bool RemoveDownload(object clientObject) { return this.ActiveOperations.Remove(clientObject); }
+
+        private void ResponseDownloadCompleted(IAsyncResult result)
         {
-            this.ActiveOperations.Add(new Net.DownloadOperation(clientObject, args));
+            AsyncDownloadArgs asyncArgs = (AsyncDownloadArgs)result.AsyncState;
+            ConnectionState state = ConnectionState.Success;
+            Exception dlException = null;
+            int size = 0;
+            System.IO.Stream res = null;
+
+            if (!asyncArgs.TimedOut)
+            {
+                try
+                {
+                    using (HttpWebResponse resp = (HttpWebResponse)asyncArgs.WR.EndGetResponse(result))
+                    {
+                        using (System.IO.Stream stream = resp.GetResponseStream())
+                        {
+                            res = MyHelper.CopyStream(stream);
+#if !(NETFX_CORE)
+                            resp.Close();
+#else
+                            resp.Dispose();
+#endif
+                            if (res != null && res.CanSeek) int.TryParse(res.Length.ToString(), out size);
+                        }
+                    }
+                }
+                catch (WebException ex)
+                {
+                    state = ConnectionState.ErrorOccured;
+                    if (ex.Status == WebExceptionStatus.RequestCanceled)
+                        state = ConnectionState.Canceled;
+                    dlException = ex;
+                }
+                catch (Exception ex)
+                {
+                    state = ConnectionState.ErrorOccured;
+                    dlException = this.GetOrCreateWebException(ex);
+                }
+            }
+            else
+            {
+                state = ConnectionState.Timeout;
+            }
+
+
+            this.RemoveDownload(asyncArgs.WR);
+
+            ConnectionInfo conn = new ConnectionInfo(state, dlException, asyncArgs.Timeout, size, asyncArgs.StartTime, DateTime.UtcNow);
+
+            StreamResponse strResp = new StreamResponse(conn, res);
+#if !(NETFX_CORE)
+            System.ComponentModel.AsyncOperationManager.CreateOperation(this).Post(new System.Threading.SendOrPostCallback(delegate(object obj)
+            {
+                object[] arr = (object[])obj;
+                RaiseAsyncDownloadCompleted((StreamResponse)arr[0], arr[1]);
+
+            }), new object[] {
+                    strResp,
+                    asyncArgs.UserArgs
+                });
+#else
+            RaiseAsyncDownloadCompleted(strResp, asyncArgs.UserArgs);
+#endif
         }
 
-        private bool RemoveDownload(object clientObject)
+        private void TimeoutAsync(object asyncArgs)
         {
-            return this.ActiveOperations.Remove(clientObject);
+            AsyncDownloadArgs aa = (AsyncDownloadArgs)asyncArgs;
+            aa.TimedOut = true;
+            aa.WR.Abort();
         }
 
-        #endregion
+
+
+        private class AsyncDownloadArgs : DownloadEventArgs
+        {
+            public DateTime StartTime { get; private set; }
+            public HttpWebRequest WR { get; private set; }
+            public int Timeout { get; private set; }
+            public bool TimedOut { get; set; }
+
+            public AsyncDownloadArgs(HttpWebRequest wr, object userArgs, DateTime st, int to)
+                : base(userArgs)
+            {
+                this.WR = wr;
+                this.StartTime = st;
+                this.Timeout = to;
+            }
+        }
     }
 }

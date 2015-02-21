@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>b9f0a63c-8de7-462a-96e8-5f89b95ec91c</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>MaasOne</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Net\UnitTest\DownloadTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Rss\UnitTest\RssFeedTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)YahooFinance\UnitTest\AnalyseUpDowngradesTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)YahooFinance\UnitTest\BondScreenerTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)YahooFinance\UnitTest\CompanyEventsTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)YahooFinance\UnitTest\CompanyKeyStatisticsTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)YahooFinance\UnitTest\CompanyMembershipsTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)YahooFinance\UnitTest\CompanyProfileTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)YahooFinance\UnitTest\FundScreenerTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)YahooFinance\UnitTest\HistoricalQuotesTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)YahooFinance\UnitTest\IDInstantSearchTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)YahooFinance\UnitTest\IDSearchTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)YahooFinance\UnitTest\IndustryCompaniesTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)YahooFinance\UnitTest\IndustryInfoTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)YahooFinance\UnitTest\IndustryListTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)YahooFinance\UnitTest\QuotesOptionsTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)YahooFinance\UnitTest\QuotesTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)YahooFinance\UnitTest\StockScreenerTest.cs" />
+  </ItemGroup>
+</Project>

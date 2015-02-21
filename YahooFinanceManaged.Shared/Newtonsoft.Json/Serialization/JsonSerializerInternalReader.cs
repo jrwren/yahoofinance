@@ -27,13 +27,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-#if !(NET35 || NET20 || PCL40)
+#if !(NET35 || NET20 || SILVERLIGHT)
 using System.ComponentModel;
 using System.Dynamic;
 #endif
 using System.Diagnostics;
 using System.Globalization;
-#if !(PORTABLE || PCL40 || NET35 || NET20)
+#if !(SILVERLIGHT || NET35 || NET20)
 using System.Numerics;
 #endif
 using System.Reflection;
@@ -293,7 +293,7 @@ namespace Newtonsoft.Json.Serialization
                         return EnsureType(reader, constructorName, CultureInfo.InvariantCulture, contract, objectType);
                     case JsonToken.Null:
                     case JsonToken.Undefined:
-#if !(NETFX_CORE || PCL40 || PORTABLE)
+#if !(NETFX_CORE || SILVERLIGHT)
                         if (objectType == typeof(DBNull))
                             return DBNull.Value;
 #endif
@@ -318,10 +318,10 @@ namespace Newtonsoft.Json.Serialization
             {
                 case JsonContractType.Object:
                 case JsonContractType.Dictionary:
-#if !(NETFX_CORE || PORTABLE || PCL40)
+#if !(NETFX_CORE || SILVERLIGHT)
                 case JsonContractType.Serializable:
 #endif
-#if !(NET35 || NET20 || PCL40)
+#if !(NET35 || NET20 || SILVERLIGHT)
                 case JsonContractType.Dynamic:
 #endif
                     return @"JSON object (e.g. {""name"":""value""})";
@@ -500,12 +500,12 @@ namespace Newtonsoft.Json.Serialization
 
                     return targetDictionary;
                 }
-#if !(NET35 || NET20 || PCL40)
+#if !(NET35 || NET20 || SILVERLIGHT)
                 case JsonContractType.Dynamic:
                     JsonDynamicContract dynamicContract = (JsonDynamicContract)contract;
                     return CreateDynamic(reader, dynamicContract, member, id);
 #endif
-#if !(NETFX_CORE || PCL40 || PORTABLE)
+#if !(NETFX_CORE || SILVERLIGHT)
                 case JsonContractType.Serializable:
                     JsonISerializableContract serializableContract = (JsonISerializableContract)contract;
                     return CreateISerializable(reader, serializableContract, member, id);
@@ -718,10 +718,10 @@ namespace Newtonsoft.Json.Serialization
                     TraceWriter.Trace(TraceLevel.Verbose, JsonPosition.FormatMessage(reader as IJsonLineInfo, reader.Path, "Resolved type '{0}' to {1}.".FormatWith(CultureInfo.InvariantCulture, qualifiedTypeName, specifiedType)), null);
 
                 if (objectType != null
-#if !(NET35 || NET20 || PCL40)
+#if !(NET35 || NET20 || SILVERLIGHT)
                     && objectType != typeof(IDynamicMetaObjectProvider)
 #endif
-                    && !objectType.IsAssignableFrom(specifiedType))
+ && !objectType.IsAssignableFrom(specifiedType))
                     throw JsonSerializationException.Create(reader, "Type specified in JSON '{0}' is not compatible with '{1}'.".FormatWith(CultureInfo.InvariantCulture, specifiedType.AssemblyQualifiedName, objectType.AssemblyQualifiedName));
 
                 objectType = specifiedType;
@@ -826,10 +826,10 @@ namespace Newtonsoft.Json.Serialization
         private bool HasNoDefinedType(JsonContract contract)
         {
             return (contract == null || contract.UnderlyingType == typeof(object) || contract.ContractType == JsonContractType.Linq
-#if !(NET35 || NET20 || PCL40)
+#if !(NET35 || NET20 || SILVERLIGHT)
                     || contract.UnderlyingType == typeof(IDynamicMetaObjectProvider)
 #endif
-                );
+);
         }
 
         private object EnsureType(JsonReader reader, object value, CultureInfo culture, JsonContract contract, Type targetType)
@@ -860,7 +860,7 @@ namespace Newtonsoft.Json.Serialization
                                 return Enum.ToObject(contract.NonNullableUnderlyingType, value);
                         }
 
-#if !(PORTABLE || PCL40 || NET35 || NET20)
+#if !(SILVERLIGHT || NET35 || NET20)
                         if (value is BigInteger)
                             return ConvertUtils.FromBigInteger((BigInteger)value, targetType);
 #endif
@@ -1441,7 +1441,7 @@ namespace Newtonsoft.Json.Serialization
             return underlyingList;
         }
 
-#if !(NETFX_CORE || PCL40 || PORTABLE)
+#if !(NETFX_CORE || SILVERLIGHT)
         private object CreateISerializable(JsonReader reader, JsonISerializableContract contract, JsonProperty member, string id)
         {
             Type objectType = contract.UnderlyingType;
@@ -1517,7 +1517,7 @@ namespace Newtonsoft.Json.Serialization
         }
 #endif
 
-#if !(NET35 || NET20 || PCL40)
+#if !(NET35 || NET20 || SILVERLIGHT)
         private object CreateDynamic(JsonReader reader, JsonDynamicContract contract, JsonProperty member, string id)
         {
             IDynamicMetaObjectProvider newObject;
